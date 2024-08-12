@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.head{
+    box-shadow: 0 0 70px gray;
+}
+
+.logo:hover{
+    transform: scale(1.2);
+    transition: 0.5s ease-in-out;
+}
+.custom-shape-divider-bottom-1722971748 {
+    position: absolute;
+    /* bottom: 0; */
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1722971748 svg {
+    position: relative;
+    display: block;
+    width: calc(102% + 1.3px);
+    height: 87px;
+}
+
+.custom-shape-divider-bottom-1722971748 .shape-fill {
+    fill: white;
+}
+.child{
+    /* border-radius: 50%; */
+}
+.child:hover{
+    border-bottom: 2px solid white;
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+.explore:hover{
+    transform: scale(1.2);
+    transition: 1s;
+    box-shadow: 0 0 50px gray;
+    background-color: bisque;
+    color: black;
+}
+.foot a{
+    font-size: larger;
+    color: gray;
+}
+.foot table{
+    width: 350px;
+    height: 300px;
+}
+.foot a:hover{
+    color: cornflowerblue;
+    text-decoration: underline;
+}
+.myfood{
+    border: 1px solid gray;
+}
+img{
+
+    width: 100%;
+    height: 100%;
+}
