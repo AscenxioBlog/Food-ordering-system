@@ -6,6 +6,7 @@ require('dotenv').config();
 const cors = require('cors')
 const Restaurant = require('./models/Restaurant')
 const multer = require('multer');
+const generalcontroller = require('./controllers/generalcontroller')
 
 const port = process.env.PORT || 3000
 
@@ -32,76 +33,11 @@ app.use(cors({
     origin: 'http://localhost:5173' // Allow only this origin
 }));
 
-app.post('/add', upload.single('image'), async (req, res) => {
-    try {
-        const { name, address, food_types, opening_time, closing_time, description, rating } = req.body;
-        const image = req.file ? `/images/${req.file.filename}` : null;
+//This is the logic to add to the database
+app.post('/add', upload.single('image'), generalcontroller.foradding);
 
-        const newRestaurant = new Restaurant({
-            name,
-            address,
-            food_types,
-            opening_time,
-            closing_time,
-            description,
-            rating,
-            image
-        });
-
-        await newRestaurant.save();
-        res.redirect('http://localhost:5173/admin/add');
-    } catch (err) {
-        console.error(err);
-        // res.status(500).send('Server error');
-    }
-});
-
-
-app.get('/api/restaurants',(req,res)=>{
-    Restaurant.find()
-        .then(response=>res.json(response))
-        .catch(err=>console.log(err))
-
-    // res.json([
-    //     {
-    //         id:1,
-    //         name:"Pizza Hut",
-    //         address:"123 Main St",
-    //         image:"/images/pizza.png"
-    //     },
-    //     {
-    //         id:2,
-    //         name:"McDonald's",
-    //         address:"456 Elm St",
-    //         image:"/images/chicken.png"
-    //     },
-    //     {
-    //         id:3,
-    //         name:"Burger King",
-    //         address:"2 Ajegunle st",
-    //         image:"/images/burger.jpg"
-    //     },
-    //     {
-    //         id:4,
-    //         name:"Sweet Sensation",
-    //         address:"32 Ogudu st",
-    //         image:"/images/sweet.avif"
-    //     },
-    //     {
-    //         id:5,
-    //         name:"Cold Stone",
-    //         address:"Opposite river, 2 Aba st",
-    //         image:"/images/coldstone.png"
-    //     },
-    //     {
-    //         id:6,
-    //         name:"Finger Licking",
-    //         address:"32 Ogudu st",
-    //         image:"/images/rice.png"
-    //     }
-
-    // ])
-})
+//This is the logic to fetch the api from the database and send it as JSON.
+app.get('/api/restaurants', generalcontroller.for_restaurantapi)
 
 app.get('*',(req,res)=>{
     res.sendFile(path.join(__dirname,"../client/dist/index.html"))
