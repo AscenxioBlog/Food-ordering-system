@@ -4,6 +4,9 @@ import HeaderComponent from './ConstantComponent/HeaderComponent';
 import FooterComponent from './ConstantComponent/FooterComponent';
 import Restaurant1Component from './Restaurant1/Restaurant1Component';
 import IndexComponent from './IndexComponent/IndexComponent'
+import AdminComponent from './AdminComponent/AdminComponent';
+import AddComponent from './AdminComponent/AddComponent';
+import AllRestaurant from './AdminComponent/AllRestaurant';
 
 function Container() {
   const [cart, setCart] = useState([]);
@@ -67,6 +70,11 @@ function Container() {
             path='/Restuarant'
             element={<Restaurant1Component addToCart={addToCart} />}
           />
+
+            <Route path='/admin' element={<AdminComponent/>}>
+                <Route path='/admin/add' element={<AddComponent/>}/>
+                <Route path='/admin/allres' element={<AllRestaurant/>}/>
+            </Route>
         </Routes>
         <FooterComponent />
       </BrowserRouter>
