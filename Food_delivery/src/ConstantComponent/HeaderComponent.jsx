@@ -21,7 +21,7 @@ function HeaderComponent({
           <div className="hidden md:inline-block lg:inline-block bg-[] text-[21px] font-bold pl-[80px] ">
             <ol className='flex gap-[30px] '>
               <li className='text-[#FF5A3C]'><a href="/Restuarant">Restaurants</a></li>
-              <li><a href="">FAQs</a></li>
+              <li><a href="/faqs">FAQs</a></li>
               <li><a href="">Support</a></li>
             </ol>
           </div>
