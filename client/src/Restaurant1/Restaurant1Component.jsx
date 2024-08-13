@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 function Restaurant1Component() {
   return (
     <div className=' bg-teal-300 h-full w-full'>
@@ -57,6 +58,7 @@ function Restaurant1Component() {
                 </div>
             </div>
       </div>
+      
     </div>
   )
 }
