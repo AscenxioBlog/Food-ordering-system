@@ -5,7 +5,8 @@ function AddComponent() {
     <div className=' bg-blue-700 w-full min-h-[100vh] flex justify-center items-center'>
 
         <div className=" min-h-[90vh] w-full lg:w-[80%] bg-fuchsia-500 pl-[20px] md-pl-[40px] lg:pl-[100px]">
-
+            <form action="localhost:5000/add" method='post'>
+                
             <div className="">
                 <label htmlFor="">Restaurant Name</label> <br />
                 <input type="text" required className=' h-[40px] w-[80%] rounded-[20px] bg-[#80808060] pl-2' />
@@ -15,6 +16,7 @@ function AddComponent() {
                 <label htmlFor="">Address</label> <br />
                 <textarea name="" id="" required className=' h-[150px] w-[80%] rounded-[20px] bg-[#80808060] pl-3 pt-2'></textarea>
             </div> <br />
+            
 
             <div className="">
                 <label htmlFor="">Restaurant Image</label> <br />
@@ -93,6 +95,7 @@ function AddComponent() {
             <div className="">
                 <input type="submit" value='Add Restaurant' className=' h-[40px] w-[90%] bg-orange-500 rounded-[20px]' />
             </div>
+            </form>
         </div>
     </div>
   )
