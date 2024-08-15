@@ -4,14 +4,13 @@ const mongoose = require('mongoose')
 const path = require('path')
 require('dotenv').config();
 const cors = require('cors')
-const Restaurant = require('./models/Restaurant')
 const multer = require('multer');
 const generalcontroller = require('./controllers/generalcontroller')
 
 const port = process.env.PORT || 3000
 
 
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI) 
     .then(()=> app.listen(port,()=> console.log("connected"))) 
     .catch(err=>console.log(err));
 

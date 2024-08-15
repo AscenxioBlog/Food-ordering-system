@@ -82,7 +82,7 @@ function AddComponent() {
 
             <div className="">
                 <label htmlFor="">Description</label> <br />
-                <textarea name="" id="" className=' h-[200px] w-[80%] rounded-[20px] bg-[#80808060] pl-3 pt-2'></textarea>
+                <textarea name="description" className=' h-[200px] w-[80%] rounded-[20px] bg-[#80808060] pl-3 pt-2'></textarea>
             </div> <br />
 
             <div className="">
@@ -91,7 +91,7 @@ function AddComponent() {
             </div><br />
 
             <div className="">
-                <input type="submit" value='Add Restaurant' className=' h-[40px] w-[90%] bg-orange-500 rounded-[20px]' />
+                <button type="submit" className=' h-[40px] w-[90%] bg-orange-500 rounded-[20px]'>Add Restaurant</button>
             </div>
         </div>
     </div>
