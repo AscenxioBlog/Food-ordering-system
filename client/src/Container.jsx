@@ -8,6 +8,10 @@ import AdminComponent from './AdminComponent/AdminComponent';
 import AddComponent from './AdminComponent/AddComponent';
 import AllRestaurant from './AdminComponent/AllRestaurant';
 import FaqsComponent from './FaqsComponent/FaqsComponent';
+// import SignUp from './Authenticator/SignUp';
+import Authenticator from './Authenticator/Authenticator';
+import SignIn from './Authenticator/SignIn';
+import SignUp from './Authenticator/SignUp';
 
 function Container() {
   const [cart, setCart] = useState([]);
@@ -73,6 +77,13 @@ function Container() {
           />
 
           <Route path='/faqs' element={<FaqsComponent/>}/>
+          <Route path='/auth' element={<Authenticator/>}>
+              <Route path='/auth/signup' element={<SignUp/>}/>
+              <Route path='/auth/signin' element={<SignIn/>}/>
+          </Route>
+
+
+
 
             <Route path='/admin' element={<AdminComponent/>}>
                 <Route path='/admin/add' element={<AddComponent/>}/>

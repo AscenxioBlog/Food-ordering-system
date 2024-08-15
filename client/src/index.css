@@ -87,3 +87,63 @@ img{
 .accord{
     border-bottom: 1px solid purple;
 }
+.SignUp .inp{
+    height: 50px;
+    width: 80%;
+    border-radius: 20px;
+    background-color: rgba(53, 8, 8, 0.311);
+    color: white;
+    font-size: 18px;
+    padding-left: 10px;
+}
+.SignUp label{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.sub{
+    background-color: #FF5A3C;
+    height: 50px;
+    width: 80%;
+    border-radius: 20px;
+    /* background-color: rgba(53, 8, 8, 0.311); */
+    color: white;
+    font-size: 18px;
+    transition: 0.5s;
+
+}
+.sub:hover{
+    background-color: burlywood;
+}
+.inp::placeholder{
+    color: wheat;
+}
+.signin .innp{
+    height: 50px;
+    width: 80%;
+    border-radius: 20px;
+    background-color: rgba(53, 8, 8, 0.311);
+    color: white;
+    font-size: 18px;
+    padding-left: 10px;
+}
+.signin label{
+    font-size: 20px;
+    font-weight: bold;
+}
+.innp::placeholder{
+    color: wheat;
+}
+.signin .btn{
+    background-color: #FF5A3C;
+    height: 50px;
+    width: 80%;
+    border-radius: 20px;
+    /* background-color: rgba(53, 8, 8, 0.311); */
+    color: white;
+    font-size: 18px;
+    transition: 0.5s;
+}
+.btn:hover{
+    background-color: burlywood;
+}

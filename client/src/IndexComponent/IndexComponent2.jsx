@@ -116,7 +116,7 @@ function IndexComponent2() {
             </div>
 
         </div>
-        <div className="explore h-[45px] w-[260px] bg-white rounded-[30px] flex justify-center items-center text-[gray] text-[18px] font-bold mt-6 border-[2px] border-[gray]">
+        <div className="explore h-[45px] w-[260px] bg-[cadetblue] rounded-[30px] flex justify-center items-center text-[gray] text-[18px] font-bold mt-6 border-[2px] border-[gray]">
           <h1><a href="/Restuarant">Explore all restaurants</a> </h1>
         </div>
     </div>
