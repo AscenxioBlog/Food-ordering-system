@@ -22,7 +22,7 @@ function HeaderComponent({
             <ol className='flex gap-[30px] '>
               <li className='text-[#FF5A3C]'><a href="/Restuarant">Restaurants</a></li>
               <li><a href="/faqs">FAQs</a></li>
-              <li><a href="">Support</a></li>
+              <li><a href="/auth">Support</a></li>
             </ol>
           </div>
         </div>
