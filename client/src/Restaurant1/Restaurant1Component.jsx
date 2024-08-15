@@ -13,14 +13,14 @@ function Restaurant1Component() {
   },[])//Array of dependecies because we need the data to  be fetched only once.
 
   return (
-    <div className=' min-h-[700px] bg-slate-600 grid grid-cols-3'>
+    <div className=' min-h-[800px] bg-slate-600 grid grid-cols-3 gap-2'>
       {
         holddata? 
         holddata.map((item)=>(
           <>
-          <div>
+          <div className=' bg-gray-500 '>
             <h2 >{item.name}</h2>
-            <img src={item.image} width={300} className=' rounded-xl'/>
+            <img src={item.image} width={"300px"} className=' rounded-xl'/>
             <p>{item.address}</p>
           </div>
           
