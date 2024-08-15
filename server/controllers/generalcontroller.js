@@ -1,5 +1,4 @@
-const Restaurant = require("./models/Restaurant")
-
+const Restaurant = require('../models/Restaurant')
 
 const foradding = async (req,res)=>{
     try {
