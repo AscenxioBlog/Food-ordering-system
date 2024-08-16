@@ -2,9 +2,9 @@ import React from 'react'
 
 function AddComponent() {
   return (
-    <div className=' bg-blue-700 w-full min-h-[100vh] flex justify-center items-center'>
+    <div className=' bg-[#E7F0DC] w-full min-h-[100vh] flex justify-center items-center mt-[30px]'>
 
-        <div className=" min-h-[90vh] w-full lg:w-[80%] bg-fuchsia-500 pl-[20px] md-pl-[40px] lg:pl-[100px]">
+        <div className=" min-h-[90vh] w-full lg:w-[80%] bg-[] pl-[20px] md-pl-[40px] lg:pl-[100px]">
             <form action="localhost:5000/add" method='post'>
                 
             <div className="">
@@ -93,7 +93,7 @@ function AddComponent() {
             </div><br />
 
             <div className="">
-                <button type="submit" className=' h-[40px] w-[90%] bg-orange-500 rounded-[20px]'>Add Restaurant</button>
+                <button type="submit" className=' h-[40px] w-[90%] bg-orange-500 rounded-[20px] font-bold'>Add Restaurant</button>
             </div>
             </form>
         </div>
