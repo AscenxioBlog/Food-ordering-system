@@ -12,6 +12,7 @@ import FaqsComponent from './FaqsComponent/FaqsComponent';
 import Authenticator from './Authenticator/Authenticator';
 import SignIn from './Authenticator/SignIn';
 import SignUp from './Authenticator/SignUp';
+import RestauarantLandingpage from './Restaurant1/RestauarantLandingpage';
 
 function Container() {
   const [cart, setCart] = useState([]);
@@ -71,6 +72,7 @@ function Container() {
         />
         <Routes>
           <Route path='/' element={<IndexComponent/>}/>
+          {/* <Route path='/Restuarant' element={<RestauarantLandingpage/>}/> */}
           <Route
             path='/Restuarant'
             element={<Restaurant1Component addToCart={addToCart} />}

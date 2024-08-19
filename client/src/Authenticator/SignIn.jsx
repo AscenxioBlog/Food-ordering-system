@@ -3,7 +3,7 @@ import React from 'react'
 function SignIn() {
   return (
     <div>
-      <div className=" h-[400px] w-[100%] md:w-[80%] lg:w-[60%] bg-yellow-200 rounded-[30px]  md:ml-[80px] lg:ml-[200px]">
+      <div className=" h-[400px] w-[100%] md:w-[80%] lg:w-[60%] bg-[#E7F0DC] rounded-[30px]  md:ml-[80px] lg:ml-[200px]">
             <section className=' h-[60px] bg-[] text-[20px] font-semibold flex justify-center items-center'>
                 <h1>Sign In To Continue</h1>
             </section>

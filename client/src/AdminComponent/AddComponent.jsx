@@ -13,12 +13,12 @@ function AddComponent() {
     }
 
   return (
-    <div className=' bg-blue-700 w-full min-h-[100vh] flex justify-center items-center'>
+    <div className=' bg-[#E7F0DC] w-full min-h-[100vh] flex justify-center items-center'>
         <div className=" w-[max-content] bg-[#f3f9d2] p-3 absolute rounded-lg left-[50%] right-[50%] transition-[1s]" style={box}>
             <h2>Added Successfully</h2>
         </div>
 
-        <div className=" min-h-[90vh] w-full lg:w-[80%] bg-fuchsia-500 pl-[20px] md-pl-[40px] lg:pl-[100px]">
+        <div className=" min-h-[90vh] w-full lg:w-[80%] bg-[] pl-[20px] md-pl-[40px] lg:pl-[100px]">
             <form action="http://localhost:5000/add" method='post' onSubmit={move} encType="multipart/form-data">
                 
             <div className="">
