@@ -20,7 +20,7 @@ function Authenticator() {
     }
   return (
     <div>
-        <div className=" min-h-[100vh] w-full bg-[#E7F0DC] mt-[100px]">
+        <div className=" min-h-[60vh] w-full bg-[#E7F0DC] mt-[100px]">
 
             {/* <div className=" bg-[] flex justify-center items-end">
                 <div className=" h-[60px] w-[300px] md:w-[400px] lg:w-[400px] bg-[] grid grid-cols-2 gap-2">

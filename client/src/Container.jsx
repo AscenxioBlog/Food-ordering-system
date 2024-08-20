@@ -88,10 +88,10 @@ function Container() {
 
 
 
-            <Route path='/admin' element={<AdminComponent/>}>
-                <Route path='/admin/add' element={<AddComponent/>}/>
+            <Route path='/admin' element={<AdminComponent/>}/>
+                {/* <Route path='/admin/add' element={<AddComponent/>}/>
                 <Route path='/admin/allres' element={<AllRestaurant/>}/>
-            </Route>
+            </Route> */}
         </Routes>
         <FooterComponent />
       </BrowserRouter>

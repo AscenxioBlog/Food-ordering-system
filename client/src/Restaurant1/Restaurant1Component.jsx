@@ -33,11 +33,11 @@ function Restaurant1Component() {
 
 
     // </div>
-    <div className=" bg-[#E7F0DC] min-h-[100vh] w-full grid grid-cols-1 md:grid-cols-[20%,80%] gap-1  mt-[120px] ">
-      <div className="h-[100vh] md:h-full bg-[]  md:flex flex-col items-center">
+    <div className=" bg-[#E7F0DC] min-h-[100vh] w-full grid grid-cols-1 md:grid-cols-[20%,80%] gap-1  mt-[105px] ">
+      <div className="min-h-[40vh] md:h-full bg-[]  md:flex flex-col items-center">
         <h1 className=" text-[25px] font-bold text-center">EXPLORE CATEGORIES</h1>
 
-       <div className="h-[60vh] md:h-[60vh] lg:h-[80vh] md:w-[80%] lg:w-[60%] bg-[] grid grid-cols-2 gap-5 md:grid-cols-1 mt-5">
+       <div className="min-h-[40vh] md:h-[60vh] lg:h-[80vh] md:w-[80%] lg:w-[60%] bg-[] grid grid-cols-2 gap-5 md:grid-cols-1 mt-5">
        <button className="  bg-lime-400 rounded-[35%] md:rounded-[20px] ">RICE</button>
 
 
@@ -52,6 +52,9 @@ function Restaurant1Component() {
       </div>
       {/* <div className="h-[100vh] bg-red-800 "></div> */}
       <div className=" bg-[] overflow-y-scroll">
+        <div className=" h-[70px] w-full bg-[] flex justify-center items-center" >
+          <input type="text" name="search" id="" className=" h-[50px] w-[80%] bg-[] rounded-[40px] pl-2" placeholder="What did you need??"/>
+        </div>
       <div className=" min-h-[500px] w-[100%] bg-[] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-3">
 
 

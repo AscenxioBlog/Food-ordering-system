@@ -106,6 +106,13 @@ function AddComponent() {
                 <input type="number" name='rating' min="1" max="5" required className=' h-[40px] w-[40%] rounded-[20px] bg-[#80808060] pl-2' />
             </div><br />
 
+            <h1>ADD FOOD MENU</h1>
+
+            <div className="">
+                <label htmlFor="">Food Name</label> <br />
+                <input type="text" name='name' required className=' h-[40px] w-[80%] rounded-[20px] bg-[#80808060] pl-2' />
+            </div> <br />
+
                 <button type="submit" className=' h-[40px] w-[90%] bg-orange-500 rounded-[20px]' >Add Restaurant</button>
             </form>
         </div>
