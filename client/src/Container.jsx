@@ -79,10 +79,11 @@ function Container() {
           />
 
           <Route path='/faqs' element={<FaqsComponent/>}/>
-          <Route path='/auth' element={<Authenticator/>}>
-              <Route path='/auth/signup' element={<SignUp/>}/>
+          <Route path='/auth' element={<Authenticator/>}/>
+
+              {/* <Route path='/auth/signup' element={<SignUp/>}/>
               <Route path='/auth/signin' element={<SignIn/>}/>
-          </Route>
+          </Route> */}
 
 
 

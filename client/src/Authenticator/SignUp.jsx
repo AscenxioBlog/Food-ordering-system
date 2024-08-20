@@ -1,9 +1,9 @@
 import React from 'react'
 
-function SignUp() {
+function SignUp(props) {
   return (
     <div>
-        <div  className=" SignUp h-[600px] w-full bg-[] rounded-[30px] flex flex-col items-center">
+        <div  className=" SignUp h-[600px] w-full bg-[#E7F0DC] rounded-[30px] flex flex-col items-center">
           <section className=" h-[40px] w-full bg-[] flex justify-center text-[20px] font-bold">
         <h1>Sign Up To Continue</h1>
           </section>
@@ -35,6 +35,10 @@ function SignUp() {
                 <input type="submit" value={'Next'} className='sub' />
               </form>
             </div>
+
+            <section className="w-full flex justify-center mt-2 space-x-2"> <span>Already have an account?</span> 
+             <span className=' underline font-bold'> <button onClick={props.SeeSignUp}>Sign In</button></span>  <span>here</span>
+            </section>
         </div>
       
     </div>
