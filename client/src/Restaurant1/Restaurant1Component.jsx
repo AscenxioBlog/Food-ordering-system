@@ -13,14 +13,20 @@ function Restaurant1Component() {
   },[])//Array of dependecies because we need the data to  be fetched only once.
 
   return (
-    <div className=' min-h-[800px] bg-slate-600 grid grid-cols-3 gap-2'>
+    <main className=' flex gap-2 mt-[50px]'>
+      <nav className=' w-[15%] bg-emerald-400 sticky top-[0px]'>
+        <h1 className=' text-2xl text-center font-bold font-[cursive]'>Filter</h1>
+      </nav>
+      <div className=' h-[inherit] overflow-scroll flex-1 bg-slate-600 grid gap-2 grid-cols-3 p-3'>
       {
         holddata? 
         holddata.map((item)=>(
           <>
-          <div className=' bg-gray-500 '>
+          <div className=' bg-[grey] rounded-t-[20px] h-[200px] mb-2'>
+            <section className=' h-[70%]'>
+              <img src={`http://localhost:5100${item.image}`} className=' rounded-t-[10px] h-[100%]'/>
+            </section>
             <h2 >{item.name}</h2>
-            <img src={item.image} width={"300px"} className=' rounded-xl'/>
             <p>{item.address}</p>
           </div>
           
@@ -30,63 +36,10 @@ function Restaurant1Component() {
       }
       
     </div>
-    // <div className=' bg-teal-300 h-full w-full'>
-    //   <div className=" mt-[120px] min-h-[500px] w-[95%] bg-[] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    //   <div className=" h-[500px]  bg-white flex flex-col items-center ">
-    //             <div className=" border-[1px] border-[gray] rounded-[25px] overflow-hidden">
-    //             <div className=" h-[350px] w-[350px] md:w-[320px] lg:w-[410px] bg-red-800 ">
-    //               <img src="" alt="" />
-    //             </div>
-    //             <div className=" h-[90px]  bg-[] grid grid-cols-[70%,30%]">
-    //               <div className=" bg-[] flex flex-col justify-center pl-2">
-    //                 <h1 className=' font-bold text-[17px] mb-1'>Jollof & Co</h1>
-    //                 <p>Everyday Naija favourites</p>
-    //               </div>
-    //               <div className=" bg-[] flex justify-center items-center text-[18px]">
-    //                 <span className=' text-[#FF5A3C]'><u><a href="">View More</a></u></span>
-    //               </div>
-    //             </div>
-    //             </div>
-    //         </div>
+    </main>
+    
+    
 
-
-    //         <div className=" h-[500px]  bg-white flex flex-col items-center ">
-    //             <div className=" border-[1px] border-[gray] rounded-[25px] overflow-hidden">
-    //             <div className=" h-[350px] w-[350px] md:w-[320px] lg:w-[410px] bg-red-800 ">
-    //               <img src="" alt="" />
-    //             </div>
-    //             <div className=" h-[90px]  bg-[] grid grid-cols-[70%,30%]">
-    //               <div className=" bg-[] flex flex-col justify-center pl-2">
-    //                 <h1 className=' font-bold text-[17px] mb-1'>Jollof & Co</h1>
-    //                 <p>Everyday Naija favourites</p>
-    //               </div>
-    //               <div className=" bg-[] flex justify-center items-center text-[18px]">
-    //                 <span className=' text-[#FF5A3C]'><u><a href="">View More</a></u></span>
-    //               </div>
-    //             </div>
-    //             </div>
-    //         </div>
-
-
-    //         <div className=" h-[500px]  bg-white flex flex-col items-center ">
-    //             <div className=" border-[1px] border-[gray] rounded-[25px] overflow-hidden">
-    //             <div className=" h-[350px] w-[350px] md:w-[320px] lg:w-[410px] bg-red-800 ">
-    //               <img src="" alt="" />
-    //             </div>
-    //             <div className=" h-[90px]  bg-[] grid grid-cols-[70%,30%]">
-    //               <div className=" bg-[] flex flex-col justify-center pl-2">
-    //                 <h1 className=' font-bold text-[17px] mb-1'>Jollof & Co</h1>
-    //                 <p>Everyday Naija favourites</p>
-    //               </div>
-    //               <div className=" bg-[] flex justify-center items-center text-[18px]">
-    //                 <span className=' text-[#FF5A3C]'><u><a href="">View More</a></u></span>
-    //               </div>
-    //             </div>
-    //             </div>
-    //         </div>
-    //   </div>
-      
-    // </div>
   )
 }
 

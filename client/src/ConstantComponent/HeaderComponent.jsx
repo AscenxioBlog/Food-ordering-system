@@ -12,8 +12,8 @@ function HeaderComponent({
   checkout
 }) {
   return (
-    <div className='head h-[100px] w-full bg-[#5F8670]' style={{ display: 'block', position: 'fixed', top: 0, zIndex: 20, transition: '1s' }}>
-      <div className="h-[80px] w-full grid grid-cols-[35%,20%,30%] md:grid-cols-[20%,60%,18%] lg:grid-cols-[20%,60%,18%] gap-1 justify-between ">
+    <div className='head h-[50px] w-full bg-[#5F8670]' style={{ display: 'block', position: 'fixed', top: 0, zIndex: 20, transition: '1s' }}>
+      <div className=" w-full grid grid-cols-[35%,20%,30%] md:grid-cols-[20%,60%,18%] lg:grid-cols-[20%,60%,18%] gap-1 justify-between ">
         <div className="bg-[] text-[35px] font-extrabold text-[#FF5A3C] flex justify-center items-center">
           <h1 className='logo'><a href="/">Feed<span className='text-white'>Me</span></a></h1>
         </div>
