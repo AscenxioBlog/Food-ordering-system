@@ -16,8 +16,8 @@ const restaurantSchema = new mongoose.Schema({
     food_types: {
         type: [String],
         enum: [
-            'pizza', 'ice-cream', 'pastries', 'local', 'chinese', 
-            'burgers', 'jollof', 'friedrice', 'pasta'
+            'pizza', 'ice-cream', 'pastries', 'local-food', 'chinese', 
+            'burgers', 'jollof-rice', 'fried-rice', 'pasta'
         ]
     },
     opening_time: {

@@ -1,16 +1,21 @@
-import React, { useEffect ,useState } from 'react'
-
+import React, { useEffect, useState } from "react";
+// const imageBaseUrl = "http://localhost:5000"; // Base URL of your server
+import chickcat from '../Files/chickcat.png'
+import ricecat from '../Files/ricecat.png'
+import juicecat from '../Files/juicecat.png'
+import grillcat from '../Files/grillcat.png'
+import shawacat from '../Files/shawacat.png'
+import localcat from '../Files/localcat.png'
 
 function Restaurant1Component() {
-  let [holddata,setHolddata] = useState('')
+  let [holddata, setHolddata] = useState("");
 
-  useEffect(()=>{
-    fetch("http://localhost:5000/api/restaurants")//fetched from my server
-        .then((response)=>response.json()) //convert the response to json. (the response can be anything)
-        .then(json=>setHolddata(json)) //(then pass the converted data into a useState)
-        .catch(err=>console.log(err)) // if there is any error
-
-  },[])//Array of dependecies because we need the data to  be fetched only once.
+  useEffect(() => {
+    fetch("http://localhost:5000/api/restaurants") //fetched from my server
+      .then((response) => response.json()) //convert the response to json. (the response can be anything)
+      .then((json) => setHolddata(json)) //(then pass the converted data into a useState)
+      .catch((err) => console.log(err)); // if there is any error
+  }, []); //Array of dependecies because we need the data to  be fetched only once.
 
   return (
     <main className=' flex gap-2 mt-[50px]'>
@@ -43,4 +48,4 @@ function Restaurant1Component() {
   )
 }
 
-export default Restaurant1Component
+export default Restaurant1Component;

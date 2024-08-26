@@ -12,6 +12,7 @@ import FaqsComponent from './FaqsComponent/FaqsComponent';
 import Authenticator from './Authenticator/Authenticator';
 import SignIn from './Authenticator/SignIn';
 import SignUp from './Authenticator/SignUp';
+import RestauarantLandingpage from './Restaurant1/RestauarantLandingpage';
 
 function Container() {
   const [cart, setCart] = useState([]);
@@ -71,24 +72,26 @@ function Container() {
         />
         <Routes>
           <Route path='/' element={<IndexComponent/>}/>
+          {/* <Route path='/Restuarant' element={<RestauarantLandingpage/>}/> */}
           <Route
             path='/Restuarant'
             element={<Restaurant1Component addToCart={addToCart} />}
           />
 
           <Route path='/faqs' element={<FaqsComponent/>}/>
-          <Route path='/auth' element={<Authenticator/>}>
-              <Route path='/auth/signup' element={<SignUp/>}/>
+          <Route path='/auth' element={<Authenticator/>}/>
+
+              {/* <Route path='/auth/signup' element={<SignUp/>}/>
               <Route path='/auth/signin' element={<SignIn/>}/>
-          </Route>
+          </Route> */}
 
 
 
 
-            <Route path='/admin' element={<AdminComponent/>}>
-                <Route path='/admin/add' element={<AddComponent/>}/>
+            <Route path='/admin' element={<AdminComponent/>}/>
+                {/* <Route path='/admin/add' element={<AddComponent/>}/>
                 <Route path='/admin/allres' element={<AllRestaurant/>}/>
-            </Route>
+            </Route> */}
         </Routes>
         <FooterComponent />
       </BrowserRouter>
