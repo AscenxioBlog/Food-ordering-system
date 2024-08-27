@@ -1,10 +1,11 @@
 import React from 'react'
 import { SlArrowDown } from "react-icons/sl";
-import food from '../Files/food.png'
-import cola from '../Files/cola.png'
-import pharmacy from '../Files/pharmacy.png'
-import pack from '../Files/package.png'
-import place from '../Files/place.png'
+// import food from '../Files/food.png'
+import food from '../../Files/food.png'
+import cola from '../../Files/cola.png'
+import pharmacy from '../../Files/pharmacy.png'
+import pack from '../../Files/package.png'
+import place from '../../Files/place.png'
 
 
 function IndexComponent1() {

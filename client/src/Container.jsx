@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import HeaderComponent from './ConstantComponent/HeaderComponent';
-import FooterComponent from './ConstantComponent/FooterComponent';
-import Restaurant1Component from './Restaurant1/Restaurant1Component';
-import IndexComponent from './IndexComponent/IndexComponent'
-import AdminComponent from './AdminComponent/AdminComponent';
-import AddComponent from './AdminComponent/AddComponent';
-import AllRestaurant from './AdminComponent/AllRestaurant';
-import FaqsComponent from './FaqsComponent/FaqsComponent';
+import React, { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HeaderComponent from "./ReusableComponent/ConstantComponent/HeaderComponent";
+import FooterComponent from "./ReusableComponent/ConstantComponent/FooterComponent";
+import Restaurant1Component from "./UI/Restaurant1/Restaurant1Component";
+import IndexComponent from "./UI/IndexComponent/IndexComponent";
+import AdminComponent from "./AdminComponent/AdminComponent";
+import AddComponent from "./AdminComponent/AddComponent";
+import AllRestaurant from "./AdminComponent/AllRestaurant";
+import FaqsComponent from "./UI/FaqsComponent/FaqsComponent";
 // import SignUp from './Authenticator/SignUp';
-import Authenticator from './Authenticator/Authenticator';
-import SignIn from './Authenticator/SignIn';
-import SignUp from './Authenticator/SignUp';
-import RestauarantLandingpage from './Restaurant1/RestauarantLandingpage';
+import Authenticator from "./Authenticator/Authenticator";
+import SignIn from "./Authenticator/SignIn";
+import SignUp from "./Authenticator/SignUp";
+import RestauarantLandingpage from "./UI/Restaurant1/RestauarantLandingpage";
 
 function Container() {
   const [cart, setCart] = useState([]);
@@ -20,7 +20,9 @@ function Container() {
 
   const addToCart = (product) => {
     setCart((prevCart) => {
-      const existingProductIndex = prevCart.findIndex(item => item.id === product.id);
+      const existingProductIndex = prevCart.findIndex(
+        (item) => item.id === product.id
+      );
       if (existingProductIndex > -1) {
         const updatedCart = [...prevCart];
         updatedCart[existingProductIndex].quantity += 1;
@@ -31,26 +33,35 @@ function Container() {
   };
 
   const removeFromCart = (productToRemove) => {
-    setCart(cart.filter(product => product.id !== productToRemove.id));
+    setCart(cart.filter((product) => product.id !== productToRemove.id));
   };
 
   const increaseQuantity = (product) => {
-    setCart(cart.map(item =>
-      item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
-    ));
+    setCart(
+      cart.map((item) =>
+        item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+      )
+    );
   };
 
   const decreaseQuantity = (product) => {
-    setCart(cart.map(item =>
-      item.id === product.id
-        ? { ...item, quantity: Math.max(item.quantity - 1, 1) }
-        : item
-    ));
+    setCart(
+      cart.map((item) =>
+        item.id === product.id
+          ? { ...item, quantity: Math.max(item.quantity - 1, 1) }
+          : item
+      )
+    );
   };
 
   const checkout = () => {
-    const totalAmount = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
-    alert(`Thank you for your purchase! Total amount: $${totalAmount.toFixed(2)}`);
+    const totalAmount = cart.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
+    alert(
+      `Thank you for your purchase! Total amount: $${totalAmount.toFixed(2)}`
+    );
     setCart([]);
   };
 
@@ -71,25 +82,22 @@ function Container() {
           checkout={checkout}
         />
         <Routes>
-          <Route path='/' element={<IndexComponent/>}/>
+          <Route path="/" element={<IndexComponent />} />
           {/* <Route path='/Restuarant' element={<RestauarantLandingpage/>}/> */}
           <Route
-            path='/Restuarant'
+            path="/Restuarant"
             element={<Restaurant1Component addToCart={addToCart} />}
           />
 
-          <Route path='/faqs' element={<FaqsComponent/>}/>
-          <Route path='/auth' element={<Authenticator/>}/>
+          <Route path="/faqs" element={<FaqsComponent />} />
+          <Route path="/auth" element={<Authenticator />} />
 
-              {/* <Route path='/auth/signup' element={<SignUp/>}/>
+          {/* <Route path='/auth/signup' element={<SignUp/>}/>
               <Route path='/auth/signin' element={<SignIn/>}/>
           </Route> */}
 
-
-
-
-            <Route path='/admin' element={<AdminComponent/>}/>
-                {/* <Route path='/admin/add' element={<AddComponent/>}/>
+          <Route path="/admin" element={<AdminComponent />} />
+          {/* <Route path='/admin/add' element={<AddComponent/>}/>
                 <Route path='/admin/allres' element={<AllRestaurant/>}/>
             </Route> */}
         </Routes>
