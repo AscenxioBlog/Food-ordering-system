@@ -18,9 +18,9 @@ function AddComponent() {
 
     return (
         <div className=' bg-[#E7F0DC] w-full min-h-[100vh] flex justify-center items-center'>
-            <div className=" w-[max-content] bg-[#f3f9d2] p-3 absolute rounded-lg left-[50%] right-[50%] transition-[1s]" style={box}>
+            {/* <div className=" w-[max-content] bg-[#f3f9d2] p-3 absolute rounded-lg left-[50%] right-[50%] transition-[1s]" style={box}>
                 <h2>Added Successfully</h2>
-            </div>
+            </div> */}
 
             <div className=" min-h-[90vh] w-full lg:w-[80%] pl-[20px] md-pl-[40px] lg:pl-[100px]">
                 <form action="http://localhost:5000/add" method='post' onSubmit={move} encType="multipart/form-data">
@@ -40,7 +40,7 @@ function AddComponent() {
                         <textarea
                             name="address"
                             required
-                            className=' h-[150px] w-[80%] rounded-[20px] bg-[#80808060] pl-3 pt-2'
+                            className=' h-[120px] w-[80%] rounded-[20px] bg-[#80808060] pl-3 pt-2'
                         ></textarea>
                     </div> <br />
                     
@@ -77,16 +77,27 @@ function AddComponent() {
 
                     <div className="">
                         <label htmlFor="opening-time">Opening Hour</label> <br />
-                        <CustomInput type="time" name="opening_time" required /> 
+
+                        <CustomInput
+                         type="time" 
+                         name="opening_time"
+                          required 
+                         /> 
+
+
                         <span>To</span> 
-                        <CustomInput type="time" name="closing_time" required />
+                        <CustomInput
+                            type="time"
+                            name="closing_time"
+                            required 
+                        />
                     </div> <br />
 
                     <div className="">
                         <label htmlFor="description">Description</label> <br />
                         <textarea
                             name="description"
-                            className=' h-[200px] w-[80%] rounded-[20px] bg-[#80808060] pl-3 pt-2'
+                            className=' h-[150px] w-[80%] rounded-[20px] bg-[#80808060] pl-3 pt-2'
                         ></textarea>
                     </div> <br />
 

@@ -34,7 +34,7 @@
 }
 
 .custom-shape-divider-bottom-1722971748 .shape-fill {
-    fill: white;
+    fill: #E7F0DC;
 }
 .child{
     /* border-radius: 50%; */
@@ -147,4 +147,7 @@ img{
 }
 .btn:hover{
     background-color: burlywood;
+}
+.how{
+    border: 1px solid gray;
 }

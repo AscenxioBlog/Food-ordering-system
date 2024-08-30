@@ -11,7 +11,8 @@ function CustomButton(props) {
         color: props.color || 'black',
         border: props.border || 'none',
         cursor: 'pointer',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        marginTop: props.marginTop
 
     }
   return (

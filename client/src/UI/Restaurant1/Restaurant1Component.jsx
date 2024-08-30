@@ -7,6 +7,7 @@ const imageBaseUrl = "http://localhost:5000"; // Base URL of your server
 // import shawacat from "../Files/shawacat.png";
 // import localcat from "../Files/localcat.png";
 import CustomButton from "../../ReusableComponent/MyButton/CustomButton";
+import RestuarantComponentPic from "./RestuarantComponentPic";
 
 function Restaurant1Component() {
   let [holddata, setHolddata] = useState("");
@@ -19,6 +20,7 @@ function Restaurant1Component() {
   }, []); //Array of dependecies because we need the data to  be fetched only once.
 
   return (
+    
     // <div className=' min-h-[800px] bg-slate-600 grid grid-cols-3 gap-2 grid-rows-2'>
     //       {holddata ?
     //       holddata.map((item) => (
@@ -33,13 +35,18 @@ function Restaurant1Component() {
     //       )):null }
 
     // </div>
-    <div className=" bg-[#E7F0DC] min-h-[100vh] w-full grid grid-cols-1 md:grid-cols-[20%,80%] gap-1  mt-[105px] ">
+    
+    <div className="">
+
+<RestuarantComponentPic/>
+
+<div className=" bg-[#E7F0DC] min-h-[100vh] w-full grid grid-cols-1 md:grid-cols-[20%,79%] gap-1 ">
       <div className="min-h-[40vh] md:h-full bg-[]  md:flex flex-col items-center">
         <h1 className=" text-[25px] font-bold text-center">
           EXPLORE CATEGORIES
         </h1>
 
-        <div className="min-h-[40vh] md:h-[60vh] lg:h-[80vh] md:w-[80%] lg:w-[60%] bg-[] grid grid-cols-2 gap-5 md:grid-cols-1 mt-5">
+        <div className="min-h-[40vh] md:h-[60vh] lg:min-h-[80vh] md:w-[80%] lg:w-[60%] bg-[] grid grid-cols-2 gap-5 md:grid-cols-1 mt-5">
           <CustomButton
             height="40px"
             width="150px"
@@ -105,7 +112,7 @@ function Restaurant1Component() {
         </div>
       </div>
       {/* <div className="h-[100vh] bg-red-800 "></div> */}
-      <div className=" bg-[] overflow-y-scroll">
+      <div className=" bg-[]">
         <div className=" h-[70px] w-full bg-[] flex justify-center items-center">
           <input
             type="text"
@@ -115,7 +122,7 @@ function Restaurant1Component() {
             placeholder="What did you need??"
           />
         </div>
-        <div className=" min-h-[500px] w-[100%] bg-[] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-3">
+        <div className=" min-h-[500px] w-[100%] bg-[] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-3">
           {holddata
             ? holddata.map((item) => (
                 <>
@@ -192,6 +199,7 @@ function Restaurant1Component() {
  )}` */}
         </div>
       </div>
+    </div>
     </div>
   );
 }
