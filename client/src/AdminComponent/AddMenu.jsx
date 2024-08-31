@@ -18,7 +18,7 @@ function AddMenu() {
             </div> */}
 
             <div className=" min-h-[90vh] w-full lg:w-[80%] pl-[20px] md-pl-[40px] lg:pl-[100px]">
-                <form action="http://localhost:5000/add" method='post' encType="multipart/form-data">
+                <form action="http://localhost:5000/add-menu" method='post' encType="multipart/form-data">
                     
 
 
@@ -46,6 +46,7 @@ function AddMenu() {
                             type="text"
                             name='name'
                             required
+                            id="food-name"
                             className=' h-[40px] w-[80%] rounded-[20px] bg-[#80808060] pl-2'
                         />
                     </div> <br />
@@ -69,12 +70,13 @@ function AddMenu() {
                         <label htmlFor="description">Description</label> <br />
                         <textarea
                             name="food_description"
+                            required
                             className=' h-[150px] w-[80%] rounded-[20px] bg-[#80808060] pl-3 pt-2'
                         ></textarea>
                     </div> <br />
 
                     <div className="">
-                        <label htmlFor="rating">Food Price</label>
+                        <label htmlFor="foodprice">Food Price</label>
                         <CustomInput
                             type="number"
                             name='price'

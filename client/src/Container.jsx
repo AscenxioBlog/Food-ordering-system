@@ -14,6 +14,8 @@ import SignIn from "./Authenticator/SignIn";
 import SignUp from "./Authenticator/SignUp";
 import RestauarantLandingpage from "./UI/Restaurant1/RestauarantLandingpage";
 import AddMenu from "./AdminComponent/AddMenu";
+import FoodComponent from "./UI/Restaurant1/FoodComponent";
+import Men from "./UI/Restaurant1/Men";
 
 function Container() {
   const [cart, setCart] = useState([]);
@@ -91,6 +93,8 @@ function Container() {
           />
 
           <Route path="/faqs" element={<FaqsComponent />} />
+          <Route path="/menu/:restaurantname/:restaurantid" element={<FoodComponent addToCart={addToCart} />} />
+          {/* <Route path="/menu/:restaurantname/:restaurantid" element={<FoodComponent />} /> */}
           <Route path="/auth" element={<Authenticator />} />
 
           {/* <Route path='/auth/signup' element={<SignUp/>}/>

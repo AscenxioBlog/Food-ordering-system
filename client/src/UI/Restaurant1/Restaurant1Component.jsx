@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 const imageBaseUrl = "http://localhost:5000"; // Base URL of your server
 // import chickcat from "../Files/chickcat.png";
 // import ricecat from "../Files/ricecat.png";
@@ -126,6 +127,7 @@ function Restaurant1Component() {
           {holddata
             ? holddata.map((item) => (
                 <>
+                <Link to={`/menu/${item.name}/${item._id}`} key={item._id}>
                   <div className=" h-[300px]  bg-[white] flex flex-col items-center rounded-[20px] ">
                     <div className=" border-[1px] border-[gray] rounded-[25px] overflow-">
                       <div className=" h-[200px] w-[250px] md:w-[220px] lg:w-[280px] bg-red-800 mt-2 ">
@@ -154,6 +156,7 @@ function Restaurant1Component() {
                       </div>
                     </div>
                   </div>
+                </Link>
                   {/* <div>
 <img src={`${imageBaseUrl}${item.image}`} alt={item.name} />
   <h1>{item.address}</h1>

@@ -12,29 +12,35 @@ function App() {
 
     const addToCart = (product) => {
         setCart((prevCart) => {
-            const existingProductIndex = prevCart.findIndex(item => item.id === product.id);
-            if (existingProductIndex > -1) {
-                const updatedCart = [...prevCart];
-                updatedCart[existingProductIndex].quantity += 1;
-                return updatedCart;
+            const existingProduct = prevCart.find(item => item._id === product._id);
+    
+            if (existingProduct) {
+                console.log(`Updating quantity for product ID: ${product._id}`);
+                return prevCart.map(item =>
+                    item._id === product._id
+                        ? { ...item, quantity: item.quantity + 1 }
+                        : item
+                );
+            } else {
+                console.log(`Adding new product ID: ${product._id}`);
+                return [...prevCart, { ...product, quantity: 1 }];
             }
-            return [...prevCart, { ...product, quantity: 1 }];
         });
     };
-
+    
     const removeFromCart = (productToRemove) => {
-        setCart(cart.filter(product => product.id !== productToRemove.id));
+        setCart(cart.filter(product => product._id !== productToRemove._id));
     };
 
     const increaseQuantity = (product) => {
         setCart(cart.map(item =>
-            item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+            item._id === product._id ? { ...item, quantity: item.quantity + 1 } : item
         ));
     };
 
     const decreaseQuantity = (product) => {
         setCart(cart.map(item =>
-            item.id === product.id
+            item._id === product._id
                 ? { ...item, quantity: Math.max(item.quantity - 1, 1) }
                 : item
         ));
@@ -52,13 +58,13 @@ function App() {
                 cart={cart}
                 toggleCartVisibility={toggleCartVisibility}
                 isCartVisible={isCartVisible}
-            />
-            <Restaurant1Component
-                addToCart={addToCart}
                 removeFromCart={removeFromCart}
                 increaseQuantity={increaseQuantity}
                 decreaseQuantity={decreaseQuantity}
                 checkout={checkout}
+            />
+            <Restaurant1Component
+                addToCart={addToCart}
             />
         </div>
     );
