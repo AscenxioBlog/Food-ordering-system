@@ -16,7 +16,7 @@ const foradding = async (req,res)=>{
             image
         });
 
-        await newRestaurant.save();
+        await newRestaurant.save(); 
         res.redirect('http://localhost:5173/admin/add');
     } catch (err) {
         console.error(err);

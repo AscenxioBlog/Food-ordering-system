@@ -1,6 +1,8 @@
 
 import React, { useState } from 'react';
 import CustomInput from '../ReusableComponent/MyInput/CustomInput';
+import { TbHomePlus } from "react-icons/tb";
+import Dropzone from '../ReusableComponent/Dropzone/Dropzone'
 
 // import CustomInput from './CustomInput';
 
@@ -17,46 +19,96 @@ function AddComponent() {
     }
 
     return (
-        <div className=' bg-[#E7F0DC] w-full min-h-[100vh] flex justify-center items-center'>
+        <div className=' bg-[] w-full min-h-[100vh] flex justify-center items-center'>
             {/* <div className=" w-[max-content] bg-[#f3f9d2] p-3 absolute rounded-lg left-[50%] right-[50%] transition-[1s]" style={box}>
                 <h2>Added Successfully</h2>
             </div> */}
 
-            <div className=" min-h-[90vh] w-full lg:w-[80%] pl-[20px] md-pl-[40px] lg:pl-[100px]">
-                <form action="http://localhost:5000/add" method='post' onSubmit={move} encType="multipart/form-data">
+            <div className=" min-h-[90vh] w-full lg:w-[80%] grid grid-cols-1 md:grid-cols-[15%,85%] ">
+               <div className=" bg-slate-200  md:flex justify-center">
+                <span className=' text-[#5F8670] text-[40px] md:text-[60px]'>
+                <TbHomePlus  />
+                </span>
+               </div>
+               <div className=" bg-slate-200 ">
+                <div className=" space-y-3 mb-6">
+                    <h1 className=' text-[25px]'>General restaurant description</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem corrupti architecto aliquid beatae hic maxime voluptatum aperiam corporis a ipsam est blanditiis alias iusto ratione, tempora vitae fugiat aut placeat.</p>
+                </div>
+               <form action="http://localhost:5000/add" method='post' onSubmit={move} encType="multipart/form-data" className=' flex justify-center flex-col'>
                     
                     <div className="">
-                        <label htmlFor="restaurant-name">Restaurant Name</label> <br />
+                        <label htmlFor="restaurant-name">Restaurant Name <span className=' text-[red]'>*</span></label> <br />
                         <CustomInput
                             type="text"
                             name='name'
                             required
-                            className=' h-[40px] w-[80%] rounded-[20px] bg-[#80808060] pl-2'
+                            className='bb h-[40px] w-[80%] rounded-[10px] bg-[transparent] pl-2'
                         />
                     </div> <br />
 
                     <div className="">
-                        <label htmlFor="address">Address</label> <br />
+                        <label htmlFor="description">Restaurant Description <span className=' text-[red]'>*</span></label> <br />
+                        <textarea
+                            name="description"
+                            className='bb h-[100px] w-[80%] rounded-[20px]  bg-[transparent] pl-3 pt-2'
+                        ></textarea>
+                    </div> <br />
+
+                    <div className=" w-[80%] bg-[] grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <section className=' bg-[]'>
+                        <label htmlFor="phone">Phone Number</label> <br />
+                        <CustomInput
+                            type="text"
+                            name='phone'
+                            // required
+                            className='bb  h-[50px] w-[100%]   bg-[transparent] rounded-[10px]'
+                        />
+                        </section>
+
+                        <section className='bg-[]'>
+                        <label htmlFor="email">Email</label> <br />
+                        <CustomInput
+                            type="email"
+                            name='email'
+                            // required
+                            className='bb h-[50px] w-[100%]  bg-[transparent] rounded-[10px]'
+                        />
+                        </section>
+                    </div>
+                    <br />
+
+
+                    <div className="">
+                        <label htmlFor="address">Address <span className=' text-[red]'>*</span></label> <br />
                         <textarea
                             name="address"
                             required
-                            className=' h-[120px] w-[80%] rounded-[20px] bg-[#80808060] pl-3 pt-2'
+                            className='bb h-[50px] w-[80%] rounded-[10px]  bg-[transparent] pl-3 pt-2'
                         ></textarea>
                     </div> <br />
+                   
                     
                     <div className="">
-                        <label htmlFor="restaurant-image">Restaurant Image</label> <br />
+                    <label htmlFor="restaurant-image">Restaurant Image <span className=' text-[red]'>*</span></label> 
+                        <Dropzone
+                            stomInput
+                            type="file"
+                            name='image'
+                            required
+                        />
+                        {/* <label htmlFor="restaurant-image">Restaurant Image</label> <br />
                         <CustomInput
                             type="file"
                             name='image'
                             required
-                            className=' h-[40px] w-[80%]'
-                        />
+                            className=' h-[180px] w-[80%] bg-[#80808060] rounded-[10px]'
+                        /> */}
                     </div> <br />
 
                     <div className="">
-                        <fieldset className=' h-[200px] w-full lg:w-[80%] ' style={{border:'2px solid black'}}>
-                            <legend>Food Types</legend>
+                        <fieldset className=' h-[200px] w-full lg:w-[80%] rounded-[10px] ' style={{border:'2px solid #cccccc'}}>
+                            <legend>Food Types <span className=' text-[red]'>*</span></legend>
 
                         {/* CHATGPT HELP ME WITH THE CODE BELLOW FOR THE FOOD TYPS */}
                             <div className=" h-[180px] grid grid-cols-3">
@@ -75,41 +127,43 @@ function AddComponent() {
                         </fieldset>
                     </div> <br />
 
-                    <div className="">
-                        <label htmlFor="opening-time">Opening Hour</label> <br />
 
+                    <div className=" w-[80%] bg-[] grid grid-cols-1 md:grid-cols-[45%.10%,45%] gap-3">
+                        <section className=' bg-[]'>
+                        <label htmlFor="opening-time">Opening Hour <span className=' text-[red]'>*</span></label>
+                    
                         <CustomInput
-                         type="time" 
-                         name="opening_time"
-                          required 
-                         /> 
-
-
-                        <span>To</span> 
+                            type="time" 
+                            name="opening_time"
+                             required 
+                            className='bb h-[50px] w-[100%]  bg-[transparent] rounded-[10px]'
+                        />
+                        </section>
+                                <span className='flex justify-center items-center'>To</span>
+                        <section className='bg-[]'>
+                        <label htmlFor="opening-time">Closing Hour <span className=' text-[red]'>*</span></label>
                         <CustomInput
                             type="time"
                             name="closing_time"
                             required 
+                            className='bb h-[50px] w-[100%]  bg-[transparent] rounded-[10px]'
                         />
-                    </div> <br />
+                        </section>
+                    </div>
+                    <br />
 
-                    <div className="">
-                        <label htmlFor="description">Description</label> <br />
-                        <textarea
-                            name="description"
-                            className=' h-[150px] w-[80%] rounded-[20px] bg-[#80808060] pl-3 pt-2'
-                        ></textarea>
-                    </div> <br />
+              
 
+                   
                     <div className="">
-                        <label htmlFor="rating">Rating</label>
+                        <label htmlFor="rating">Rating <span className=' text-[red]'>*</span></label>
                         <CustomInput
                             type="number"
                             name='rating'
                             min="1"
                             max="5"
                             required
-                            className=' h-[40px] w-[40%] rounded-[20px] bg-[#80808060] pl-2'
+                            className='bb h-[40px] w-[50%] rounded-[10px]  bg-[transparent] pl-2'
                         />
                     </div><br />
 
@@ -125,8 +179,9 @@ function AddComponent() {
                         />
                     </div> <br /> */}
 
-                    <button type="submit" className=' h-[40px] w-[90%] bg-orange-500 rounded-[20px]'>Add Restaurant</button>
+                    <button type="submit" className=' h-[40px] w-[90%] bg-[] rounded-[10px] hover:bg-[#E7F0DC]' style={{border: '2px solid #5F8670',}}>Add Restaurant</button>
                 </form>
+               </div>
             </div>
         </div>
     );

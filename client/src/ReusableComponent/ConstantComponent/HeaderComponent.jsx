@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Cart from "../Cart";
+import { Link } from "react-router-dom";
+import Authenticator from "../../Authenticator/Authenticator";
 
 function HeaderComponent({
   cart,
@@ -10,7 +12,18 @@ function HeaderComponent({
   increaseQuantity,
   decreaseQuantity,
   checkout,
-}) {
+})
+
+{
+
+var [height,setHeight]= useState('-120vh')
+var [view, setView] = useState(0)
+
+function setmodal() {
+  setHeight('0')
+  setView(1)
+}
+
   return (
     <div
       className="head h-[100px] w-full bg-[#5F8670]"
@@ -33,14 +46,26 @@ function HeaderComponent({
         <div className="flex items-center ">
           <div className="hidden md:inline-block lg:inline-block bg-[] text-[21px] font-bold pl-[80px] ">
             <ol className="flex gap-[30px] ">
-              <li className="text-[#FF5A3C]">
-                <a href="/Restuarant">Restaurants</a>
+            <li className="text-[#FF5A3C]">
+                <Link to='/'>Home</Link>
+                {/* <a href="/Restuarant">Restaurants</a> */}
+              </li>
+              <li className="text-[]">
+                <Link to='/Restuarant'>Restaurants</Link>
+                {/* <a href="/Restuarant">Restaurants</a> */}
               </li>
               <li>
-                <a href="/faqs">FAQs</a>
+                <Link to='/faqs'>FAQs</Link>
+                {/* <a href="/faqs">FAQs</a> */}
               </li>
               <li>
-                <a href="/auth">Support</a>
+                <Link to=''>Support</Link>
+                {/* <a href="/auth">Support</a> */}
+              </li>
+
+              <li>
+                <button onClick={setmodal} className="">Login</button>
+                {/* <a href="/auth">Support</a> */}
               </li>
             </ol>
           </div>
@@ -65,6 +90,10 @@ function HeaderComponent({
           )}
         </div>
       </div>
+      <Authenticator 
+      getheight={height}
+      seemodal={view}
+      />
     </div>
   );
 }

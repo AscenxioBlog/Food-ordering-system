@@ -77,9 +77,9 @@ img{
     height: 100%;
 }
 
-.adminbtn{
+/* .adminbtn{
     box-shadow: 5px 10px 10px rgb(186, 125, 125);
-}
+} */
 
 .adminbtn:hover{
     background-color: indianred;
@@ -150,4 +150,27 @@ img{
 }
 .how{
     border: 1px solid gray;
+}
+
+.dropzone {
+    -moz-transition: .3s;
+    -webkit-transition: .3s;
+    transition: .3s;
+    -moz-border-radius: 0;
+    /* -webkit-border-radius: 0; */
+    border-radius: 0;
+    background-color: transparent;
+    border: 2px dashed rgba(0, 0, 0, 0.1);
+    min-height: 180px;
+    padding: 0;
+    margin-bottom: 15px;
+}
+.bb{
+    border: 2px solid #cccccc;
+}
+.bb::placeholder{
+    color: white;
+    font-size: 18px;
+    padding-left: 10px;
+    font-weight: bold;
 }

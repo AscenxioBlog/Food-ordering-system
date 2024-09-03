@@ -17,9 +17,10 @@ function FoodComponent({ addToCart }) {
   }, [restaurantid]);
 
   return (
-    <div className='mt-[200px] bg-blue-400'>
+    <div className='mt-[100px] bg-blue-400'>
       <div className="min-h-[75vh] w-full mt-[20px]">
         <div className="h-[500px] w-full bg-red-400">
+          
         </div>
         <div className="h-[150px] w-full p-4">
           <h1 className='text-[25px] font-bold'>Chicken & Co</h1>
@@ -39,7 +40,7 @@ function FoodComponent({ addToCart }) {
 
 holdmenu.map((item) => (
   <div key={item._id} className="p-4 border border-gray-200 rounded-lg shadow-md">
-    <img src={`/images/${item.image}`} alt={item.name} className="w-full h-40 object-cover mb-2" />
+    <img src={`http://localhost:5000${item.image}`} alt={item.name} className="w-full h-40 object-cover mb-2" />
     <h2 className="text-xl font-bold">{item.name}</h2>
     <p className="text-gray-600">{item.food_description}</p>
     <p className="text-lg font-bold">${item.price.toFixed(2)}</p>

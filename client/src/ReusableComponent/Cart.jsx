@@ -1,4 +1,6 @@
 import React from 'react';
+import CustomButton from './MyButton/CustomButton';
+import { MdOutlineDeleteForever } from "react-icons/md";
 
 function Cart({ cart, removeFromCart, increaseQuantity, decreaseQuantity, checkout }) {
   const totalPrice = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
@@ -13,7 +15,7 @@ function Cart({ cart, removeFromCart, increaseQuantity, decreaseQuantity, checko
       <ul>
         {cart.map((item, index) => (
           <li key={index} className="border-b py-2 flex items-center">
-            <img src={item.image} alt={item.name} className="w-16 h-16 object-cover mr-4" />
+            <img src={`http://localhost:5000${item.image}`} alt={item.name} className="w-16 h-16 object-cover mr-4" />
             <div className="flex-1">
               <p className="font-bold">{item.name}</p>
               <p>Price: ${item.price.toFixed(2)}</p>
@@ -37,7 +39,7 @@ function Cart({ cart, removeFromCart, increaseQuantity, decreaseQuantity, checko
                 className="text-red-500 font-bold"
                 onClick={() => removeFromCart(item)}
               >
-                Remove
+                <MdOutlineDeleteForever size={30} />
               </button>
             </div>
           </li>
@@ -45,12 +47,15 @@ function Cart({ cart, removeFromCart, increaseQuantity, decreaseQuantity, checko
       </ul>
       <div className="flex justify-between items-center mt-4">
         <p className="font-bold">Total Price: ${totalPrice.toFixed(2)}</p>
-        <button
+        <CustomButton
+        label = 'Checkout'
+        height = '30px'
+        
           className="bg-green-500 text-white font-bold py-2 px-4 rounded"
           onClick={checkout}
-        >
-          Checkout
-        </button>
+        />
+          
+        
       </div>
     </div>
   );

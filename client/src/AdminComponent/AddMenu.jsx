@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { json } from 'react-router-dom'
 import CustomInput from '../ReusableComponent/MyInput/CustomInput'
+import { MdOutlineRestaurantMenu } from "react-icons/md";
+import Dropzone from '../ReusableComponent/Dropzone/Dropzone'
 
 function AddMenu() {
     var [allRestaurant, setAllrestuarant]= useState('')
@@ -12,23 +14,32 @@ function AddMenu() {
     }, [])
   return (
     <div>
-     <div className=' bg-[#E7F0DC] w-full min-h-[100vh] flex justify-center items-center'>
+     <div className='  w-full min-h-[100vh]'>
             {/* <div className=" w-[max-content] bg-[#f3f9d2] p-3 absolute rounded-lg left-[50%] right-[50%] transition-[1s]" >
                 <h2>Added Successfully</h2>
             </div> */}
 
-            <div className=" min-h-[90vh] w-full lg:w-[80%] pl-[20px] md-pl-[40px] lg:pl-[100px]">
-                <form action="http://localhost:5000/add-menu" method='post' encType="multipart/form-data">
-                    
+            <div className=" min-h-[90vh] w-full lg:w-[80%] pl-[2px] md-pl-[0px] lg:pl-[120px] grid grid-cols-1 md:grid-cols-[15%,85%]">
+               <div className=" bg-slate-200 md:flex justify-center ">
+                <span className=' text-[#5F8670] text-[40px] md:text-[60px]'> <MdOutlineRestaurantMenu /></span>
+               
+               </div>
+               <div className=" bg-slate-200">
+               <form action="http://localhost:5000/add-menu" method='post' encType="multipart/form-data">
+               <div className="space-y-3  ml-[2px] md-ml-[0px] lg:ml-[0px] bg-slate-200">
+                    <h1 className=' text-[25px]'>Edit menu list</h1>
+                    <p>Partem diceret praesent mel et, vis facilis alienum antiopam ea, vim in sumo diam sonet. Illud ignota cum te, decore elaboraret nec ea. Quo ei graeci repudiare definitionem. Vim et malorum ornatus assentior, exerci elaboraret eum ut, diam meliore no mel.</p>
+                </div>
+                    <br />
 
 
                     <div className="">
-                        <select name="restaurant" id="">
+                        <select name="restaurant" id=""  className='bb h-[40px] w-[80%] rounded-[10px] bg-[transparent] pl-2'>
                             <option value="">Select Restaurant</option>
                             {
                                 allRestaurant? (
                                     allRestaurant.map((restaurant) => (
-                                        <option key={restaurant._id} value={restaurant._id}>
+                                        <option key={restaurant._id} value={restaurant._id} >
                                             {restaurant.name.charAt(0).toUpperCase() + 
                                             restaurant.name.slice(1)}
                                         </option>
@@ -38,7 +49,7 @@ function AddMenu() {
                                 )
                             }
                         </select>
-                    </div>
+                    </div> <br />
 
                     <div className="">
                         <label htmlFor="food-name">Food Name</label> <br />
@@ -47,7 +58,7 @@ function AddMenu() {
                             name='name'
                             required
                             id="food-name"
-                            className=' h-[40px] w-[80%] rounded-[20px] bg-[#80808060] pl-2'
+                             className='bb h-[40px] w-[80%] rounded-[10px] bg-[transparent] pl-2'
                         />
                     </div> <br />
 
@@ -55,12 +66,18 @@ function AddMenu() {
                     
                     <div className="">
                         <label htmlFor="restaurant-image">Food Image</label> <br />
-                        <CustomInput
+                        <Dropzone
+                            stomInput
+                            type="file"
+                            name='image'
+                            required
+                        />
+                        {/* <CustomInput
                             type="file"
                             name='image'
                             required
                             className=' h-[40px] w-[80%]'
-                        />
+                        /> */}
                     </div> <br />
 
          
@@ -70,25 +87,30 @@ function AddMenu() {
                         <label htmlFor="description">Description</label> <br />
                         <textarea
                             name="food_description"
+                            className='bb h-[100px] w-[80%] rounded-[20px]  bg-[transparent] pl-3 pt-2'
+                        ></textarea>
+                        {/* <textarea
+                            name="food_description"
                             required
                             className=' h-[150px] w-[80%] rounded-[20px] bg-[#80808060] pl-3 pt-2'
-                        ></textarea>
+                        ></textarea> */}
                     </div> <br />
 
                     <div className="">
-                        <label htmlFor="foodprice">Food Price</label>
+                        <label htmlFor="foodprice">Food Price</label> <br />
                         <CustomInput
                             type="number"
                             name='price'
                             required
-                            className=' h-[40px] w-[40%] rounded-[20px] bg-[#80808060] pl-2'
+                             className='bb h-[40px] w-[80%] rounded-[10px] bg-[transparent] pl-2'
                         />
                     </div><br />
 
                    
 
-                    <button type="submit" className=' h-[40px] w-[90%] bg-orange-500 rounded-[20px]'>Add Menu</button>
+                    <button type="submit" className=' h-[40px] w-[90%] bg-[] rounded-[10px] hover:bg-[#E7F0DC]' style={{border: '2px solid #5F8670',}}>Add menu</button>
                 </form>
+               </div>
             </div>
         </div>      
     </div>
