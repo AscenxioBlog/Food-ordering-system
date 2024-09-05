@@ -174,3 +174,20 @@ img{
     padding-left: 10px;
     font-weight: bold;
 }
+
+.workwithus{
+    background-color: #5f8670a6;
+    background-image: url(Files/resttt.jpg);
+    background-size: 100% 100%;
+    background-blend-mode: darken;
+}
+.bike{
+    background-image: url(Files/bike.jpg);
+    background-size: 100% 100%;
+
+}
+.FOOD{
+    background-image: url(Files/bike.jpg);
+    background-size: 100% 100%;
+
+}

@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import Cart from "../Cart";
 import { Link } from "react-router-dom";
 import Authenticator from "../../Authenticator/Authenticator";
+import { TiThMenu } from "react-icons/ti";
+import { FaCartArrowDown } from "react-icons/fa";
 
 function HeaderComponent({
   cart,
@@ -18,10 +20,16 @@ function HeaderComponent({
 
 var [height,setHeight]= useState('-120vh')
 var [view, setView] = useState(0)
+var [cancel,setCancel] = useState('0')
 
 function setmodal() {
   setHeight('0')
   setView(1)
+}
+function cancelfunction() {
+    // setCancel('-120vh')
+    setHeight('-120vh')
+    // alert('hiiiii')
 }
 
   return (
@@ -44,7 +52,7 @@ function setmodal() {
           </h1>
         </div>
         <div className="flex items-center ">
-          <div className="hidden md:inline-block lg:inline-block bg-[] text-[21px] font-bold pl-[80px] ">
+          <div className="hidden md:hidden lg:inline-block bg-[] text-[21px] font-bold pl-[80px] ">
             <ol className="flex gap-[30px] ">
             <li className="text-[#FF5A3C]">
                 <Link to='/'>Home</Link>
@@ -59,7 +67,7 @@ function setmodal() {
                 {/* <a href="/faqs">FAQs</a> */}
               </li>
               <li>
-                <Link to=''>Support</Link>
+                <Link to='/work'>Support</Link>
                 {/* <a href="/auth">Support</a> */}
               </li>
 
@@ -70,13 +78,14 @@ function setmodal() {
             </ol>
           </div>
         </div>
-        <div className="bg-[] flex justify-center items-center relative">
+        <div className="bg-[] flex justify-center items-center relative gap-4 pr-3">
           <button
-            className="h-[40px] w-[150px] bg-[#FF5A3C] text-[18px] text-white font-semibold rounded-[20px]"
+            className="h-[40px] w-[150px] bg-[#FF5A3C] text-[18px] text-white font-semibold rounded-[20px] flex justify-center items-center"
             onClick={toggleCartVisibility}
           >
-            Cart ({cart.length})
+            <FaCartArrowDown size={25} /> ({cart.length})
           </button>
+          <button className=" text-white lg:hidden "><TiThMenu size={25}/></button>
           {isCartVisible && (
             <div className="absolute top-[100%] right-0 mt-2 w-[400px] bg-white border border-gray-300 shadow-lg z-10">
               <Cart
@@ -93,6 +102,7 @@ function setmodal() {
       <Authenticator 
       getheight={height}
       seemodal={view}
+      passcancelFunction = {cancelfunction}
       />
     </div>
   );

@@ -16,10 +16,12 @@ function FoodComponent({ addToCart }) {
       .catch(err => console.log(err));
   }, [restaurantid]);
 
+
+  
   return (
     <div className='mt-[100px] bg-blue-400'>
       <div className="min-h-[75vh] w-full mt-[20px]">
-        <div className="h-[500px] w-full bg-red-400">
+        <div className="FOOD h-[500px] w-full bg-red-400">
           
         </div>
         <div className="h-[150px] w-full p-4">

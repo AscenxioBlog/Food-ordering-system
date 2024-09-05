@@ -10,7 +10,8 @@ function Cart({ cart, removeFromCart, increaseQuantity, decreaseQuantity, checko
   }
 
   return (
-    <div className="cart-items p-5">
+    <div className="cart-items h-[500px] overflow-y-scroll p-5">
+      <div className="min-h-[700px]">
       <h2 className="text-xl font-bold">Cart Items:</h2>
       <ul>
         {cart.map((item, index) => (
@@ -56,6 +57,7 @@ function Cart({ cart, removeFromCart, increaseQuantity, decreaseQuantity, checko
         />
           
         
+      </div>
       </div>
     </div>
   );

@@ -1,10 +1,14 @@
 import React from 'react'
 import CustomInput from '../ReusableComponent/MyInput/CustomInput'
+import { GiCancel } from "react-icons/gi";
 
-function SignUp(props) {
+
+function SignUp({SeeSignUp,passme}) {
   return (
     <div>
-        <div  className=" SignUp h-[600px] w-full bg-[#5F8670] rounded-[30px] flex flex-col items-center mt-6">
+        <div  className=" SignUp h-[600px] w-full bg-[#5F8670] rounded-[30px] flex flex-col items-center mt-6 relative">
+        <button onClick={passme}  className=' absolute top-3 right-3 text-[#cf9292]'><GiCancel size={25} /></button>
+
           <section className=" h-[40px] w-full bg-[] flex justify-center text-[20px] text-white font-bold">
         <h1>Sign Up To Continue</h1>
           </section>
@@ -89,7 +93,7 @@ function SignUp(props) {
             </div> 
 
             <section className="w-full flex justify-center mt-2 space-x-2"> <span>Already have an account?</span> 
-             <span className=' underline font-bold'> <button onClick={props.SeeSignUp}>Sign In</button></span>  <span>here</span>
+             <span className=' underline font-bold'> <button onClick={SeeSignUp}>Sign In</button></span>  <span>here</span>
             </section>
         </div>
       

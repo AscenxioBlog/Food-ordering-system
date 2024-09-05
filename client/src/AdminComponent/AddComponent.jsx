@@ -8,6 +8,7 @@ import Dropzone from '../ReusableComponent/Dropzone/Dropzone'
 
 function AddComponent() {
     let [divdown, setDivdown] = useState(false);
+    const [selectedFile, setSelectedFile] = useState(null);  // Store the uploaded file
 
     let box = divdown ? { top: "0%" } : { top: "-10%" };
 
@@ -17,6 +18,34 @@ function AddComponent() {
             setDivdown(false);
         }, 2000);
     }
+
+    // Function to handle file drop from the Dropzone
+  const handleFileDrop = (files) => {
+    setSelectedFile(files[0]);  // Assuming single file upload, so take the first file
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+
+    if (selectedFile) {
+      formData.append('image', selectedFile);  // Append the image file to the form data
+    }
+
+    try {
+      const response = await fetch("http://localhost:5000/add", {
+        method: 'POST',
+        body: formData,
+      }); 
+      if (response.ok) {
+        alert('Menu added successfully!');
+      } else {
+        console.error('Error submitting the form');
+      }
+    } catch (error) {
+      console.error('Error submitting the form:', error);
+    }
+  };
 
     return (
         <div className=' bg-[] w-full min-h-[100vh] flex justify-center items-center'>
@@ -35,7 +64,7 @@ function AddComponent() {
                     <h1 className=' text-[25px]'>General restaurant description</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem corrupti architecto aliquid beatae hic maxime voluptatum aperiam corporis a ipsam est blanditiis alias iusto ratione, tempora vitae fugiat aut placeat.</p>
                 </div>
-               <form action="http://localhost:5000/add" method='post' onSubmit={move} encType="multipart/form-data" className=' flex justify-center flex-col'>
+               <form  onSubmit={handleSubmit} encType="multipart/form-data" className=' flex justify-center flex-col'>
                     
                     <div className="">
                         <label htmlFor="restaurant-name">Restaurant Name <span className=' text-[red]'>*</span></label> <br />
@@ -91,12 +120,8 @@ function AddComponent() {
                     
                     <div className="">
                     <label htmlFor="restaurant-image">Restaurant Image <span className=' text-[red]'>*</span></label> 
-                        <Dropzone
-                            stomInput
-                            type="file"
-                            name='image'
-                            required
-                        />
+                    <Dropzone onFileDrop={handleFileDrop} />  {/* Pass the handler to Dropzone */}
+
                         {/* <label htmlFor="restaurant-image">Restaurant Image</label> <br />
                         <CustomInput
                             type="file"
