@@ -2,6 +2,7 @@ import React from 'react'
 import CustomButton from '../../ReusableComponent/MyButton/CustomButton'
 import capture from '../../Files/Capture.PNG'
 import captur1 from '../../Files/Capture1.PNG'
+import { Link } from 'react-router-dom'
 
 function IndexComponent5() {
   return (
@@ -16,33 +17,30 @@ function IndexComponent5() {
             <div className=" h-[200px] w-full bg-yellow-400">
                 <img src={capture} alt="" />
             </div>
-            <div className="  text-center">
+            <div className="  text-center flex flex-col items-center">
                 <h1 className=' text-[20px] font-bold'>Submit Your Restaurants</h1>
                 <p className=' text-[gray] text-[17px] mt-3'>Start To Earn Customers</p>
                 <p className=' mt-3'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos eaque incidunt voluptates suscipit esse iusto quam. Dolorem odit molestiae, rerum nesciunt maiores eos minus dolores quaerat sequi magnam, aliquam ipsam!</p>
                 
-                <CustomButton 
-                    height = '40px'
-                    width = '150px'
-                    backgroundColor = '#5F8670'
-                    borderRadius = '10px'
-                    label = 'Read More'
-                    marginTop = '30px'
-                
-                
-                />
+                <Link to='/register'>
+                    <div  className=' h-[40px] w-[150px] font-bold bg-[#5F8670] rounded-[10px] mt-[30px] flex justify-center items-center'>Read More</div>
+                </Link>
             </div>
         </div>
         <div className=" bg-white p-5">
         <div className=" h-[200px] w-full bg-yellow-400">
                 <img src={captur1} alt="" />
             </div>
-            <div className="  text-center">
+            <div className="  text-center flex flex-col items-center">
                 <h1 className=' text-[20px] font-bold'>We Are Looking For A Driver</h1>
                 <p className=' text-[gray] text-[17px] mt-3'>Start To Earn Money</p>
                 <p className=' mt-3'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos eaque incidunt voluptates suscipit esse iusto quam. Dolorem odit molestiae, rerum nesciunt maiores eos minus dolores quaerat sequi magnam, aliquam ipsam!</p>
                 
-                <CustomButton 
+                <Link to='/rider'>
+                    <div  className=' h-[40px] w-[150px] font-bold bg-[#5F8670] rounded-[10px] mt-[30px] flex justify-center items-center'>Read More</div>
+                </Link>
+
+                {/* <CustomButton 
                     height = '40px'
                     width = '150px'
                     backgroundColor = '#5F8670'
@@ -51,7 +49,7 @@ function IndexComponent5() {
                     marginTop = '30px'
                 
                 
-                />
+                /> */}
             </div>
         </div>
       </div>

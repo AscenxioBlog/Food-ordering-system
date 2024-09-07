@@ -12,7 +12,7 @@ function WorkComponent4() {
         <form action="" method="post">
         <div className=" min-h-[100px] w-full bg-[] grid grid-cols-1 md:grid-cols-2 gap-3">
             <div className=" bg-[] font-bold space-y-2">
-                <label htmlFor="">Firstname</label> <br />
+                <label htmlFor="">Firstname<span className=' text-[red]'>*</span></label> <br />
                 <CustomInput
                      type="text"
                   name="first_name"
@@ -23,7 +23,7 @@ function WorkComponent4() {
                 />
             </div>
             <div className=" bg-[] font-bold space-y-2">
-            <label htmlFor="">Last Name</label> <br />
+            <label htmlFor="">Last Name<span className=' text-[red]'>*</span></label> <br />
                 <CustomInput
                      type="text"
                      name="Last_name"
@@ -38,7 +38,7 @@ function WorkComponent4() {
 
         <div className=" min-h-[100px] w-full bg-[] grid grid-cols-1 md:grid-cols-2 gap-3">
             <div className=" bg-[] font-bold space-y-2">
-                <label htmlFor="">Email</label> <br />
+                <label htmlFor="">Email<span className=' text-[red]'>*</span></label> <br />
                 <CustomInput
                      type="email"
                   name="first_name"
@@ -49,7 +49,7 @@ function WorkComponent4() {
                 />
             </div>
             <div className=" bg-[] font-bold space-y-2">
-            <label htmlFor="">Phone Number</label> <br />
+            <label htmlFor="">Phone Number<span className=' text-[red]'>*</span></label> <br />
                 <CustomInput
                      type="text"
                      name="Phone_number"
@@ -66,7 +66,7 @@ function WorkComponent4() {
         <div className=" min-h-[100px] w-full bg-[] grid grid-cols-1 md:grid-cols-2 gap-3">
             <div className=" bg-[] font-bold space-y-2">
 
-                <span>Do you have a motorbike or scooter?</span> <br />
+                <span>Do you have a motorbike or scooter?<span className=' text-[red]'>*</span></span> <br />
                <div className=" flex space-x-8">
                <span className=' flex items-center space-x-2'>
                
@@ -96,7 +96,7 @@ function WorkComponent4() {
                </div>
             </div>
             <div className=" bg-[] font-bold space-y-2">
-            <span>Are you a student?</span> <br />
+            <span>Are you a student?<span className=' text-[red]'>*</span></span> <br />
                <div className=" flex space-x-8">
                <span className=' flex items-center space-x-2'>
                
@@ -131,7 +131,7 @@ function WorkComponent4() {
         <div className=" min-h-[100px] w-full bg-[] grid grid-cols-1 md:grid-cols-2 gap-3">
             <div className=" bg-[] font-bold space-y-2">
 
-                <span>Do you have a driving license?</span> <br />
+                <span>Do you have a driving license?<span className=' text-[red]'>*</span></span> <br />
                <div className=" flex space-x-8">
                <span className=' flex items-center space-x-2'>
                
@@ -161,7 +161,7 @@ function WorkComponent4() {
                </div>
             </div>
             <div className=" bg-[] font-bold space-y-2">
-            <span>Do you have an iPhone or Android mobile?</span> <br />
+            <span>Do you have an iPhone or Android mobile?<span className=' text-[red]'>*</span></span> <br />
                <div className=" flex space-x-8">
                <span className=' flex items-center space-x-2'>
                

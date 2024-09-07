@@ -75,7 +75,7 @@ function AddMenu() {
               <br />
 
               <div className="">
-                <label htmlFor="food-name">Food Name</label>
+                <label htmlFor="food-name">Food Name<span className=' text-[red]'>*</span></label>
                 <br />
                 <CustomInput
                   type="text"
@@ -88,14 +88,14 @@ function AddMenu() {
               <br />
 
               <div className="">
-                <label htmlFor="restaurant-image">Food Image</label>
+                <label htmlFor="restaurant-image">Food Image<span className=' text-[red]'>*</span></label>
                 <br />
                 <Dropzone onFileDrop={handleFileDrop} />  {/* Pass the handler to Dropzone */}
               </div>
               <br />
 
               <div className="">
-                <label htmlFor="description">Description</label>
+                <label htmlFor="description">Description<span className=' text-[red]'>*</span></label>
                 <br />
                 <textarea
                   name="food_description"
@@ -105,7 +105,7 @@ function AddMenu() {
               <br />
 
               <div className="">
-                <label htmlFor="foodprice">Food Price</label>
+                <label htmlFor="foodprice">Food Price<span className=' text-[red]'>*</span></label>
                 <br />
                 <CustomInput
                   type="number"

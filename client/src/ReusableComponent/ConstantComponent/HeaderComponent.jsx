@@ -67,7 +67,7 @@ function cancelfunction() {
                 {/* <a href="/faqs">FAQs</a> */}
               </li>
               <li>
-                <Link to='/work'>Support</Link>
+                <Link to=''>Support</Link>
                 {/* <a href="/auth">Support</a> */}
               </li>
 
