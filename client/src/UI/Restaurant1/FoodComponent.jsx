@@ -5,8 +5,10 @@ import { useParams } from 'react-router-dom';
 function FoodComponent({ addToCart }) {
   const [holdmenu, setHoldmenu] = useState([]);
   const { restaurantname, restaurantid } = useParams();
+  const [restaurantDetails, setRestaurantDetails] = useState({});
 
   useEffect(() => {
+    // Fetch the menu for the restaurant
     fetch(`http://localhost:5000/menu/${restaurantid}`)
       .then(res => res.json())
       .then(json => {
@@ -14,21 +16,33 @@ function FoodComponent({ addToCart }) {
         setHoldmenu(json);
       })
       .catch(err => console.log(err));
+
+    // Fetch the restaurant details using restaurantid
+    fetch(`http://localhost:5000/api/restaurants/${restaurantid}`)
+      .then(res => res.json())
+      .then(json => {
+        console.log(json);
+        setRestaurantDetails(json);  // Store restaurant details in state
+      })
+      .catch(err => console.log(err));
   }, [restaurantid]);
 
-
-  
   return (
-    <div className='mt-[100px] bg-blue-400'>
+    <div className='mt-[100px] bg-[#E7F0DC]'>
       <div className="min-h-[75vh] w-full mt-[20px]">
         <div className="FOOD h-[500px] w-full bg-red-400">
-          
+          {/* Add restaurant's cover image here if available */}
+          {/* <img src={restaurantname} alt="" /> */}
         </div>
+
+        {/* Display restaurant details */}
         <div className="h-[150px] w-full p-4">
-          <h1 className='text-[25px] font-bold'>Chicken & Co</h1>
-          <p className='text-[16px] text-slate-400'>African, Rice, Chicken, Snacks</p>
-          <p className='text-[16px] text-slate-400 flex'><MdStarBorderPurple500 className='text-[yellow] text-[20px]' /> 4.1 537+ Ratings</p>
-          <p className='text-[16px] text-slate-400'>Ijebu-Ode, Ogun State</p>
+          <h1 className='text-[25px] font-bold'>{restaurantname}</h1>
+          <p className='text-[16px] text-slate-400'>{restaurantDetails.description || "Description not available"}</p>
+          <p className='text-[16px] text-slate-400 flex'>
+            <MdStarBorderPurple500 className='text-[yellow] text-[20px]' /> 4.1 537+ Ratings
+          </p>
+          <p className='text-[16px] text-slate-400'>{restaurantDetails.address || "Address not available"}</p>
         </div>
       </div>
 
@@ -37,41 +51,35 @@ function FoodComponent({ addToCart }) {
         <p className='text-[gray] text-[20px]'>Scoop and swallows</p>
       </div>
 
+      {/* Display menu items */}
       <div className="h-auto bg-white w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center">
-        {
-
-holdmenu.map((item) => (
-  <div key={item._id} className="p-4 border border-gray-200 rounded-lg shadow-md">
-    <img src={`http://localhost:5000${item.image}`} alt={item.name} className="w-full h-40 object-cover mb-2" />
-    <h2 className="text-xl font-bold">{item.name}</h2>
-    <p className="text-gray-600">{item.food_description}</p>
-    <p className="text-lg font-bold">${item.price.toFixed(2)}</p>
-    <button
-      className="mt-2 bg-blue-500 text-white py-1 px-3 rounded"
-      onClick={() => addToCart({
-          _id: item._id, // Correct ID field
-          name: item.name,
-          price: item.price,
-          image: item.image,
-          food_description: item.food_description
-      })}
-    >
-      Add to Cart
-    </button>
-  </div>
-))
-        // holdmenu.length > 0 ? (
-         
-        // ) : (
-        //   <p>Loading menu...</p>
-        // )
-        }
+        {holdmenu.map((item) => (
+          <div key={item._id} className="p-4 border border-gray-200 rounded-lg shadow-md">
+            <img src={`http://localhost:5000${item.image}`} alt={item.name} className="w-full h-40 object-cover mb-2" />
+            <h2 className="text-xl font-bold">{item.name}</h2>
+            <p className="text-gray-600">{item.food_description}</p>
+            <p className="text-lg font-bold">${item.price.toFixed(2)}</p>
+            <button
+              className="mt-2 bg-blue-500 text-white py-1 px-3 rounded"
+              onClick={() => addToCart({
+                  _id: item._id,
+                  name: item.name,
+                  price: item.price,
+                  image: item.image,
+                  food_description: item.food_description
+              })}
+            >
+              Add to Cart
+            </button>
+          </div>
+        ))}
       </div>
     </div>
   );
 }
 
 export default FoodComponent;
+
 
 
 

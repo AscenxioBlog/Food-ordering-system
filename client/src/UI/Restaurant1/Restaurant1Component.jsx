@@ -157,16 +157,37 @@ function Restaurant1Component() {
                     </div>
                   </div>
                 </Link>
-                  {/* <div>
-<img src={`${imageBaseUrl}${item.image}`} alt={item.name} />
-  <h1>{item.address}</h1>
-  <p>{item.name}</p>
-</div> */}
+
                 </>
               ))
             : null}
 
-          {/*     `
+     
+        </div>
+      </div>
+    </div>
+    </div>
+  );
+}
+
+export default Restaurant1Component;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     {/*     `
 
 {holddata ? (
    holddata.map((item) => (
@@ -200,11 +221,3 @@ function Restaurant1Component() {
  ) : (
    <p>Poor network...loading</p>
  )}` */}
-        </div>
-      </div>
-    </div>
-    </div>
-  );
-}
-
-export default Restaurant1Component;
