@@ -9,6 +9,7 @@ const imageBaseUrl = "http://localhost:5000"; // Base URL of your server
 // import localcat from "../Files/localcat.png";
 import CustomButton from "../../ReusableComponent/MyButton/CustomButton";
 import RestuarantComponentPic from "./RestuarantComponentPic";
+import CustomInput from "../../ReusableComponent/MyInput/CustomInput";
 
 function Restaurant1Component() {
   let [holddata, setHolddata] = useState("");
@@ -115,13 +116,15 @@ function Restaurant1Component() {
       {/* <div className="h-[100vh] bg-red-800 "></div> */}
       <div className=" bg-[]">
         <div className=" h-[70px] w-full bg-[] flex justify-center items-center">
-          <input
-            type="text"
-            name="search"
-            id=""
-            className=" h-[50px] w-[80%] bg-[] rounded-[40px] pl-2"
-            placeholder="What did you need??"
-          />
+         
+           <CustomInput
+                 type="text"
+                 name="search"
+                 id=""
+                 className="bb h-[50px] w-[80%] bg-[transparent] rounded-[40px]  pl-2"
+                 placeholder="What did you need??"
+                  // className=' h-[40px] w-[80%] rounded-[10px] bg-[transparent] pl-2'
+                />
         </div>
         <div className=" min-h-[500px] w-[100%] bg-[] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-3">
           {holddata
