@@ -75,6 +75,8 @@ app.get('/menu/:restaurantid',async (req,res)=>{
     try{
         const {restaurantid} = req.params;
         const menus = await Menu.find({restaurant: restaurantid})
+           .populate('restaurant', 'address'); // This will only populate the 'address' field from the Restaurant collection
+
         res.json(menus)
         // console.log(req.params)
         console.log('Menus found:', menus);
