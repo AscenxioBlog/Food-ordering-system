@@ -71,7 +71,11 @@ function Restaurant1Component() {
       </nav>
       <div className=" h-[inherit] flex-1 bg-slate-600 p-3">
         <div className=" flex justify-center mb-4">
-          <input type="search" className=" p-2 rounded-lg w-[50%] placeholder:font-bold placeholder:text-black placeholder:text-[13px] " placeholder="thou cravest for...?"/>
+          <input
+            type="search"
+            className=" p-2 rounded-lg w-[50%] placeholder:font-bold placeholder:text-black placeholder:text-[13px] "
+            placeholder="thou cravest for...?"
+          />
         </div>
         <div className=" grid gap-2 grid-cols-3">
           {holddata ? (

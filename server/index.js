@@ -40,6 +40,17 @@ app.post('/add', upload.single('image'), generalcontroller.foradding);
 //This is the logic to fetch the api from the database and send it as JSON.
 app.get('/api/restaurants', generalcontroller.for_restaurantapi)
 
+//This is the logic to fetch the a limited number of restaurant from the database and send it as JSON.
+app.get('/api/fewrestaurants', async (req, res) => {
+    try {
+      // Limit the number of restaurants to 10
+      const restaurants = await Restaurant.find().sort({ createdAt: -1 }).limit(6);
+      res.json(restaurants);
+    } catch (error) {
+      res.status(500).send(error);
+    }
+});
+
 app.post('/add-menu', upload.single('image'),async (req,res)=>{
     try{
         const {name,price,food_description,restaurant } = req.body;
@@ -75,6 +86,8 @@ app.get('/menu/:restaurantid',async (req,res)=>{
     try{
         const {restaurantid} = req.params;
         const menus = await Menu.find({restaurant: restaurantid})
+            .populate('restaurant','address')
+            .populate('restaurant','description')
         res.json(menus)
         // console.log(req.params)
         console.log('Menus found:', menus);
@@ -87,4 +100,3 @@ app.get('/menu/:restaurantid',async (req,res)=>{
 app.get('*',(req,res)=>{
     res.sendFile(path.join(__dirname,"../client/dist/index.html"))
 })
-
