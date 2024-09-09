@@ -6,6 +6,8 @@ function FoodComponent({ addToCart }) {
   const [holdmenu, setHoldmenu] = useState([]);
   const { restaurantname, restaurantid } = useParams();
   const [restaurantDetails, setRestaurantDetails] = useState({});
+  const selectedAddress = holdmenu.find((item,index) => index === 0);
+  console.log(selectedAddress)
 
   useEffect(() => {
     // Fetch the menu for the restaurant
@@ -17,15 +19,7 @@ function FoodComponent({ addToCart }) {
       })
       .catch(err => console.log(err));
 
-    // Fetch the restaurant details using restaurantid
-    fetch(`http://localhost:5000/api/restaurants/${restaurantid}`)
-      .then(res => res.json())
-      .then(json => {
-        console.log(json);
-        setRestaurantDetails(json);  // Store restaurant details in state
-      })
-      .catch(err => console.log(err));
-  }, [restaurantid]);
+  }, []);
 
   return (
     <div className='mt-[100px] bg-[#E7F0DC]'>
@@ -42,7 +36,15 @@ function FoodComponent({ addToCart }) {
           <p className='text-[16px] text-slate-400 flex'>
             <MdStarBorderPurple500 className='text-[yellow] text-[20px]' /> 4.1 537+ Ratings
           </p>
-          <p className='text-[16px] text-slate-400'>{restaurantDetails.address || "Address not available"}</p>
+          
+          <p className='text-[16px] text-slate-400'>
+              {selectedAddress ? (
+               <p>{selectedAddress.restaurant.address}</p>
+                ) : (
+                "Loading address..."
+              )}
+          </p>
+          {/* {console.log(holdmenu[0].restaurant.address)} */}
         </div>
       </div>
 

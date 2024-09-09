@@ -101,7 +101,7 @@ function Container() {
         />
         <Routes>
           <Route path="/" element={<IndexComponent />} />
-          <Route path="/Restuarant" element={<Restaurant1Component />} />
+          <Route path="/restaurant" element={<Restaurant1Component />} />
           <Route path="/faqs" element={<FaqsComponent />} />
           <Route path="/menu/:restaurantname/:restaurantid" element={<FoodComponent addToCart={addToCart} />} />
           <Route path="/auth" element={<Authenticator />} />

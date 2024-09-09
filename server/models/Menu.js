@@ -20,7 +20,7 @@ const menuSchema = new Schema({
         type: String,
         required: true,
     },
-});
+}, { timestamps: true });
 
 const Menu = mongoose.model("Menu",menuSchema);
 module.exports = Menu;
