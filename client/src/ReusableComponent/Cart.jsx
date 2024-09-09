@@ -1,7 +1,8 @@
 import React from 'react';
+import CustomButton from './MyButton/CustomButton';
+import { MdOutlineDeleteForever } from "react-icons/md";
 
 function Cart({ cart, removeFromCart, increaseQuantity, decreaseQuantity, checkout }) {
-  // Calculate total price
   const totalPrice = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
 
   if (cart.length === 0) {
@@ -9,16 +10,17 @@ function Cart({ cart, removeFromCart, increaseQuantity, decreaseQuantity, checko
   }
 
   return (
-    <div className="cart-items p-5 ">
+    <div className="cart-items h-[500px] overflow-y-scroll p-5">
+      <div className="min-h-[700px]">
       <h2 className="text-xl font-bold">Cart Items:</h2>
       <ul>
         {cart.map((item, index) => (
           <li key={index} className="border-b py-2 flex items-center">
-            <img src={item.image} alt={item.Name} className="w-16 h-16 object-cover mr-4" />
+            <img src={`http://localhost:5000${item.image}`} alt={item.name} className="w-16 h-16 object-cover mr-4" />
             <div className="flex-1">
-              <p className="font-bold">{item.Name}</p>
-              <p>Price: ${item.price}</p>
-              <p>SubTotal: ${item.price * item.quantity}</p>
+              <p className="font-bold">{item.name}</p>
+              <p>Price: ${item.price.toFixed(2)}</p>
+              <p>SubTotal: ${(item.price * item.quantity).toFixed(2)}</p>
             </div>
             <div className="flex gap-2 items-center">
               <button
@@ -38,7 +40,7 @@ function Cart({ cart, removeFromCart, increaseQuantity, decreaseQuantity, checko
                 className="text-red-500 font-bold"
                 onClick={() => removeFromCart(item)}
               >
-                Remove
+                <MdOutlineDeleteForever size={30} />
               </button>
             </div>
           </li>
@@ -46,12 +48,16 @@ function Cart({ cart, removeFromCart, increaseQuantity, decreaseQuantity, checko
       </ul>
       <div className="flex justify-between items-center mt-4">
         <p className="font-bold">Total Price: ${totalPrice.toFixed(2)}</p>
-        <button
+        <CustomButton
+        label = 'Checkout'
+        height = '30px'
+        
           className="bg-green-500 text-white font-bold py-2 px-4 rounded"
           onClick={checkout}
-        >
-          Checkout
-        </button>
+        />
+          
+        
+      </div>
       </div>
     </div>
   );

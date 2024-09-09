@@ -5,14 +5,15 @@ import Slider from "react-slick";
 function IndexComponent2() {
 
   return (
-    <div className=' min-h-[100vh] w-full bg-[] flex flex-col items-center mb-8'>
+    <div className=' min-h-[100vh] w-full bg-[] flex flex-col items-center mb-8 mt-[80px]'>
         <div className=" h-[80px] w-full flex justify-center">
         <h1 className=' text-[30px] font-bold'>Meet The Restaurants</h1>
         </div>
         <div className=" mt-8 min-h-[500px] w-[95%] bg-[] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
       
             <div className=" h-[350px]  bg-white flex flex-col items-center ">
-                <div className=" border-[1px] border-[gray] rounded-[25px] overflow-hidden">
+               <a href="">
+               <div className=" border-[1px] border-[gray] rounded-[25px] overflow-hidden">
                 <div className=" h-[250px] w-[350px] md:w-[320px] lg:w-[380px] bg-red-800 ">
                   <img src="" alt="" />
                 </div>
@@ -26,11 +27,13 @@ function IndexComponent2() {
                   </div>
                 </div>
                 </div>
+               </a>
             </div>
 
 
             <div className=" h-[350px]  bg-white flex flex-col items-center ">
-                <div className=" border-[1px] border-[gray] rounded-[25px] overflow-hidden">
+               <a href="">
+               <div className=" border-[1px] border-[gray] rounded-[25px] overflow-hidden">
                 <div className=" h-[250px] w-[350px] md:w-[320px] lg:w-[380px] bg-red-800 ">
                   <img src="" alt="" />
                 </div>
@@ -44,11 +47,13 @@ function IndexComponent2() {
                   </div>
                 </div>
                 </div>
+               </a>
             </div>
 
 
             <div className=" h-[350px]  bg-white flex flex-col items-center ">
-                <div className=" border-[1px] border-[gray] rounded-[25px] overflow-hidden">
+               <a href="">
+               <div className=" border-[1px] border-[gray] rounded-[25px] overflow-hidden">
                 <div className=" h-[250px] w-[350px] md:w-[320px] lg:w-[380px] bg-red-800 ">
                   <img src="" alt="" />
                 </div>
@@ -62,10 +67,12 @@ function IndexComponent2() {
                   </div>
                 </div>
                 </div>
+               </a>
             </div>
 
             <div className=" h-[350px]  bg-white flex flex-col items-center ">
-                <div className=" border-[1px] border-[gray] rounded-[25px] overflow-hidden">
+               <a href="">
+               <div className=" border-[1px] border-[gray] rounded-[25px] overflow-hidden">
                 <div className=" h-[250px] w-[350px] md:w-[320px] lg:w-[380px] bg-red-800 ">
                   <img src="" alt="" />
                 </div>
@@ -79,9 +86,11 @@ function IndexComponent2() {
                   </div>
                 </div>
                 </div>
+               </a>
             </div>
 
             <div className=" h-[350px]  bg-white flex flex-col items-center ">
+                <a href="">
                 <div className=" border-[1px] border-[gray] rounded-[25px] overflow-hidden">
                 <div className=" h-[250px] w-[350px] md:w-[320px] lg:w-[380px] bg-red-800 ">
                   <img src="" alt="" />
@@ -96,9 +105,11 @@ function IndexComponent2() {
                   </div>
                 </div>
                 </div>
+                </a>
             </div>
 
             <div className=" h-[350px]  bg-white flex flex-col items-center ">
+                <a href="">
                 <div className=" border-[1px] border-[gray] rounded-[25px] overflow-hidden">
                 <div className=" h-[250px] w-[350px] md:w-[320px] lg:w-[380px] bg-red-800 ">
                   <img src="" alt="" />
@@ -113,6 +124,7 @@ function IndexComponent2() {
                   </div>
                 </div>
                 </div>
+                </a>
             </div>
 
         </div>
