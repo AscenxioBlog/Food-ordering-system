@@ -4,7 +4,8 @@ const mongoose = require('mongoose')
 const path = require('path')
 require('dotenv').config();
 const cors = require('cors')
-// const Restaurant = require("./models/Restaurant")
+const Menu = require('./models/Menu')
+const Restaurant = require("./models/Restaurant")
 const multer = require('multer');
 const generalcontroller = require("./controllers/generalcontroller")
 
