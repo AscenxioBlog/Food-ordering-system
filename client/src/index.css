@@ -49,11 +49,14 @@ img{
     height: 100%;
    
 }
+.explore{
+    border: 2px solid gray;
+}
 .explore:hover{
     transform: scale(1.2);
     transition: 1s;
     box-shadow: 0 0 50px gray;
-    background-color: bisque;
+    background-color: #5F8670;
     color: black;
 }
 .foot a{
@@ -190,4 +193,32 @@ img{
     background-image: url(Files/bike.jpg);
     background-size: 100% 100%;
 
+}
+.template:hover{
+    box-shadow: 0 0 50px #5F8670;
+    transform: translateY(-10px);
+}
+
+.checkout{
+    background-image: url(Files/checkoutpics.jpg);
+    background-size: 100% 100%;
+    background-color: #5f8670a9;
+    background-blend-mode: darken;
+}
+
+.colaa{
+    background-image: url(Files/colaa.jpg);
+    background-size: 100% 100%;
+}
+.coke{
+    background-image: url(Files/cokee.jpg);
+    background-size: 100% 100%;
+}
+.cream{
+    background-image: url(Files/cream.jpg);
+    background-size: 100% 100%;
+}
+.code{
+    background-image: url(Files/code.jpg);
+    background-size: 100% 100%;
 }

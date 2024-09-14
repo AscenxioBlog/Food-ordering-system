@@ -17,6 +17,7 @@ import FoodComponent from "./UI/Restaurant1/FoodComponent";
 import Work from "./UI/WorkwithUs/Work";
 import RegRestaurant from "./UI/RegRestaurant/RegRestaurant";
 import Newsign from "./Authenticator/Newsign";
+import CheckoutForm from "./UI/CheckoutForm/CheckoutForm";
 
 function Container() {
   const [cart, setCart] = useState([]);
@@ -109,6 +110,7 @@ function Container() {
           <Route path='/rider' element={<Work/>}/>
           <Route path='/register' element={<RegRestaurant/>}/>
           <Route path='/newsign' element={<Newsign/>}/>
+          <Route path='/checkout' element={<CheckoutForm/>}/>
           <Route path="/admin" element={<AdminComponent />}>
             <Route path='/admin/add' element={<AddComponent/>}/>
             <Route path='/admin/addmenu' element={<AddMenu/>}/>

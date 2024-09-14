@@ -26,7 +26,7 @@ function IndexComponent2() {
           ? someRestaurant.map((item) => (
               <>
                 <Link to={`/menu/${item.name}/${item._id}`} key={item._id}>
-                  <div className=" h-[300px]  bg-[white] flex flex-col items-center rounded-[20px] ">
+                  <div className=" template h-[300px]  bg-[white] flex flex-col items-center rounded-[20px] " style={{boxShadow:' 0 0 25px #5F8670'}}>
                     <div className=" border-[1px] border-[gray] rounded-[25px] overflow-">
                       <div className=" h-[200px] w-[250px] md:w-[220px] lg:w-[280px] bg-red-800 mt-2 ">
                         <img
@@ -82,9 +82,9 @@ function IndexComponent2() {
           </a>
         </div>
       </div> */}
-      <div className="explore h-[45px] w-[260px] bg-[cadetblue] rounded-[30px] flex justify-center items-center text-[gray] text-[18px] font-bold mt-6 border-[2px] border-[gray]">
+      <div className="explore h-[45px] w-[260px] bg-[] rounded-[30px] flex justify-center items-center text-[gray] text-[18px] font-bold mt-6 border-[2px] border-[gray]">
         <h1>
-          <Link to="/Restuarant">Explore all restaurants</Link>{" "}
+          <Link to="/restaurant">Explore all restaurants</Link>{" "}
         </h1>
       </div>
     </div>
