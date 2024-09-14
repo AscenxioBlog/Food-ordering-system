@@ -168,7 +168,7 @@ function Restaurant1Component() {
               ? holddata.map((item) => (
                   <>
                     <Link to={`/menu/${item.name}/${item._id}`} key={item._id}>
-                      <div className=" h-[300px]  bg-[white] flex flex-col items-center rounded-[20px] ">
+                      <div className="template h-[300px]  bg-[white] flex flex-col items-center rounded-[20px] " style={{boxShadow:' 0 0 25px #5F8670'}}>
                         <div className=" border-[1px] border-[gray] rounded-[25px] overflow-">
                           <div className=" h-[200px] w-[250px] md:w-[220px] lg:w-[280px] bg-red-800 mt-2 ">
                             <img

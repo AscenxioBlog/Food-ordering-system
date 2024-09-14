@@ -5,7 +5,7 @@ function IndexComponent3() {
   return (
     <div className=' min-h-[600px] w-full bg-[] '>
       <div className=" h-[100px] w-full bg-[] text-[30px] text-slate-600 font-bold flex justify-center items-center">
-        <h1>Word on the street</h1>
+        <h1>Healthy Eating Tips</h1>
       </div>
       <Quote/>
 

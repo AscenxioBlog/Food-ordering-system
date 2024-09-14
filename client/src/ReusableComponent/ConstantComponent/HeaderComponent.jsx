@@ -59,7 +59,7 @@ function cancelfunction() {
                 {/* <a href="/Restuarant">Restaurants</a> */}
               </li>
               <li className="text-[]">
-                <Link to='/Restuarant'>Restaurants</Link>
+                <Link to='/restaurant'>Restaurants</Link>
                 {/* <a href="/Restuarant">Restaurants</a> */}
               </li>
               <li>

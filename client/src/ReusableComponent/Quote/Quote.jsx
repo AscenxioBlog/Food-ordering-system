@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react'
 
 // Updated quotes array to include both quote and author
 const quotes = [
-    { text: "I have not failed. I’ve just found 10,000 ways that won’t work.", author: "Hassan Ascenxio"},
-    { text: "The best way to predict the future is to invent it.", author: "OMA EGE" },
-    { text: "Life is 10% what happens to us and 90% how we react to it.", author: "Charles R. Swindoll" },
-    { text: "Your time is limited, don’t waste it living someone else’s life.", author: "Steve Jobs" },
-    { text: "Success is not final, failure is not fatal: It is the courage to continue that counts.", author: "Winston Churchill" },
-    { text: "Don’t watch the clock; do what it does. Keep going.", author: "Sam Levenson" },
+    { text: "Have them pick out a new fruit or vegetable in the grocery store each week. Plan together how to prepare it in a healthy way.", author: "Make it fun for kids to try new fruits and vegetables."},
+    { text: "Use nontropical liquid vegetable oils, such as canola, corn, olive, safflower, sesame and sunflower, in place of butter and other solid fats to minimize saturated fat and avoid trans fat.", author: "Choose healthy “good” fats. " },
+    { text: "It’s hard to expect your kids to eat their vegetables if you’re not eating yours. Teach your kids and show by example what healthy foods are and how much we should be eating to keep our bodies healthy..", author: "Be a good role model." },
+    { text: "They are loaded with nutrients and dietary fiber. They are also naturally low in calories and sodium. Fresh, frozen and canned produce can all be healthy choices. For canned, choose the no-salt-added, reduced-sodium and no-added-sugar options. For frozen, look for those with no sauces or seasonings.", author: "Choose fresh, canned or frozen vegetables and fruits." },
+    { text: "Keep your recipes, grocery list and coupons organized to make planning and budgeting easier. The more you plan, the less likely you’ll be tempted to choose fast food or make other unhealthy choices.", author: "Schedule time each week to plan healthy meals." },
+    { text: "Sit down for a meal together at least once a week with family, friends or neighbors. It can reduce stress, boost self-esteem and make everyone feel more connected..", author: "Eat together as a family." },
     { text: "The words impossible is not in my dictionary. I will give it a try first", author: "Chef Code Arnold"},
     { text: 'I am so clever that sometimes I don’t understand a single word of what I am saying🤣', author: 'Hassan Ascenxio'},
   ];
@@ -49,7 +49,7 @@ function Quote() {
 
 <div className=" h-[450px] w-full flex justify-center items-center">
         <div className=" h-[400px] w-[70%] bg-[#E7F0DC] rounded-[30px] flex flex-col justify-center items-center p-[20px]">
-          <h1 className=' text-[20px] font-bold mb-6 lg:text-[30px] text-[#5F8670] ' style={{textShadow:'0px 7px 5px orangered'}}>{quote.author}</h1>
+          <h1 className=' text-[15px] font-medium mb-6 lg:text-[20px] text-[#5F8670] ' style={{textShadow:'0px 7px 5px orangered'}}>{quote.author}</h1>
           <p className=' text-[20px] font-semibold'>{quote.text}</p>
         </div>
       </div>
