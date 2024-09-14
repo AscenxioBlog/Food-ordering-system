@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const path = require('path')
 require('dotenv').config();
 const cors = require('cors')
+const User = require('./models/User')
 const Menu = require('./models/Menu')
 const Restaurant = require("./models/Restaurant")
 const multer = require('multer');
@@ -29,6 +30,8 @@ const upload = multer({ storage: storage });
 
 app.use(express.static(path.join(__dirname,"../client/dist")))
 app.use(express.static(path.join(__dirname,"../public")))
+app.use(express.json());//Middleware to parse json
+
 
 app.use(cors({
     origin: 'http://localhost:5173' // Allow only this origin
@@ -94,6 +97,30 @@ app.get('/menu/:restaurantid',async (req,res)=>{
     }
     catch(err){
         console.log(err)
+    }
+})
+
+app.post('/sign-up',upload.single('image'), async (req,res)=>{
+    try{
+        const {firstname,lastname,email,tel,password } = req.body;
+
+        // const hashedpassword = await bcrypt.hash(password,10)
+
+        const newUser = new User({
+            firstname, 
+            lastname, 
+            email,
+            tel,
+            password
+        })
+
+       
+        await newUser.save();
+        res.status(201).json({ message: 'Signin successful!' });
+        // res.redirect('http://localhost:5173/signup')
+    }
+    catch(err){
+        res.status(500).json({ error: 'Failed to create user' });
     }
 })
 
