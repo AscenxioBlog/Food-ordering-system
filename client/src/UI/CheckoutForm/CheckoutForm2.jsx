@@ -1,9 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Cart from '../../ReusableComponent/Cart'
 import CustomInput from '../../ReusableComponent/MyInput/CustomInput'
 import SliderComponent from '../../ReusableComponent/Slider/SliderComponent'
+import { Link } from 'react-router-dom'
 
 function CheckoutForm2() {
+    let [newcart,setNewcart]=useState(()=>{
+        const storedCart = localStorage.getItem('cart');
+        return storedCart ? JSON.parse(storedCart):[]
+      })
+
+      useEffect(()=>{
+        const storenewcart = localStorage.getItem('cart');
+        setNewcart(storenewcart? JSON.parse(storenewcart) : []);
+
+        const handleStorageChange = ()=>{
+            const updateCart = localStorage.getItem('cart');
+            setNewcart(updateCart? JSON.parse(updateCart) : []);
+
+        }
+
+        window.addEventListener('storageUpdate',handleStorageChange );
+        return ()=> {
+            window.removeEventListener('storageUpdate',handleStorageChange );
+        };
+      },[newcart])
+
+      const totalPrice = newcart.reduce((total, item) => total + (item.price * item.quantity), 0);
   return (
     <div className=' min-h-[100vh] w-full bg-[#E7F0DC] grid grid-cols-1 lg:grid-cols-[32%,40%,24%] gap-6 '>
         <div className="h-[60vh] md:h-[60vh] lg:h-[100vh] bg-[] flex items-center p-2">
@@ -141,14 +164,18 @@ function CheckoutForm2() {
                 />
             </div>
         </div>
-        <CustomInput
+        <Link to='/payment'  >
+            <div className="bb h-[40px] w-[90%] bg-[] font-bold rounded-[10px] lg:ml-3 hover:bg-[#5F8670] cursor-pointer flex justify-center items-center">Order Now</div>
+        </Link>
+
+        {/* <CustomInput
                      type="submit"
                     //  name="/"
                     //  required  
                     // placeholder= 'Your Postal code/'
                      className='bb h-[40px] w-[90%] bg-[] rounded-[10px] lg:ml-3 hover:bg-[#5F8670] cursor-pointer'
 
-                />
+                /> */}
 
             </form>
            </div>
@@ -156,8 +183,27 @@ function CheckoutForm2() {
 
         </div>
 
-        <div className=" bg-red-400">
-            Display all the product in cart here
+        <div className=" bg-[] p-2">
+            {
+                newcart.map((item, index)=>(
+                    <li key={index} className="border-b py-2 flex items-center">
+                    <img src={`http://localhost:5000${item.image}`} alt={item.name} className="w-16 h-16 object-cover mr-4" />
+                    <div className="flex-1">
+                      <p className="font-bold">{item.name}</p>
+                     
+                      <p>SubTotal: ${(item.price * item.quantity).toFixed(2)}</p>
+                    </div>
+                    <div className="flex gap-2 items-center">
+                     
+                      <p className=' font-bold'>{item.quantity}</p>
+                     
+                    </div>
+                   
+                  </li>
+                ))
+            }
+             <p className="font-bold">Total Price: ${totalPrice.toFixed(2)}</p>
+            {/* Display all the product in cart here */}
             {/* <Cart/> */}
         </div>
       

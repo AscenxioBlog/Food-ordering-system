@@ -53,7 +53,7 @@ function AddComponent() {
                 <h2>Added Successfully</h2>
             </div> */}
 
-            <div className=" min-h-[90vh] w-full lg:w-[80%] grid grid-cols-1 md:grid-cols-[15%,85%] ">
+            <div className=" min-h-[90vh] w-full  grid grid-cols-1 md:grid-cols-[15%,85%] ">
                <div className=" bg-slate-200  md:flex justify-center">
                 <span className=' text-[#5F8670] text-[40px] md:text-[60px]'>
                 <TbHomePlus  />

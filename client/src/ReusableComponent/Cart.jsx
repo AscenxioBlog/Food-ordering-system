@@ -3,7 +3,7 @@ import CustomButton from './MyButton/CustomButton';
 import { MdOutlineDeleteForever } from "react-icons/md";
 import { Link } from 'react-router-dom';
 
-function Cart({ cart, removeFromCart, increaseQuantity, decreaseQuantity, checkout }) {
+function Cart({visible , cart, removeFromCart, increaseQuantity, decreaseQuantity, checkout }) {
   const totalPrice = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
 
   if (cart.length === 0) {
@@ -49,7 +49,7 @@ function Cart({ cart, removeFromCart, increaseQuantity, decreaseQuantity, checko
       </ul>
       <div className="flex justify-between items-center mt-4">
         <p className="font-bold">Total Price: ${totalPrice.toFixed(2)}</p>
-        <Link to='/checkout'  className="bg-green-500 text-white font-bold py-2 px-4 rounded">Checkout</Link>
+        <Link to='/checkout' onClick={visible} className="bg-green-500 text-white font-bold py-2 px-4 rounded">Checkout</Link>
         {/* <CustomButton
         label = 'Checkout'
         height = '30px'

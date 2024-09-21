@@ -44,7 +44,7 @@ function AddMenu() {
   return (
     <div>
       <div className="w-full min-h-[100vh]">
-        <div className="min-h-[90vh] w-full lg:w-[80%] pl-[2px] md-pl-[0px] lg:pl-[120px] grid grid-cols-1 md:grid-cols-[15%,85%]">
+        <div className="min-h-[90vh] w-full lg:w-full pl-[2px] md-pl-[0px]  grid grid-cols-1 md:grid-cols-[15%,85%]">
           <div className="bg-slate-200 md:flex justify-center">
             <span className='text-[#5F8670] text-[40px] md:text-[60px]'>
               <MdOutlineRestaurantMenu />

@@ -18,9 +18,14 @@ import Work from "./UI/WorkwithUs/Work";
 import RegRestaurant from "./UI/RegRestaurant/RegRestaurant";
 import Newsign from "./Authenticator/Newsign";
 import CheckoutForm from "./UI/CheckoutForm/CheckoutForm";
+import AdminIndex from "./AdminComponent/AdminIndex";
+import PaymentComponent from "./UI/PaymentComponent/PaymentComponent";
 
 function Container() {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(()=>{
+    const storedCart = localStorage.getItem('cart');
+    return storedCart ? JSON.parse(storedCart):[]
+  });
 
   // Load cart from local storage when the app loads
   useEffect(() => {
@@ -28,14 +33,17 @@ function Container() {
     if (storedCart) {
       setCart(JSON.parse(storedCart));
     }
+    
   }, []);
 
   // Save cart to local storage whenever it changes
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cart));
+
+    window.dispatchEvent(new Event('storageUpdate'))
   }, [cart]);
 
-  const [isCartVisible, setCartVisible] = useState(false);
+  const [isCartVisible, setCartVisible] = useState("-400px");
 
   const addToCart = (product) => {
     setCart((prevCart) => {
@@ -86,7 +94,7 @@ function Container() {
   };
 
   const toggleCartVisibility = () => {
-    setCartVisible(!isCartVisible);
+    isCartVisible == "-400px"? setCartVisible('0px') : setCartVisible('-400px')
   };
 
   return (
@@ -111,7 +119,9 @@ function Container() {
           <Route path='/register' element={<RegRestaurant/>}/>
           <Route path='/newsign' element={<Newsign/>}/>
           <Route path='/checkout' element={<CheckoutForm/>}/>
+          <Route path='/payment' element={<PaymentComponent/>}/>
           <Route path="/admin" element={<AdminComponent />}>
+            <Route index element={<AdminIndex/>}/>
             <Route path='/admin/add' element={<AddComponent/>}/>
             <Route path='/admin/addmenu' element={<AddMenu/>}/>
             <Route path='/admin/allres' element={<AllRestaurant/>}/>

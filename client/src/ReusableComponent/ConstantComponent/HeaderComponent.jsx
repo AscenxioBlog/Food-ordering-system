@@ -86,17 +86,16 @@ function cancelfunction() {
             <FaCartArrowDown size={25} /> ({cart.length})
           </button>
           <button className=" text-white lg:hidden "><TiThMenu size={25}/></button>
-          {isCartVisible && (
-            <div className="absolute top-[100%] right-0 mt-2 w-[400px] bg-white border border-gray-300 shadow-lg z-10">
+            <div className="absolute top-[100%] transition-all duration-500 right-0 mt-2 w-[400px] bg-white border border-gray-300 shadow-lg z-10" style={{right:isCartVisible}}>
               <Cart
                 cart={cart}
                 removeFromCart={removeFromCart}
                 increaseQuantity={increaseQuantity}
                 decreaseQuantity={decreaseQuantity}
                 checkout={checkout}
+                visible={toggleCartVisibility}
               />
             </div>
-          )}
         </div>
       </div>
       <Authenticator 

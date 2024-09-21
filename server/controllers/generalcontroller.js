@@ -15,6 +15,7 @@ const foradding = async (req,res)=>{
             rating,
             image
 
+
         });
 
         await newRestaurant.save(); 
