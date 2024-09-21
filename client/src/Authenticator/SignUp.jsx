@@ -24,7 +24,6 @@ function SignUp({SeeSignUp,passme}) {
     })
   };
 
-
   const handleSubmit = async (e) => {
     e.preventDefault(); 
 
@@ -66,6 +65,7 @@ function SignUp({SeeSignUp,passme}) {
                             name="firstname"
                             required 
                              placeholder= 'First Name'
+                             value={formdata.firstname}
                              onChange={handleDataChange}
                             className='bb h-[50px] w-[80%]  bg-[transparent] rounded-[5px]'
                         />
@@ -79,6 +79,7 @@ function SignUp({SeeSignUp,passme}) {
                             name="lastname"
                             required 
                             placeholder='Last Name'
+                            value={formdata.lastname}
                             onChange={handleDataChange}
                             className='bb h-[50px] w-[80%]  bg-[transparent] rounded-[5px]'
                         /> <br />
@@ -92,6 +93,7 @@ function SignUp({SeeSignUp,passme}) {
                             name="email"
                             required 
                             placeholder= 'Email'
+                            value={formdata.email}
                             onChange={handleDataChange}
                             className='bb h-[50px] w-[80%]  bg-[transparent] rounded-[5px]'
                         /> <br />
@@ -105,6 +107,7 @@ function SignUp({SeeSignUp,passme}) {
                             name="tel"
                             required 
                             placeholder='telephone'
+                            value={formdata.tel}
                             onChange={handleDataChange}
                             className='bb h-[50px] w-[80%]  bg-[transparent] rounded-[5px]'
                         /> <br />
@@ -118,6 +121,7 @@ function SignUp({SeeSignUp,passme}) {
                             name="password"
                             required 
                             placeholder= 'Password'
+                            value={formdata.password}
                             onChange={handleDataChange}
                             className='bb h-[50px] w-[80%]  bg-[transparent] rounded-[5px]'
                         /> <br /> <br />

@@ -22,7 +22,7 @@ function AdminComponent() {
                 </li> */}
 
                 <li className='adminbtn h-[35px] w-[110px] md:h-[35px] md:w-[120px] lg:h-[50px] lg:w-[200px] bg-slate-200 flex justify-center items-center  text-[15px] md:text-[20px] lg:text-[20px]'>
-                    <Link> RESTAURANT</Link>
+                    <Link to="/admin/allrestaurant"> RESTAURANT</Link>
                 </li>
             </ul>
         </section>

@@ -4,9 +4,8 @@ const mongoose = require('mongoose')
 const path = require('path')
 require('dotenv').config();
 const cors = require('cors')
-const User = require('./models/User')
-const Menu = require('./models/Menu')
-const Restaurant = require("./models/Restaurant")
+// const User = require('./models/User')
+// const Restaurant = require("./models/Restaurant")
 const multer = require('multer');
 const generalcontroller = require("./controllers/generalcontroller")
 
@@ -44,85 +43,19 @@ app.post('/add', upload.single('image'), generalcontroller.foradding);
 app.get('/api/restaurants', generalcontroller.for_restaurantapi)
 
 //This is the logic to fetch the a limited number of restaurant from the database and send it as JSON.
-app.get('/api/fewrestaurants', async (req, res) => {
-    try {
-      // Limit the number of restaurants to 10
-      const restaurants = await Restaurant.find().sort({ createdAt: -1 }).limit(6);
-      res.json(restaurants);
-    } catch (error) {
-      res.status(500).send(error);
-    }
-});
+app.get('/api/fewrestaurants', generalcontroller.for_fewrestaurants);
 
-app.post('/add-menu', upload.single('image'),async (req,res)=>{
-    try{
-        const {name,price,food_description,restaurant } = req.body;
-        const image = req.file ? `/images/${req.file.filename}` : null;
+app.get('/api/allrestaurants',generalcontroller.for_allrestaurant)
 
-        const newMenu = new Menu({
-            name,
-            price,
-            food_description,
-            restaurant ,
-            image
-        })
+app.post('/add-menu', upload.single('image'),generalcontroller.for_addmenu)
 
-        await newMenu.save();
-        res.redirect('http://localhost:5173/admin/add')
-    }catch(err){
-        console.error(err);
-    }
+app.get('/api/food-types',generalcontroller.for_foodtypes);
 
-})
+app.get('/menu/:restaurantid',generalcontroller.for_Eachmenu)
 
-app.get('/api/food-types', async (req, res) => {
-    try {
-        const foodTypes = await Restaurant.distinct('food_types');// This is mongoDB distinct which allows you to get the unique values for a specific field across all documents in your collection.
-        res.json(foodTypes);
-    } catch (err) {
-        console.error(err);
-        res.status(500).json({ error: 'Server error' });
-    }
-});
+app.post('/sign-up',upload.single('image'), generalcontroller.signup)
 
-app.get('/menu/:restaurantid',async (req,res)=>{
-    try{
-        const {restaurantid} = req.params;
-        const menus = await Menu.find({restaurant: restaurantid})
-            .populate('restaurant','address')
-            .populate('restaurant','description')
-        res.json(menus)
-        // console.log(req.params)
-        console.log('Menus found:', menus);
-    }
-    catch(err){
-        console.log(err)
-    }
-})
-
-app.post('/sign-up',upload.single('image'), async (req,res)=>{
-    try{
-        const {firstname,lastname,email,tel,password } = req.body;
-
-        // const hashedpassword = await bcrypt.hash(password,10)
-
-        const newUser = new User({
-            firstname, 
-            lastname, 
-            email,
-            tel,
-            password
-        })
-
-       
-        await newUser.save();
-        res.status(201).json({ message: 'Signin successful!' });
-        // res.redirect('http://localhost:5173/signup')
-    }
-    catch(err){
-        res.status(500).json({ error: 'Failed to create user' });
-    }
-})
+app.post('/sign-in',upload.single('image'), generalcontroller.signin)
 
 app.get('*',(req,res)=>{
     res.sendFile(path.join(__dirname,"../client/dist/index.html"))

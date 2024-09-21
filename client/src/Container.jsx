@@ -114,7 +114,7 @@ function Container() {
           <Route path="/admin" element={<AdminComponent />}>
             <Route path='/admin/add' element={<AddComponent/>}/>
             <Route path='/admin/addmenu' element={<AddMenu/>}/>
-            <Route path='/admin/allres' element={<AllRestaurant/>}/>
+            <Route path='/admin/allrestaurant' element={<AllRestaurant/>}/>
           </Route>
         </Routes>
         <FooterComponent />
