@@ -49,9 +49,13 @@ function Cart({visible , cart, removeFromCart, increaseQuantity, decreaseQuantit
       </ul>
       <div className="flex justify-between items-center mt-4">
         <p className="font-bold">Total Price: ${totalPrice.toFixed(2)}</p>
+<<<<<<< HEAD
         <Link to='/checkout' onClick={visible} className="bg-green-500 text-white font-bold py-2 px-4 rounded">Checkout</Link>
+=======
+        <Link to='/checkout' className="bg-green-500 text-white font-bold py-2 px-4 rounded">Checkout</Link>
+>>>>>>> 0f8dfc01078d0f157f358d592d7d0fae95934e69
         {/* <CustomButton
-        label = 'Checkout'
+        label = 'Checkout'  
         height = '30px'
         
           className="bg-green-500 text-white font-bold py-2 px-4 rounded"

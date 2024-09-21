@@ -124,7 +124,7 @@ function Container() {
             <Route index element={<AdminIndex/>}/>
             <Route path='/admin/add' element={<AddComponent/>}/>
             <Route path='/admin/addmenu' element={<AddMenu/>}/>
-            <Route path='/admin/allres' element={<AllRestaurant/>}/>
+            <Route path='/admin/allrestaurant' element={<AllRestaurant/>}/>
           </Route>
         </Routes>
         <FooterComponent />
