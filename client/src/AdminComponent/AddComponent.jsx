@@ -53,7 +53,7 @@ function AddComponent() {
                 <h2>Added Successfully</h2>
             </div> */}
 
-            <div className=" min-h-[90vh] w-full lg:w-[80%] grid grid-cols-1 md:grid-cols-[15%,85%] ">
+            <div className=" min-h-[90vh] w-full  grid grid-cols-1 md:grid-cols-[15%,85%] ">
                <div className=" bg-slate-200  md:flex justify-center">
                 <span className=' text-[#5F8670] text-[40px] md:text-[60px]'>
                 <TbHomePlus  />
@@ -72,7 +72,7 @@ function AddComponent() {
                             type="text"
                             name='name'
                             required
-                            className='bb h-[40px] w-[80%] rounded-[10px] bg-[transparent] pl-2'
+                            className='border-[2px] border-solid border-emerald-600 h-[40px] w-[80%] rounded-[10px] bg-[transparent] pl-2'
                         />
                     </div> <br />
 
@@ -80,7 +80,7 @@ function AddComponent() {
                         <label htmlFor="description">Restaurant Description <span className=' text-[red]'>*</span></label> <br />
                         <textarea
                             name="description"
-                            className='bb h-[100px] w-[80%] rounded-[20px]  bg-[transparent] pl-3 pt-2'
+                            className='border-[2px] border-solid border-emerald-600 h-[100px] w-[80%] rounded-[20px]  bg-[transparent] pl-3 pt-2'
                         ></textarea>
                     </div> <br />
 
@@ -91,7 +91,7 @@ function AddComponent() {
                             type="text"
                             name='phone'
                             // required
-                            className='bb  h-[50px] w-[100%]   bg-[transparent] rounded-[10px]'
+                            className='border-[2px] border-solid border-emerald-600  h-[50px] w-[100%]   bg-[transparent] rounded-[10px]'
                         />
                         </section>
 
@@ -101,7 +101,7 @@ function AddComponent() {
                             type="email"
                             name='email'
                             // required
-                            className='bb h-[50px] w-[100%]  bg-[transparent] rounded-[10px]'
+                            className='border-[2px] border-solid border-emerald-600 h-[50px] w-[100%]  bg-[transparent] rounded-[10px]'
                         />
                         </section>
                     </div>
@@ -113,7 +113,7 @@ function AddComponent() {
                         <textarea
                             name="address"
                             required
-                            className='bb h-[50px] w-[80%] rounded-[10px]  bg-[transparent] pl-3 pt-2'
+                            className='border-[2px] border-solid border-emerald-600 h-[50px] w-[80%] rounded-[10px]  bg-[transparent] pl-3 pt-2'
                         ></textarea>
                     </div> <br />
                    
@@ -132,7 +132,7 @@ function AddComponent() {
                     </div> <br />
 
                     <div className="">
-                        <fieldset className=' h-[200px] w-full lg:w-[80%] rounded-[10px] ' style={{border:'2px solid #cccccc'}}>
+                        <fieldset className='border-[2px] border-solid border-emerald-600 h-[200px] w-full lg:w-[80%] rounded-[10px] '>
                             <legend>Food Types <span className=' text-[red]'>*</span></legend>
 
                         {/* CHATGPT HELP ME WITH THE CODE BELLOW FOR THE FOOD TYPS */}
@@ -161,7 +161,7 @@ function AddComponent() {
                             type="time" 
                             name="opening_time"
                              required 
-                            className='bb h-[50px] w-[100%]  bg-[transparent] rounded-[10px]'
+                            className='border-[2px] border-solid border-emerald-600 h-[50px] w-[100%]  bg-[transparent] rounded-[10px]'
                         />
                         </section>
                                 <span className='flex justify-center items-center'>To</span>
@@ -171,7 +171,7 @@ function AddComponent() {
                             type="time"
                             name="closing_time"
                             required 
-                            className='bb h-[50px] w-[100%]  bg-[transparent] rounded-[10px]'
+                            className='border-[2px] border-solid border-emerald-600 h-[50px] w-[100%]  bg-[transparent] rounded-[10px]'
                         />
                         </section>
                     </div>
@@ -188,7 +188,7 @@ function AddComponent() {
                             min="1"
                             max="5"
                             required
-                            className='bb h-[40px] w-[50%] rounded-[10px]  bg-[transparent] pl-2'
+                            className=' h-[40px] w-[50%] rounded-[10px] border-[2px] border-solid border-emerald-600  bg-[transparent] pl-2'
                         />
                     </div><br />
 

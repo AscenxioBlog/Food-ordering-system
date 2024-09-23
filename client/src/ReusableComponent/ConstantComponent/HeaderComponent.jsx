@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Authenticator from "../../Authenticator/Authenticator";
 import { TiThMenu } from "react-icons/ti";
 import { FaCartArrowDown } from "react-icons/fa";
+import { IoIosArrowDown } from "react-icons/io";
 
 function HeaderComponent({
   cart,
@@ -34,7 +35,7 @@ function cancelfunction() {
 
   return (
     <div
-      className="head h-[100px] w-full bg-[#5F8670]"
+      className="head h-[100px] w-full bg-[#5F8670] text-white"
       style={{
         display: "block",
         position: "fixed",
@@ -66,8 +67,13 @@ function cancelfunction() {
                 <Link to='/faqs'>FAQs</Link>
                 {/* <a href="/faqs">FAQs</a> */}
               </li>
-              <li>
-                <Link to=''>Support</Link>
+              <li className="service relative ">
+                <Link to='' className=" flex gap-2 items-center">Services <IoIosArrowDown /></Link>
+                <div className="serviceDropdown h-[150px] w-[150px] bg-orange-100  grid absolute left-[-25px]" style={{border:'2px solid gray'}} > 
+                  <Link to='/catering' className=" h-[50px]  flex justify-center items-center hover:bg-[#5F8670]" style={{borderBottom:'1px solid gray'}}><div className=" text-[15px] ">Catering service</div></Link>
+                 <Link  className="h-[50px] flex justify-center items-center hover:bg-[#5F8670]" style={{borderBottom:'1px solid gray'}}> <div className=" text-[15px] flex justify-center items-center">Suprise Package?</div></Link>
+                 <Link  className="h-[50px] flex justify-center items-center hover:bg-[#5F8670]" style={{borderBottom:'1px solid gray'}}> <div className=" text-[15px] flex justify-center items-center">Place Advert</div></Link>
+                </div>
                 {/* <a href="/auth">Support</a> */}
               </li>
 
@@ -86,17 +92,16 @@ function cancelfunction() {
             <FaCartArrowDown size={25} /> ({cart.length})
           </button>
           <button className=" text-white lg:hidden "><TiThMenu size={25}/></button>
-          {isCartVisible && (
-            <div className="absolute top-[100%] right-0 mt-2 w-[400px] bg-white border border-gray-300 shadow-lg z-10">
+            <div className="absolute top-[100%] transition-all duration-500 right-0 mt-2 w-[400px] bg-white border border-gray-300 shadow-lg z-10" style={{right:isCartVisible}}>
               <Cart
                 cart={cart}
                 removeFromCart={removeFromCart}
                 increaseQuantity={increaseQuantity}
                 decreaseQuantity={decreaseQuantity}
                 checkout={checkout}
+                visible={toggleCartVisibility}
               />
             </div>
-          )}
         </div>
       </div>
       <Authenticator 

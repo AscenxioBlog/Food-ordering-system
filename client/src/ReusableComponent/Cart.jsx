@@ -3,7 +3,7 @@ import CustomButton from './MyButton/CustomButton';
 import { MdOutlineDeleteForever } from "react-icons/md";
 import { Link } from 'react-router-dom';
 
-function Cart({ cart, removeFromCart, increaseQuantity, decreaseQuantity, checkout }) {
+function Cart({visible , cart, removeFromCart, increaseQuantity, decreaseQuantity, checkout }) {
   const totalPrice = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
 
   if (cart.length === 0) {
@@ -11,7 +11,7 @@ function Cart({ cart, removeFromCart, increaseQuantity, decreaseQuantity, checko
   }
 
   return (
-    <div className="cart-items h-[500px] overflow-y-scroll p-5">
+    <div className="cart-items h-[500px] overflow-y-scroll p-5 text-black">
       <div className="min-h-[700px]">
       <h2 className="text-xl font-bold">Cart Items:</h2>
       <ul>
@@ -20,7 +20,7 @@ function Cart({ cart, removeFromCart, increaseQuantity, decreaseQuantity, checko
             <img src={`http://localhost:5000${item.image}`} alt={item.name} className="w-16 h-16 object-cover mr-4" />
             <div className="flex-1">
               <p className="font-bold">{item.name}</p>
-              <p>Price: ${item.price.toFixed(2)}</p>
+              <p>Price: $ {item.price.toFixed(2)}</p>
               <p>SubTotal: ${(item.price * item.quantity).toFixed(2)}</p>
             </div>
             <div className="flex gap-2 items-center">
@@ -49,7 +49,11 @@ function Cart({ cart, removeFromCart, increaseQuantity, decreaseQuantity, checko
       </ul>
       <div className="flex justify-between items-center mt-4">
         <p className="font-bold">Total Price: ${totalPrice.toFixed(2)}</p>
-        <Link to='/checkout' className="bg-green-500 text-white font-bold py-2 px-4 rounded">Checkout</Link>
+
+        <Link to='/checkout' onClick={visible} className="bg-green-500 text-white font-bold py-2 px-4 rounded">Checkout</Link>
+
+        {/* <Link to='/checkout' className="bg-green-500 text-white font-bold py-2 px-4 rounded">Checkout</Link> */}
+
         {/* <CustomButton
         label = 'Checkout'  
         height = '30px'

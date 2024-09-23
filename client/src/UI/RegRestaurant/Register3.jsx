@@ -27,7 +27,7 @@ function Register3() {
 
             <div className="h-[60vh] md:h-[70vh] md:translate-y-[-20px] bg-white flex flex-col items-center gap-5 justify-center rounded-[20px] " style={{boxShadow:'0px 5px 25px black' , border:'3px solid green'}}>
             <div className=" h-[90px] w-[90%] bg text-[25px] uppercase font-semibold flex items-center justify-center" style={{borderBottom:'1px solid gray'}}>
-                    <h1>6 Month Plan</h1>
+                    <h1>3 Month Plan</h1>
                 </div>
 
                 <div className=" h-[170px] w-[160px] bg-slate-500 rounded-[100%] flex justify-center items-center text-[20px] font-bold text-white ">
@@ -43,7 +43,7 @@ function Register3() {
             </div>
             <div className="h-[60vh] md:h-[65vh] bg-white flex flex-col items-center gap-5 justify-center" style={{border:'1px solid gray'}}>
             <div className=" h-[90px] w-[90%] bg text-[25px] uppercase font-semibold flex items-center justify-center" style={{borderBottom:'1px solid gray'}}>
-                    <h1>3 Month Plan</h1>
+                    <h1>6 Month Plan</h1>
                 </div>
 
                 <div className=" h-[170px] w-[160px] bg-slate-500 rounded-[100%] flex justify-center items-center text-[20px] font-bold text-white ">

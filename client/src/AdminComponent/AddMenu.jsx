@@ -44,7 +44,7 @@ function AddMenu() {
   return (
     <div>
       <div className="w-full min-h-[100vh]">
-        <div className="min-h-[90vh] w-full lg:w-[80%] pl-[2px] md-pl-[0px] lg:pl-[120px] grid grid-cols-1 md:grid-cols-[15%,85%]">
+        <div className="min-h-[90vh] w-full lg:w-full pl-[2px] md-pl-[0px]  grid grid-cols-1 md:grid-cols-[15%,85%]">
           <div className="bg-slate-200 md:flex justify-center">
             <span className='text-[#5F8670] text-[40px] md:text-[60px]'>
               <MdOutlineRestaurantMenu />
@@ -59,7 +59,7 @@ function AddMenu() {
 
               <br />
               <div className="">
-                <select name="restaurant" className='bb h-[40px] w-[80%] rounded-[10px] bg-[transparent] pl-2'>
+                <select name="restaurant" className='border-[2px] border-solid border-emerald-600 h-[40px] w-[80%] rounded-[10px] bg-[transparent] pl-2'>
                   <option value="">Select Restaurant</option>
                   {allRestaurant ? (
                     allRestaurant.map((restaurant) => (
@@ -82,7 +82,7 @@ function AddMenu() {
                   name="name"
                   required
                   id="food-name"
-                  className='bb h-[40px] w-[80%] rounded-[10px] bg-[transparent] pl-2'
+                  className='border-[2px] border-solid border-emerald-600 h-[40px] w-[80%] rounded-[10px] bg-[transparent] pl-2'
                 />
               </div>
               <br />
@@ -99,7 +99,7 @@ function AddMenu() {
                 <br />
                 <textarea
                   name="food_description"
-                  className='bb h-[100px] w-[80%] rounded-[20px] bg-[transparent] pl-3 pt-2'
+                  className='border-[2px] border-solid border-emerald-600 h-[100px] w-[80%] rounded-[20px] bg-[transparent] pl-3 pt-2'
                 ></textarea>
               </div>
               <br />
@@ -111,7 +111,7 @@ function AddMenu() {
                   type="number"
                   name="price"
                   required
-                  className='bb h-[40px] w-[80%] rounded-[10px] bg-[transparent] pl-2'
+                  className='border-[2px] border-solid border-emerald-600 h-[40px] w-[80%] rounded-[10px] bg-[transparent] pl-2'
                 />
               </div>
               <br />
