@@ -91,7 +91,7 @@ const for_Eachmenu = async (req,res)=>{
             .populate('restaurant','description')
         res.json(menus)
         // console.log(req.params)
-        console.log('Menus found:', menus);
+        // console.log('Menus found:', menus);
     }
     catch(err){
         console.log(err)
@@ -150,12 +150,12 @@ const signin = async (req,res)=>{
         const user = await User.findOne({email});
         console.log(user);
         if (!user) {
-            return res.status(400).json({message:"User not found"})
+            return res.status(400).json({emailMessage:"User not found"})
         }
 
         const checkpassword = await bcrypt.compare(password, user.password);
         if(!checkpassword){
-            return res.status(400).json({message:"Incorrect password"})
+            return res.status(400).json({passwordMessage:"Incorrect password"})
         }
 
         const token = jwt.sign({ id: user._id }, process.env.SECRETKEY, { expiresIn: '1h' });
