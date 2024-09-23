@@ -9,6 +9,8 @@ import { BsCashCoin } from "react-icons/bs";
 
 
 function Payment2() {
+    var Delivery = 1000;
+    var [totalmoney,setTotalMoney]=useState()
     let [newcart,setNewcart]=useState(()=>{
         const storedCart = localStorage.getItem('cart');
         return storedCart ? JSON.parse(storedCart):[]
@@ -43,7 +45,7 @@ function Payment2() {
 
         <div className=" bg-[] ">
             <div className=" h-[80px] w-full bg-[#5F8670] text-[20px] md:text-[35px] flex justify-center items-center text-white font-bold">
-                <h1>Your order details</h1>
+                <h1>Your payment details</h1>
             </div>
             
            <div className="p-3 bg-slate-100">
@@ -174,6 +176,9 @@ function Payment2() {
                 ))
             }
              <p className="font-bold">Total Price: ${totalPrice.toFixed(2)}</p>
+             <p className="font-bold">Amount To Be Paid: {totalmoney}</p>
+
+             
             {/* Display all the product in cart here */}
             {/* <Cart/> */}
         </div>

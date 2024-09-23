@@ -59,7 +59,7 @@ function AddMenu() {
 
               <br />
               <div className="">
-                <select name="restaurant" className='bb h-[40px] w-[80%] rounded-[10px] bg-[transparent] pl-2'>
+                <select name="restaurant" className='border-[2px] border-solid border-emerald-600 h-[40px] w-[80%] rounded-[10px] bg-[transparent] pl-2'>
                   <option value="">Select Restaurant</option>
                   {allRestaurant ? (
                     allRestaurant.map((restaurant) => (
@@ -82,7 +82,7 @@ function AddMenu() {
                   name="name"
                   required
                   id="food-name"
-                  className='bb h-[40px] w-[80%] rounded-[10px] bg-[transparent] pl-2'
+                  className='border-[2px] border-solid border-emerald-600 h-[40px] w-[80%] rounded-[10px] bg-[transparent] pl-2'
                 />
               </div>
               <br />
@@ -99,7 +99,7 @@ function AddMenu() {
                 <br />
                 <textarea
                   name="food_description"
-                  className='bb h-[100px] w-[80%] rounded-[20px] bg-[transparent] pl-3 pt-2'
+                  className='border-[2px] border-solid border-emerald-600 h-[100px] w-[80%] rounded-[20px] bg-[transparent] pl-3 pt-2'
                 ></textarea>
               </div>
               <br />
@@ -111,7 +111,7 @@ function AddMenu() {
                   type="number"
                   name="price"
                   required
-                  className='bb h-[40px] w-[80%] rounded-[10px] bg-[transparent] pl-2'
+                  className='border-[2px] border-solid border-emerald-600 h-[40px] w-[80%] rounded-[10px] bg-[transparent] pl-2'
                 />
               </div>
               <br />

@@ -222,3 +222,14 @@ img{
     background-image: url(Files/code.jpg);
     background-size: 100% 100%;
 }
+
+.serviceDropdown{
+    display: none;
+}
+.service:hover .serviceDropdown{
+    display: block;
+}
+.cateringpics{
+    background-image: url(Files/cater.jpg);
+    background-size: 100% 100%;
+}

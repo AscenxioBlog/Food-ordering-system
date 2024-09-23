@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Cart from '../../ReusableComponent/Cart'
 import CustomInput from '../../ReusableComponent/MyInput/CustomInput'
 import SliderComponent from '../../ReusableComponent/Slider/SliderComponent'
 import { Link } from 'react-router-dom'
 
 function CheckoutForm2() {
+    var Delivery = 1000;
     let [newcart,setNewcart]=useState(()=>{
         const storedCart = localStorage.getItem('cart');
         return storedCart ? JSON.parse(storedCart):[]
@@ -203,7 +204,8 @@ function CheckoutForm2() {
                 ))
             }
              <p className="font-bold">Total Price: ${totalPrice.toFixed(2)}</p>
-            {/* Display all the product in cart here */}
+             <p className="font-bold">Delivery Fee: {Delivery} </p>
+            
             {/* <Cart/> */}
         </div>
       

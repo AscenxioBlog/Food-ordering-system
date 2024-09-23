@@ -20,6 +20,9 @@ import Newsign from "./Authenticator/Newsign";
 import CheckoutForm from "./UI/CheckoutForm/CheckoutForm";
 import AdminIndex from "./AdminComponent/AdminIndex";
 import PaymentComponent from "./UI/PaymentComponent/PaymentComponent";
+import AllEvent from "./AdminComponent/AllEvent";
+import Profile from "./AdminComponent/Profile";
+import CateringComponent from "./UI/CateringComponent/CateringComponent";
 
 function Container() {
   const [cart, setCart] = useState(()=>{
@@ -120,11 +123,14 @@ function Container() {
           <Route path='/newsign' element={<Newsign/>}/>
           <Route path='/checkout' element={<CheckoutForm/>}/>
           <Route path='/payment' element={<PaymentComponent/>}/>
+          <Route path='/catering' element={<CateringComponent/>}/>
           <Route path="/admin" element={<AdminComponent />}>
             <Route index element={<AdminIndex/>}/>
             <Route path='/admin/add' element={<AddComponent/>}/>
             <Route path='/admin/addmenu' element={<AddMenu/>}/>
             <Route path='/admin/allrestaurant' element={<AllRestaurant/>}/>
+            <Route path='/admin/allevent' element={<AllEvent/>}/>
+            <Route path='/admin/profile' element={<Profile/>}/>
           </Route>
         </Routes>
         <FooterComponent />
