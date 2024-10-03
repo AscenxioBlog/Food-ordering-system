@@ -23,6 +23,8 @@ import PaymentComponent from "./UI/PaymentComponent/PaymentComponent";
 import AllEvent from "./AdminComponent/AllEvent";
 import Profile from "./AdminComponent/Profile";
 import CateringComponent from "./UI/CateringComponent/CateringComponent";
+// import MisteryComponent from "./UI/MisterySurprise/MisteryComponent";
+import MysteryComponent from "./UI/MisterySurprise/MysteryComponent";
 
 function Container() {
   const [cart, setCart] = useState(()=>{
@@ -124,6 +126,7 @@ function Container() {
           <Route path='/checkout' element={<CheckoutForm/>}/>
           <Route path='/payment' element={<PaymentComponent/>}/>
           <Route path='/catering' element={<CateringComponent/>}/>
+          <Route path='/gift' element={<MysteryComponent/>}/>
           <Route path="/admin" element={<AdminComponent />}>
             <Route index element={<AdminIndex/>}/>
             <Route path='/admin/add' element={<AddComponent/>}/>
