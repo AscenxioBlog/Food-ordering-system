@@ -64,38 +64,11 @@ function HeaderComponent({
                 {/* <a href="/faqs">FAQs</a> */}
               </li>
               <li className="service relative ">
-                <Link to="" className=" flex gap-2 items-center">
-                  Services <IoIosArrowDown />
-                </Link>
-                <div
-                  className="serviceDropdown h-[150px] w-[150px] bg-orange-100  grid absolute left-[-25px]"
-                  style={{ border: "2px solid gray" }}
-                >
-                  <Link
-                    to="/catering"
-                    className=" h-[50px]  flex justify-center items-center hover:bg-[#5F8670]"
-                    style={{ borderBottom: "1px solid gray" }}
-                  >
-                    <div className=" text-[15px] ">Catering service</div>
-                  </Link>
-                  <Link
-                    className="h-[50px] flex justify-center items-center hover:bg-[#5F8670]"
-                    style={{ borderBottom: "1px solid gray" }}
-                  >
-                    {" "}
-                    <div className=" text-[15px] flex justify-center items-center">
-                      Suprise Package?
-                    </div>
-                  </Link>
-                  <Link
-                    className="h-[50px] flex justify-center items-center hover:bg-[#5F8670]"
-                    style={{ borderBottom: "1px solid gray" }}
-                  >
-                    {" "}
-                    <div className=" text-[15px] flex justify-center items-center">
-                      Place Advert
-                    </div>
-                  </Link>
+                <Link to='' className=" flex gap-2 items-center">Services <IoIosArrowDown /></Link>
+                <div className="serviceDropdown h-[150px] w-[150px] bg-orange-100  grid absolute left-[-25px]" style={{border:'2px solid gray'}} > 
+                  <Link to='/catering' className=" h-[50px]  flex justify-center items-center hover:bg-[#5F8670] " style={{borderBottom:'1px solid gray'}}><div className=" text-[15px] text-black ">Catering service</div></Link>
+                 <Link to='/gift'  className="h-[50px] flex justify-center items-center hover:bg-[#5F8670]" style={{borderBottom:'1px solid gray'}}> <div className=" text-[15px] flex justify-center items-center  text-black">Suprise Package?</div></Link>
+                 <Link  className="h-[50px] flex justify-center items-center hover:bg-[#5F8670]" style={{borderBottom:'1px solid gray'}}> <div className=" text-[15px] flex justify-center items-center text-black">Place Advert</div></Link>
                 </div>
               </li>
             </ol>
