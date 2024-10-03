@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CustomInput from "../ReusableComponent/MyInput/CustomInput";
 import { GiCancel } from "react-icons/gi";
+
 function SignIn({ passme, tinubu }) {
   let [signupdata, setsignupdata] = useState({
     email: "",
@@ -37,14 +38,18 @@ function SignIn({ passme, tinubu }) {
         setPasswordvalidator(data.passwordMessage)
       }
       console.log(data); // Here you will get the JWT token if login is successful
+      localStorage.setItem('token', data.token);
+      localStorage.setItem('firstname', data.userfirstname);
+      localStorage.setItem('lastname', data.userlastname);
+
     } catch (err) {
       console.error("Login failed:", err.message);
     }
   };
 
   return (
-    <div>
-      <div className=" h-[400px] w-[100%] md:w-[80%] lg:w-[60%] bg-[#5F8670] mt-9 rounded-[30px]  md:ml-[80px] lg:ml-[200px] relative">
+    <div className=" bg-red-400">
+      <div className=" h-[400px] w-[100%] md:w-[80%] lg:w-[60%] bg-[#000] mt-9 rounded-[30px]  md:ml-[80px] lg:ml-[200px] relative">
         <button
           onClick={passme}
           className=" absolute top-3 right-3 text-[#cf9292]"

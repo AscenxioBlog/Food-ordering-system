@@ -33,7 +33,7 @@ function Authenticator({getheight,seemodal,passcancelFunction}) {
                 </div>
             </div> */}
 
-            <div className=" min-h-[120vh]  bg-[] flex justify-center">
+            <div className=" h-[100vh]  bg-[teal] flex justify-center">
                 <div className=" min-h-[400px] w-[80%] lg:w-[60%] bg-[]  rounded-[30px]">
                <div className="" style={{display:hide}}>
                <SignIn tinubu={setReveal} passme={passcancelFunction}/>

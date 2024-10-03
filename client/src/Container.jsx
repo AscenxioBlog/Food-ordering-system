@@ -9,8 +9,6 @@ import AddComponent from "./AdminComponent/AddComponent";
 import AllRestaurant from "./AdminComponent/AllRestaurant";
 import FaqsComponent from "./UI/FaqsComponent/FaqsComponent";
 import Authenticator from "./Authenticator/Authenticator";
-import SignIn from "./Authenticator/SignIn";
-import SignUp from "./Authenticator/SignUp";
 import RestauarantLandingpage from "./UI/Restaurant1/RestauarantLandingpage";
 import AddMenu from "./AdminComponent/AddMenu";
 import FoodComponent from "./UI/Restaurant1/FoodComponent";
@@ -120,7 +118,6 @@ function Container() {
           <Route path="/auth" element={<Authenticator />} />
           <Route path='/rider' element={<Work/>}/>
           <Route path='/register' element={<RegRestaurant/>}/>
-          <Route path='/newsign' element={<Newsign/>}/>
           <Route path='/checkout' element={<CheckoutForm/>}/>
           <Route path='/payment' element={<PaymentComponent/>}/>
           <Route path='/catering' element={<CateringComponent/>}/>

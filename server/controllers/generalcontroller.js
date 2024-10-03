@@ -122,16 +122,16 @@ const for_addmenu = async (req,res)=>{
 
 const signup = async (req,res)=>{
     try{
-        const {firstname,lastname,email,tel,password } = req.body;
+        const {username,email,tel,password } = req.body;
 
-        const hashedpassword = await bcrypt.hash(password,10)
+        const hashedpassword = await bcrypt.hash(password,10);
 
         const newUser = new User({
-            firstname, 
-            lastname, 
+            username,
             email,
-            tel,
-            password:hashedpassword
+            // tel,
+            password:hashedpassword,
+            role:'user',
         })
 
        
@@ -147,22 +147,29 @@ const signup = async (req,res)=>{
 const signin = async (req,res)=>{
     try{
         const {email,password } = req.body;
-
+        console.log(password)
         const user = await User.findOne({email});
-        console.log(user);
+        const checkpassword = await bcrypt.compare(password, user.password);
+        // const checkpassword = await password === user.password
+        const username = user ? user.username : ""
+ 
         if (!user) {
             return res.status(400).json({emailMessage:"User not found"})
-        }
-
-        const checkpassword = await bcrypt.compare(password, user.password);
-        if(!checkpassword){
+        }else if(!checkpassword){
             return res.status(400).json({passwordMessage:"Incorrect password"})
+        }else{
+            res.json({ token, message: 'Login successful!',username });
         }
 
-        const token = jwt.sign({ id: user._id }, process.env.SECRETKEY, { expiresIn: '1h' });
+        const token = jwt.sign(
+            { id: user._id, role: user.role },
+            process.env.SECRETKEY,
+            { expiresIn: "1h" }
+          );
+        // const token = jwt.sign({ id: user._id }, process.env.SECRETKEY, { expiresIn: '1h' });
 
-        res.json({ message: 'Login successful!' });
     }
+    
     catch(err){
         console.log(err)
         res.status(500).json({ error: 'Server error' });

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import Cart from "../Cart";
 import { Link } from "react-router-dom";
@@ -6,6 +6,9 @@ import Authenticator from "../../Authenticator/Authenticator";
 import { TiThMenu } from "react-icons/ti";
 import { FaCartArrowDown } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
+import { LuUser2 } from "react-icons/lu";
+import Userprofile from "./Userprofile";
+import Holdsign from "../../Authenticator/Holdsign";
 
 function HeaderComponent({
   cart,
@@ -15,27 +18,20 @@ function HeaderComponent({
   increaseQuantity,
   decreaseQuantity,
   checkout,
-})
-
-{
-
-var [height,setHeight]= useState('-120vh')
-var [view, setView] = useState(0)
-var [cancel,setCancel] = useState('0')
-
-function setmodal() {
-  setHeight('0')
-  setView(1)
-}
-function cancelfunction() {
-    // setCancel('-120vh')
-    setHeight('-120vh')
-    // alert('hiiiii')
-}
+}) {
+  var [login, setLogin] = useState("-130vh");
+  let [showProfile, setShowProfile] = useState("0");
+  // let [isLogged, setIsLogged] = useState(false);
+  let obi = localStorage.getItem('isAuthenticated')
+  let [isAuthenticated, setIsAuthenticated] = useState(false);
+  useEffect(() => {
+    const storedAuthStatus = localStorage.getItem('isAuthenticated');
+    setIsAuthenticated(storedAuthStatus === 'true'); // Set based on localStorage value
+  }, []);
 
   return (
     <div
-      className="head h-[100px] w-full bg-[#5F8670] text-white"
+      className="head h-[70px] w-full bg-[#5F8670] text-white"
       style={{
         display: "block",
         position: "fixed",
@@ -55,60 +51,112 @@ function cancelfunction() {
         <div className="flex items-center ">
           <div className="hidden md:hidden lg:inline-block bg-[] text-[21px] font-bold pl-[80px] ">
             <ol className="flex gap-[30px] ">
-            <li className="text-[#FF5A3C]">
-                <Link to='/'>Home</Link>
+              <li className="text-[#FF5A3C]">
+                <Link to="/">Home</Link>
                 {/* <a href="/Restuarant">Restaurants</a> */}
               </li>
               <li className="text-[]">
-                <Link to='/restaurant'>Restaurants</Link>
+                <Link to="/restaurant">Restaurants</Link>
                 {/* <a href="/Restuarant">Restaurants</a> */}
               </li>
               <li>
-                <Link to='/faqs'>FAQs</Link>
+                <Link to="/faqs">FAQs</Link>
                 {/* <a href="/faqs">FAQs</a> */}
               </li>
               <li className="service relative ">
-                <Link to='' className=" flex gap-2 items-center">Services <IoIosArrowDown /></Link>
-                <div className="serviceDropdown h-[150px] w-[150px] bg-orange-100  grid absolute left-[-25px]" style={{border:'2px solid gray'}} > 
-                  <Link to='/catering' className=" h-[50px]  flex justify-center items-center hover:bg-[#5F8670]" style={{borderBottom:'1px solid gray'}}><div className=" text-[15px] ">Catering service</div></Link>
-                 <Link  className="h-[50px] flex justify-center items-center hover:bg-[#5F8670]" style={{borderBottom:'1px solid gray'}}> <div className=" text-[15px] flex justify-center items-center">Suprise Package?</div></Link>
-                 <Link  className="h-[50px] flex justify-center items-center hover:bg-[#5F8670]" style={{borderBottom:'1px solid gray'}}> <div className=" text-[15px] flex justify-center items-center">Place Advert</div></Link>
+                <Link to="" className=" flex gap-2 items-center">
+                  Services <IoIosArrowDown />
+                </Link>
+                <div
+                  className="serviceDropdown h-[150px] w-[150px] bg-orange-100  grid absolute left-[-25px]"
+                  style={{ border: "2px solid gray" }}
+                >
+                  <Link
+                    to="/catering"
+                    className=" h-[50px]  flex justify-center items-center hover:bg-[#5F8670]"
+                    style={{ borderBottom: "1px solid gray" }}
+                  >
+                    <div className=" text-[15px] ">Catering service</div>
+                  </Link>
+                  <Link
+                    className="h-[50px] flex justify-center items-center hover:bg-[#5F8670]"
+                    style={{ borderBottom: "1px solid gray" }}
+                  >
+                    {" "}
+                    <div className=" text-[15px] flex justify-center items-center">
+                      Suprise Package?
+                    </div>
+                  </Link>
+                  <Link
+                    className="h-[50px] flex justify-center items-center hover:bg-[#5F8670]"
+                    style={{ borderBottom: "1px solid gray" }}
+                  >
+                    {" "}
+                    <div className=" text-[15px] flex justify-center items-center">
+                      Place Advert
+                    </div>
+                  </Link>
                 </div>
-                {/* <a href="/auth">Support</a> */}
-              </li>
-
-              <li>
-                <button onClick={setmodal} className="">Login</button>
-                {/* <a href="/auth">Support</a> */}
               </li>
             </ol>
           </div>
         </div>
         <div className="bg-[] flex justify-center items-center relative gap-4 pr-3">
           <button
-            className="h-[40px] w-[150px] bg-[#FF5A3C] text-[18px] text-white font-semibold rounded-[20px] flex justify-center items-center"
+            className="h-[40px] w-[40px] bg-[#FF5A3C] text-[18px] text-white font-semibold rounded-[20px] flex justify-center items-center"
             onClick={toggleCartVisibility}
           >
-            <FaCartArrowDown size={25} /> ({cart.length})
+            <FaCartArrowDown size={18} />
           </button>
-          <button className=" text-white lg:hidden "><TiThMenu size={25}/></button>
-            <div className="absolute top-[100%] transition-all duration-500 right-0 mt-2 w-[400px] bg-white border border-gray-300 shadow-lg z-10" style={{right:isCartVisible}}>
-              <Cart
-                cart={cart}
-                removeFromCart={removeFromCart}
-                increaseQuantity={increaseQuantity}
-                decreaseQuantity={decreaseQuantity}
-                checkout={checkout}
-                visible={toggleCartVisibility}
-              />
-            </div>
+          {/* <button
+            onClick={handleUserClick}
+            className="h-[40px] w-[40px] bg-[#FF5A3C] text-[18px] text-white font-semibold rounded-[20px] flex justify-center items-center"
+          >
+            <LuUser2 className=" font-bold" size={20}/> 
+          </button> */}
+          {isAuthenticated ? (
+            // Show user profile if logged in
+            <button
+              onClick={() => setShowProfile(showProfile === '0' ? '1' : '0')}
+              className="h-[40px] w-[40px] bg-[#FF5A3C] text-[18px] text-white font-semibold rounded-[20px] flex justify-center items-center"
+            >
+              <LuUser2 size={20} />
+            </button>
+          ) : (
+            // Show login button if not authenticated
+            <button
+              onClick={() => setLogin("0")}
+              className="h-[40px] w-[40px] bg-[#FF5A3C] text-[18px] text-white font-semibold rounded-[20px] flex justify-center items-center"
+            >
+              <LuUser2 size={20} />
+            </button>
+          )}
+          <button className=" text-white lg:hidden ">
+            <TiThMenu size={25} />
+          </button>
+          <div
+            className="absolute top-[100%] transition-all duration-500 right-0 mt-2 w-[400px] bg-white border border-gray-300 shadow-lg z-10"
+            style={{ right: isCartVisible }}
+          >
+            <Cart
+              cart={cart}
+              removeFromCart={removeFromCart}
+              increaseQuantity={increaseQuantity}
+              decreaseQuantity={decreaseQuantity}
+              checkout={checkout}
+              visible={toggleCartVisibility}
+            />
+          </div>
         </div>
       </div>
-      <Authenticator 
+      {/* <Authenticator 
       getheight={height}
       seemodal={view}
       passcancelFunction = {cancelfunction}
-      />
+      /> */}
+
+      <Userprofile showProfile={showProfile} setShowprofile={setShowProfile} setLogin={setLogin} setIsAuthenticated={setIsAuthenticated}/>
+      <Holdsign login={login} setLogin={setLogin} setIsAuthenticated={setIsAuthenticated}/>
     </div>
   );
 }
