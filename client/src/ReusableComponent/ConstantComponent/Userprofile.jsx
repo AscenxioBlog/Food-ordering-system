@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
 import { LuUser2 } from "react-icons/lu";
 
-function Userprofile({showProfile,setLogin,setIsAuthenticated,setShowprofile}) {
-    let [username,setusername] = useState(localStorage.getItem("username"))
+function Userprofile({username,showProfile,setLogin,setIsAuthenticated,setShowprofile}) {
     
-    const handleLoginSuccess = () => {
-    localStorage.setItem('isAuthenticated',false)// Set user as authenticated
-    setLogin('-130vh'); 
-    setIsAuthenticated(false);
-    setShowprofile("0");
+    const logout = () => {
+      localStorage.clear()
+      localStorage.setItem('isAuthenticated',false)// Set user as authenticated
+      setLogin('-130vh'); 
+      setIsAuthenticated(false);
+      setShowprofile("0");
+      alert("You logged out")
     };
 
   return (
@@ -18,7 +19,7 @@ function Userprofile({showProfile,setLogin,setIsAuthenticated,setShowprofile}) {
             <p>{username}</p>
         </section>
         <section className=' row-span-1 border-b border-solid cursor-pointer border-red-300 hover:bg-[#FF5A3C96] pl-[10px]'> My Orders </section>
-        <section className=' row-span-1 bg-red-900 pl-[10px] cursor-pointer rounded-bl-[7px] rounded-br-[7px]' onClick={handleLoginSuccess}><span>Logout</span> </section>
+        <section className=' row-span-1 bg-red-900 pl-[10px] cursor-pointer rounded-bl-[7px] rounded-br-[7px]' onClick={logout}><span>Logout</span> </section>
     </div>
   )
 }

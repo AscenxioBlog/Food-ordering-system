@@ -22,8 +22,9 @@ function HeaderComponent({
   var [login, setLogin] = useState("-130vh");
   let [showProfile, setShowProfile] = useState("0");
   // let [isLogged, setIsLogged] = useState(false);
-  let obi = localStorage.getItem('isAuthenticated')
   let [isAuthenticated, setIsAuthenticated] = useState(false);
+  let [username,setusername] = useState(localStorage.getItem("username") || "");
+
   useEffect(() => {
     const storedAuthStatus = localStorage.getItem('isAuthenticated');
     setIsAuthenticated(storedAuthStatus === 'true'); // Set based on localStorage value
@@ -75,6 +76,7 @@ function HeaderComponent({
           </div>
         </div>
         <div className="bg-[] flex justify-center items-center relative gap-4 pr-3">
+          {username}
           <button
             className="h-[40px] w-[40px] bg-[#FF5A3C] text-[18px] text-white font-semibold rounded-[20px] flex justify-center items-center"
             onClick={toggleCartVisibility}
@@ -119,6 +121,7 @@ function HeaderComponent({
               checkout={checkout}
               visible={toggleCartVisibility}
             />
+            
           </div>
         </div>
       </div>
@@ -128,8 +131,8 @@ function HeaderComponent({
       passcancelFunction = {cancelfunction}
       /> */}
 
-      <Userprofile showProfile={showProfile} setShowprofile={setShowProfile} setLogin={setLogin} setIsAuthenticated={setIsAuthenticated}/>
-      <Holdsign login={login} setLogin={setLogin} setIsAuthenticated={setIsAuthenticated}/>
+      <Userprofile username={username} setusername={setusername} showProfile={showProfile} setShowprofile={setShowProfile} setLogin={setLogin} setIsAuthenticated={setIsAuthenticated}/>
+      <Holdsign login={login} setusername={setusername} setLogin={setLogin} setIsAuthenticated={setIsAuthenticated}/>
     </div>
   );
 }

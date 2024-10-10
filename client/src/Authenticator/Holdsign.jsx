@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import SignIn2 from "./SignIn2";
 import Signup2 from "./Signup2";
 
-function Holdsign({login,setLogin,setIsAuthenticated}) {
+function Holdsign({login,setLogin,setIsAuthenticated,setusername}) {
   const switchers = [...document.querySelectorAll(".switcher")];
 
   switchers.forEach((item) => {
@@ -38,7 +38,7 @@ function Holdsign({login,setLogin,setIsAuthenticated}) {
     <div className="forms-section bg-[#1616146b] w-full transition-all duration-300" style={{marginTop:login}} onClick={()=>setLogin('-130vh')}>
       <div className="forms" onClick={(e)=>e.stopPropagation()}>
         <SignIn2 onLoginSuccess={handleLoginSuccess}/>
-        <Signup2 onLoginSuccess={handleLoginSuccess}/>
+        <Signup2 setusername={setusername} onLoginSuccess={handleLoginSuccess}/>
       </div>
     </div>
   );
