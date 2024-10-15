@@ -9,7 +9,7 @@ import AddComponent from "./AdminComponent/AddComponent";
 import AllRestaurant from "./AdminComponent/AllRestaurant";
 import FaqsComponent from "./UI/FaqsComponent/FaqsComponent";
 import Authenticator from "./Authenticator/Authenticator";
-import RestauarantLandingpage from "./UI/Restaurant1/RestauarantLandingpage";
+// import RestauarantLandingpage from "./UI/Restaurant1/RestauarantLandingpage";
 import AddMenu from "./AdminComponent/AddMenu";
 import FoodComponent from "./UI/Restaurant1/FoodComponent";
 import Work from "./UI/WorkwithUs/Work";

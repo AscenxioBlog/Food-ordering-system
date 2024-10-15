@@ -51,7 +51,7 @@ function CheckoutForm2() {
                  name='first_name'
                  required
                  placeholder='First Name'
-                 className='bb h-[50px] w-[100%]  bg-[transparent] rounded-[10px]'
+                 className='border-[2px] border-solid border-emerald-600 h-[50px] w-[100%]  bg-[transparent] rounded-[10px]'
                 
                 />
             </div>
@@ -63,7 +63,7 @@ function CheckoutForm2() {
                  name='last_name'
                  required
                  placeholder='Last Name'
-                 className='bb h-[50px] w-[100%]  bg-[transparent] rounded-[10px]'
+                 className='border-[2px] border-solid border-emerald-600 h-[50px] w-[100%]  bg-[transparent] rounded-[10px]'
                 
                 />
             </div>
@@ -76,7 +76,7 @@ function CheckoutForm2() {
                  name='Telephone/mobile'
                  required
                  placeholder='Telephone/mobile'
-                 className='bb h-[50px] w-[100%]  bg-[transparent] rounded-[10px]'
+                 className='border-[2px] border-solid border-emerald-600 h-[50px] w-[100%]  bg-[transparent] rounded-[10px]'
                 
                 />
             </div>
@@ -88,7 +88,7 @@ function CheckoutForm2() {
                  name='Telephone/mobile'
                  required
                  placeholder='Your Email'
-                 className='bb h-[50px] w-[100%]  bg-[transparent] rounded-[10px]'
+                 className='border-[2px] border-solid border-emerald-600 h-[50px] w-[100%]  bg-[transparent] rounded-[10px]'
                 
                 />
             </div>
@@ -101,7 +101,7 @@ function CheckoutForm2() {
                  name='address'
                  required
                  placeholder='Your full address'
-                 className='bb h-[50px] w-[100%]  bg-[transparent] rounded-[10px]'
+                 className='border-[2px] border-solid border-emerald-600 h-[50px] w-[100%]  bg-[transparent] rounded-[10px]'
                 
                 />
             </div>
@@ -119,7 +119,7 @@ function CheckoutForm2() {
                     name="city"
                      required 
                     placeholder= 'Your City'
-                     className='bb h-[50px] w-[90%] bg-[transparent] rounded-[5px]'
+                     className='border-[2px] border-solid border-emerald-600 h-[50px] w-[90%] bg-[transparent] rounded-[5px]'
 
                 />
             </div>
@@ -130,7 +130,7 @@ function CheckoutForm2() {
                      name="Postal_code"
                      required  
                     placeholder= 'Your Postal code'
-                     className='bb h-[50px] w-[90%] bg-[transparent] rounded-[5px]'
+                     className='border-[2px] border-solid border-emerald-600 h-[50px] w-[90%] bg-[transparent] rounded-[5px]'
 
                 />
             </div>
@@ -139,7 +139,7 @@ function CheckoutForm2() {
         <div className=" min-h-[100px] w-full bg-[] grid grid-cols-1 md:grid-cols-2 gap-3">
             <div className=" bg-[] font-bold space-y-2">
                 <label htmlFor="">Delivery Day<span className=' text-[red]'>*</span></label> <br />
-                <select className='bb h-[50px] w-[90%] bg-[transparent] rounded-[5px]' required  name="" id="">
+                <select className='border-[2px] border-solid border-emerald-600 h-[50px] w-[90%] bg-[transparent] rounded-[5px]' required  name="" id="">
                     <option value="">Select Day</option>
                     <option value="">Today</option>
                     <option value="">Tomorrow</option>
@@ -160,13 +160,13 @@ function CheckoutForm2() {
                      name="time"
                     //  required  
                     // placeholder= 'Your Postal code/'
-                     className='bb h-[50px] w-[90%] bg-[transparent] rounded-[5px]'
+                     className='border-[2px] border-solid border-emerald-600 h-[50px] w-[90%] bg-[transparent] rounded-[5px]'
 
                 />
             </div>
         </div>
         <Link to='/payment'  >
-            <div className="bb h-[40px] w-[90%] bg-[] font-bold rounded-[10px] lg:ml-3 hover:bg-[#5F8670] cursor-pointer flex justify-center items-center">Order Now</div>
+            <div className="border-[2px] border-solid border-emerald-600 h-[40px] w-[90%] bg-[] font-bold rounded-[10px] lg:ml-3 hover:bg-[#5F8670] cursor-pointer flex justify-center items-center">Order Now</div>
         </Link>
 
         {/* <CustomInput

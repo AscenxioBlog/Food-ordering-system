@@ -61,7 +61,7 @@ function IndexComponent4() {
     
 
   return (
-    <div className='min-h-[110vh] w-full bg-[#E7F0DC] flex flex-col items-center pb-[50px] md:pb-1 relative'>
+    <div className='min-h-[110vh] w-full bg-[#E7F0DC] flex flex-col items-center pb-[50px] md:pb-1 relative mb-[100px]'>
         <section className=" h-[100px] bg-[] w-full text-center">
             <h1 className=' text-[35px] font-bold'>How It Works</h1>
             <p className=' text-[20px]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, a.</p>
@@ -117,18 +117,18 @@ function IndexComponent4() {
             </div>
         </section>
  
-        <div className=" min-h-[60px] md:min-h-[100px] w-[80%] grid grid-cols-4 gap-3 bg-[#5F8670] absolute bottom-[-30px] md:bottom-[-50px] rounded-[10px]">
-            <div className="h-[60px] md:h-[100px] bg-[] text-white  flex justify-center items-center">
-                <span className='text-[0.5rem] md:text-[1rem] lg:text-[1.5rem]'>Restaurant:</span> <span className='text-[0.5rem] md:text-[1rem] lg:text-[1.5rem]'>{restaurant}+</span>
+        <div className=" min-h-[60px] md:min-h-[100px] w-[80%] grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4  gap-3 bg-[#5F8670] absolute mb-[100px] mt-10 md:mb-0 bottom-[-150px] md:bottom-[-50px] rounded-[10px]">
+            <div className="h-[40px] md:h-[100px] bg-[] text-white  flex justify-center items-center">
+                <span className='text-[1rem] md:text-[1rem] lg:text-[1.5rem]'>Restaurant:</span> <span className='text-[1rem] md:text-[1rem] lg:text-[1.5rem]'>{restaurant}+</span>
             </div>
-            <div className="h-[60px] md:h-[100px] bg-[] text-white flex justify-center items-center">
-                <span className='text-[0.5rem] md:text-[1rem] lg:text-[1.5rem]'>People Served:</span> <span className='text-[0.5rem] md:text-[1rem] lg:text-[1.5rem]'>{people}+</span>
+            <div className="h-[40px] md:h-[100px] bg-[] text-white flex justify-center items-center">
+                <span className='text-[1rem] md:text-[1rem] lg:text-[1.5rem]'>People Served:</span> <span className='text-[1rem] md:text-[1rem] lg:text-[1.5rem]'>{people}+</span>
             </div>
-            <div className="h-[60px] md:h-[100px] bg-[] text-white  flex justify-center items-center">
-               <span className='text-[0.5rem] md:text-[1rem] lg:text-[1.5rem]'>Registered Users:</span>  <span className='text-[0.5rem] md:text-[1rem] lg:text-[1.5rem]'>{user}+</span>
+            <div className="h-[40px] md:h-[100px] bg-[] text-white  flex justify-center items-center">
+               <span className='text-[1rem] md:text-[1rem] lg:text-[1.5rem]'>Registered Users:</span>  <span className='text-[1rem] md:text-[1rem] lg:text-[1.5rem]'>{user}+</span>
             </div>
-            <div className="h-[60px] md:h-[100px] bg-[] text-white  flex justify-center items-center">
-                <span></span><span className='text-[0.5rem] md:text-[1rem] lg:text-[1.5rem]'>{menu}+</span>
+            <div className="h-[40px] md:h-[100px] bg-[] text-white  flex justify-center items-center">
+                <span className='text-[1rem] md:text-[1rem] lg:text-[1.5rem]'>Total User</span><span className='text-[1rem] md:text-[1rem] lg:text-[1.5rem]'>{menu}+</span>
             </div>
         </div>
 

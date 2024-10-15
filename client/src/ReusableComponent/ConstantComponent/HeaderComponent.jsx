@@ -9,6 +9,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { LuUser2 } from "react-icons/lu";
 import Userprofile from "./Userprofile";
 import Holdsign from "../../Authenticator/Holdsign";
+import HeaderMini from "./HeaderMini";
 
 function HeaderComponent({
   cart,
@@ -28,6 +29,20 @@ function HeaderComponent({
     const storedAuthStatus = localStorage.getItem('isAuthenticated');
     setIsAuthenticated(storedAuthStatus === 'true'); // Set based on localStorage value
   }, []);
+
+
+  var [view,setView]=useState('-300px')
+  var [opacity,setOpacity]=useState(0)
+  function dropdown() {
+    if (opacity == 0 && view == '-300px') {
+      setOpacity(1)
+      setView('70px')
+    } else {
+      setOpacity(0)
+      setView('-300px')
+    }
+   
+  }
 
   return (
     <div
@@ -104,13 +119,14 @@ function HeaderComponent({
               <LuUser2 size={20} />
             </button>
           )}
-          <button className=" text-white lg:hidden ">
+          <button onClick={dropdown} className=" text-white lg:hidden ">
             <TiThMenu size={25} />
           </button>
           <div
             className="absolute top-[100%] transition-all duration-500 right-0 mt-2 w-[400px] bg-white border border-gray-300 shadow-lg z-10"
             style={{ right: isCartVisible }}
           >
+             {/* <HeaderMini setOpacity={opacity} setView={view}/> */}
             <Cart
               cart={cart}
               removeFromCart={removeFromCart}
@@ -130,6 +146,9 @@ function HeaderComponent({
 
       <Userprofile showProfile={showProfile} setShowprofile={setShowProfile} setLogin={setLogin} setIsAuthenticated={setIsAuthenticated}/>
       <Holdsign login={login} setLogin={setLogin} setIsAuthenticated={setIsAuthenticated}/>
+
+      <HeaderMini  setOpacity={opacity} setView={view}   dropdown={dropdown}/>
+
     </div>
   );
 }

@@ -17,7 +17,7 @@ function SliderComponent() {
   return (
     <div className=' h-[400px] w-[90%] bg-[] '>
        
-        <Slider  {...settings}>
+        <Slider {...settings}>
         <div className="colaa  h-[400px] w-full bg-[cadetblue] flex justify-center items-center">
             <h1 className='text-white text-[2rem] font-bold'>ADVERT BILL BOARD</h1>
         </div>
@@ -37,7 +37,8 @@ function SliderComponent() {
 
         </div>
       
-    </Slider>
+
+        </Slider>
     </div>
   )
 }
