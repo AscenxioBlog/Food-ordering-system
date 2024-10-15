@@ -12,12 +12,14 @@ function AllRestaurant() {
       .catch(err=>console.log(err.message))
   },[])
 
+
   const deleteRestaurant = (id) => {
-    fetch(`http://localhost:5000/api/restaurant/${id}`, {
+    fetch(`http://localhost:5000/admin/allrestaurants/${id}`, {
       method: 'DELETE',
     })
       .then(res => res.json())
-      .then(() => {
+      .then((json) => {
+        // console.log(json)
         // Update the restaurantData state to remove the deleted restaurant
         setRestaurantData(prevData => prevData.filter(restaurant => restaurant.id !== id));
       })
@@ -53,11 +55,11 @@ function AllRestaurant() {
                   <img src={`http://localhost:5000/${item.image}`} className=' h-[50px] w-[80px] rounded-xl'/>
                 </td>
                 <td className=' border-[1px] border-dotted border-emerald-600 text-[20px] font-bold w-[20%]'>{item.name}</td>
-                <td className=' border-[1px] border-dotted border-emerald-600 '>{item.rating}</td>
+                <td className=' border-[1px] border-dotted border-emerald-600 '>{item.rating}⭐</td>
                 <td className=' border-[1px] border-dotted border-emerald-600 w-[30%]'>{item.food_types.toString()}</td>
                 <td className=' border-[1px] border-dotted border-emerald-600 w-[20%]'>{item.address}</td>
-                <td className=' border-[1px] border-dotted border-emerald-600 w-[9%] cursor-pointer'><FaRegEdit className=' inline'/></td>
-                <td className=' border-[1px] border-dotted border-emerald-600 w-[20%] cursor-pointer'  onClick={ deleteRestaurant(item._id)}><BsTrashFill className=' inline'/></td>
+                <td className=' border-[1px] border-dotted border-emerald-600 w-[9%] cursor-pointer  hover:text-blue-600 transition-all duration-500'><FaRegEdit className=' inline'/></td>
+                <td className=' border-[1px] border-dotted border-emerald-600 w-[20%] cursor-pointer hover:text-red-600 transition-all duration-500' onClick={()=>deleteRestaurant(item._id)}><BsTrashFill className=' inline ' /></td>
               </tr>
             ))
             

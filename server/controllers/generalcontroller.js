@@ -119,12 +119,34 @@ const for_addmenu = async (req,res)=>{
     }
 
 }
+// const passwordToTest = 'nono';
+// bcrypt.hash(passwordToTest, 10).then(hashedPassword => {
+//   console.log("Hashed Password: ", hashedPassword);
+
+//   bcrypt.compare(passwordToTest, hashedPassword).then(result => {
+//     console.log("Password Match:", result); // Should print: true
+//   });
+// });
+
 
 const signup = async (req,res)=>{
+    // const email_ent = await User.findOne({email});
+
     try{
         const {username,email,tel,password } = req.body;
+        console.log(username,email,password)
+        
+        let email_ent = await User.findOne({email});
+
+        if(email_ent){
+            return res.status(400).json({
+                status: false,
+                message: "Email already exists, please login",
+            });
+        }
 
         const hashedpassword = await bcrypt.hash(password,10);
+        console.log("Hashed Password: ", hashedpassword);
 
         const newUser = new User({
             username,
@@ -134,38 +156,45 @@ const signup = async (req,res)=>{
             role:'user',
         })
 
-       
+        
         await newUser.save();
         res.status(201).json({ message: 'Signup successful!' });
         // res.redirect('http://localhost:5173/signup')
     }
     catch(err){
+        console.error(err); 
         res.status(500).json({ error: 'Failed to create user' });
     }
+
+    
 }
 
 const signin = async (req,res)=>{
     try{
         const {email,password } = req.body;
-        console.log(password)
         const user = await User.findOne({email});
-        const checkpassword = await bcrypt.compare(password, user.password);
-        // const checkpassword = await password === user.password
-        const username = user ? user.username : ""
- 
         if (!user) {
             return res.status(400).json({emailMessage:"User not found"})
-        }else if(!checkpassword){
-            return res.status(400).json({passwordMessage:"Incorrect password"})
-        }else{
-            res.json({ token, message: 'Login successful!',username });
         }
 
+        const checkpassword = await bcrypt.compare(password, user.password);
+        // const checkpassword = await password === user.password
+
+        if(!checkpassword){
+            return res.status(400).json({passwordMessage:"Incorrect password"})
+        }
+        console.log("Password Match: ", checkpassword); 
+ 
         const token = jwt.sign(
             { id: user._id, role: user.role },
             process.env.SECRETKEY,
             { expiresIn: "1h" }
           );
+
+        const username = user ? user.username : ""
+        
+        res.json({ token, message: 'Login successful!',username });
+        
         // const token = jwt.sign({ id: user._id }, process.env.SECRETKEY, { expiresIn: '1h' });
 
     }
@@ -173,6 +202,19 @@ const signin = async (req,res)=>{
     catch(err){
         console.log(err)
         res.status(500).json({ error: 'Server error' });
+    }
+}
+
+const deleteone = async (req,res)=>{
+    try {
+        let {id} = req.params;
+
+        Restaurant.findByIdAndDelete(id)
+            .then(response=>res.send(response))
+            .catch(err=>console.log(err))
+            
+    } catch (error) {
+        console.log(error)
     }
 }
 
@@ -185,6 +227,6 @@ module.exports = {
     for_Eachmenu,
     for_addmenu,
     signup,
-    signin
-
+    signin,
+    deleteone
 }

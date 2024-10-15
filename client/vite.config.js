@@ -11,4 +11,9 @@ export default defineConfig({
       '/api': 'http://localhost:5000', // Adjust this according to your API
     },
   },
-})
+  
+  // Add this block to optimize deps (including jwt-decode)
+  optimizeDeps: {
+    include: ['jwt-decode'], // This is the key part you're adding
+  },
+});

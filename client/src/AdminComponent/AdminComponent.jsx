@@ -50,16 +50,7 @@ function AdminComponent() {
             </section>
         </div>
         <div className="min-h-[100vh] bg-[]">
-            <div className=" h-[60px] w-full bg-[] text-[20px] flex items-center font-bold justify-between pr-5">
-                <h1>Welcome</h1>  
-                {/* <CustomButton
-                 className=" text-orange-700 lg:hidden  "
-                 label = <TiThMenu size={25}/>
-                 onclick={HideModal}
-                /> */}
-                <button onClick={HideModal} className=" text-orange-700 md:hidden  "><TiThMenu size={25}/></button>
-                
-            </div>
+            
             <div className="  ">
                 <Outlet/>
             </div>

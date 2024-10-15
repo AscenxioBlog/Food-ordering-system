@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Signup2({onLoginSuccess}) {
+function Signup2({ onLoginSuccess,setusername }) {
   const [formdata, setFormdata] = useState({
     username: "",
     email: "",
@@ -34,12 +34,19 @@ function Signup2({onLoginSuccess}) {
 
       const data = await response.json(); // Parse the JSON response
 
-      if (response.ok) {
-        // If sign-up is successful
-        alert(data.message); // Display success message
-        onLoginSuccess(true,"-130vh")
-      } else {
-        alert("Sign-up failed");
+      switch (response.status) {
+        case 200:
+          // If sign-up is successful
+          alert(data.message); 
+          onLoginSuccess(true, "-130vh");
+          setusername(data.username);
+
+          break;
+        case 400:
+          alert(data.message); // Handle 400 Bad Request
+          break;
+        default:
+          alert(data.error || "An unexpected error occurred"); 
       }
     } catch (error) {
       console.error("Error:", error);
@@ -95,6 +102,7 @@ function Signup2({onLoginSuccess}) {
               name="password"
               type="password"
               required
+              onChange={handleDataChange}
             />
           </div>
         </fieldset>

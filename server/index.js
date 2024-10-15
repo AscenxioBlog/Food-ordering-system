@@ -57,6 +57,8 @@ app.post('/sign-up',upload.single('image'), generalcontroller.signup)
 
 app.post('/sign-in',upload.single('image'), generalcontroller.signin)
 
+app.delete('/admin/allrestaurants/:id', generalcontroller.deleteone)
+
 app.get('*',(req,res)=>{
     res.sendFile(path.join(__dirname,"../client/dist/index.html"))
 })

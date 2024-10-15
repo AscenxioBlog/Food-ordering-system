@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import CustomInput from "../ReusableComponent/MyInput/CustomInput";
+// import jwt_decode from 'jwt-decode'
 
-function SignIn2({onLoginSuccess}) {
+
+function SignIn2({onLoginSuccess,setusername}) {
   let [signindata, setsignindata] = useState({
     email: "",
     password: "",
@@ -46,6 +48,10 @@ function SignIn2({onLoginSuccess}) {
       console.log(data); // Here you will get the JWT token if login is successful
       localStorage.setItem("token", data.token);
       localStorage.setItem("username", data.username);
+
+      // const decodedToken = jwt_decode(data.token);
+      // console.log(decodedToken)
+
     } catch (err) {
       console.error("Login failed:", err.message);
     }
@@ -72,12 +78,10 @@ function SignIn2({onLoginSuccess}) {
               type="email"
               name="email"
               required
-              // placeholder="Email"
               onChange={getValues}
               className="bb h-[50px] w-[80%]  bg-[transparent] rounded-[5px]"
             />
             <p className=" text-red-600 text-[12px]">{emailValidator}</p>
-            {/* <input id="login-email" type="email" required /> */}
           </div>
           <div class="input-block">
             <label for="login-password">Password</label>
@@ -85,13 +89,11 @@ function SignIn2({onLoginSuccess}) {
               type="password"
               name="password"
               required
-              placeholder="Password"
               onChange={getValues}
               className="bb h-[50px] w-[80%]  bg-[transparent] rounded-[5px]"
             />
             <p className=" text-red-600 text-[12px]">{passwordvalidator}</p>
 
-            {/* <input id="login-password" type="password" required /> */}
           </div>
         </fieldset>
         <button type="submit" class="btn-login">
