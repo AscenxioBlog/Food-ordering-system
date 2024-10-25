@@ -47,8 +47,8 @@ function Quote() {
       </div>
     </div> */}
 
-<div className=" h-[450px] w-full flex justify-center items-center">
-        <div className=" h-[400px] w-[70%] bg-[#E7F0DC] rounded-[30px] flex flex-col justify-center items-center p-[20px]">
+<div className=" min-h-[450px] w-full flex justify-center items-center">
+        <div className=" min-h-[400px] w-[70%] bg-[#E7F0DC] rounded-[30px] flex flex-col justify-center items-center p-[20px]">
           <h1 className=' text-[15px] font-medium mb-6 lg:text-[20px] text-[#5F8670] ' style={{textShadow:'0px 7px 5px orangered'}}>{quote.author}</h1>
           <p className=' text-[20px] font-semibold'>{quote.text}</p>
         </div>

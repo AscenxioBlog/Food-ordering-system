@@ -22,7 +22,7 @@ function FoodComponent({ addToCart }) {
   }, []);
 
   return (
-    <div className='mt-[100px] bg-[#E7F0DC]'>
+    <div className='mt-[70px] bg-[#E7F0DC]'>
       <div className="min-h-[75vh] w-full mt-[20px]">
         <div className="FOOD h-[500px] w-full bg-red-400">
           {/* Add restaurant's cover image here if available */}

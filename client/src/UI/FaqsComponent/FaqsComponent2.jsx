@@ -118,7 +118,7 @@ function FaqsComponent2() {
                    }
                 }
             }>How can I report or resolve issues & disputes?  <span style={{ transform: `rotate(${rotat3})`, transition:'1s' }}><IoIosAddCircle size={30} /></span></h1>
-            <p className=' h-0'>You can email us at hello@getfoodcourt.com or visit the help/ feedback page on the app to see the available call & whatsapp lines</p>
+            <p className=' h-0'>You can email us at HelloFeedMe.com or visit the help/ feedback page on the app to see the available call & whatsapp lines</p>
         </div>
 
 

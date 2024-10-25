@@ -4,8 +4,8 @@ import CheckoutForm2 from './CheckoutForm2'
 
 function CheckoutForm() {
   return (
-    <div >
-        <CheckoutForm1/>
+    <div className=' mt-[70px]'>
+        {/* <CheckoutForm1/> */}
         <CheckoutForm2/>
       
     </div>

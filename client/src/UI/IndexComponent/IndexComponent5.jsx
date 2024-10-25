@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom'
 
 function IndexComponent5() {
   return (
-    <div className=" bg-[#E7F0DC]">
+    <div className=" bg-[#E7F0DC] pb-3">
         <div className=" h-[100px] w-full bg-[] flex flex-col justify-end items-center ">
             <h1 className=' text-[30px] font-bold '>Work With Us</h1>
-            <p className=' text-[17px] '>You can work with us and earn more than your expectation</p>
+            <p className=' text-[17px] text-center'>You can work with us and earn more than your expectation</p>
         </div>
          <div className=' min-h-[700px] w-full flex justify-center items-center'>
       <div className=" min-h-[500px] w-[70%] bg-[] grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-5 ">

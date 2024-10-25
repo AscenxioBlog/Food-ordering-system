@@ -13,7 +13,7 @@ function IndexComponent1() {
   return (
     <div className=' min-h-[450px] w-full bg-[#5F8670] lg:mt-4'>
         <div className=" h-[80px] w-full bg-[] grid grid-cols-[35%,20%,30%] md:grid-cols-[20%,60%,18%] lg:grid-cols-[20%,60%,18%] gap-1 justify-between ">
-            <div className=" bg-[] text-[35px] font-extrabold text-[#FF5A3C] flex justify-center items-center">
+            {/* <div className=" bg-[] text-[35px] font-extrabold text-[#FF5A3C] flex justify-center items-center">
                 <h1 className=' logo'><a href="/">Feed<span className=' text-white'>Me</span></a></h1>
             </div>
            <div className="flex items-center ">
@@ -27,7 +27,7 @@ function IndexComponent1() {
            </div>
             <div className=" bg-[] flex justify-center items-center">
                 <button className=' h-[40px] w-[150px] bg-[#FF5A3C] text-[18px] text-white font-semibold rounded-[20px]'>Cart</button>
-            </div>
+            </div> */}
 
         </div>
 
