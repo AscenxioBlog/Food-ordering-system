@@ -59,6 +59,22 @@ app.post('/sign-in',upload.single('image'), generalcontroller.signin)
 
 app.delete('/admin/allrestaurants/:id', generalcontroller.deleteone)
 
+app.put('/restaurants/:id', async (req, res) => {
+    try {
+      const { id } = req.params;
+      const updatedData = req.body; // The updated restaurant data
+  
+      const updatedRestaurant = await Restaurant.findByIdAndUpdate(id, updatedData, { new: true });
+      
+      if (!updatedRestaurant) return res.status(404).send('Restaurant not found');
+  
+      res.json(updatedRestaurant);
+    } catch (error) {
+      res.status(500).send('Server error');
+    }
+  });
+  
+
 app.get('*',(req,res)=>{
     res.sendFile(path.join(__dirname,"../client/dist/index.html"))
 })

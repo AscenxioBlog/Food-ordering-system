@@ -54,12 +54,12 @@ function AddComponent() {
             </div> */}
 
             <div className=" min-h-[90vh] w-full  grid grid-cols-1 md:grid-cols-[15%,85%] ">
-               <div className=" bg-slate-200  md:flex justify-center">
+               <div className="  md:flex justify-center">
                 <span className=' text-[#5F8670] text-[40px] md:text-[60px]'>
                 <TbHomePlus  />
                 </span>
                </div>
-               <div className=" bg-slate-200 ">
+               <div className="  ">
                 <div className=" space-y-3 mb-6">
                     <h1 className=' text-[25px]'>General restaurant description</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem corrupti architecto aliquid beatae hic maxime voluptatum aperiam corporis a ipsam est blanditiis alias iusto ratione, tempora vitae fugiat aut placeat.</p>

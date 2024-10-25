@@ -26,15 +26,21 @@ function AllRestaurant() {
       .catch(err => console.log(err.message));
   };
 
+  const fetchRestaurantById = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:5000/restaurants/${id}`);
+      const data = await response.json();
+      setRestaurantData(data); // Set the fetched restaurant data to prefill the form
+    } catch (error) {
+      console.error('Error fetching restaurant data:', error);
+    }
+  };
+  
+
   return (
-    <div className=' bg-gray-800 w-full h-[100vh] p-8 overflow-y-scroll '>
-      <div className=" lg:hidden h-[400px] w-full text-white text-[30px] font-bold flex flex-col justify-center items-center">
-      <h1>YOU CAN ONLY</h1>
-      <h1>VIEW THIS ON</h1>
-      <h1>LARGER SCREEN</h1>
-      <h1>THANKS</h1>
-      </div>
-      <table className=' hidden lg:inline-block w-[80%] border-[2px] border-solid border-emerald-600 text-center text-white'>
+    <div className=' h-full p-8  flex justify-center items-center overflow-x-scroll'>
+      
+      <table className=' text-[#5F8670] lg:inline-block w-[90%] border-[2px] border-solid border-emerald-600 text-center '>
         <thead>
           <tr className=' border-[2px] border-dotted border-emerald-600'>
             <th className=' border-[1px] border-dotted border-emerald-600 '>Image</th>
@@ -51,7 +57,7 @@ function AllRestaurant() {
             restaurantData ? 
             restaurantData.map(item=>(
               <tr className='border-[2px]'>
-                <td className=' border-[1px] border-dotted border-emerald-600 py-3 pl-5 w-[13%]'>
+                <td className=' border-[1px] border-dotted border-emerald-600 py-3 pl-5 w-[15%]'>
                   <img src={`http://localhost:5000/${item.image}`} className=' h-[50px] w-[80px] rounded-xl'/>
                 </td>
                 <td className=' border-[1px] border-dotted border-emerald-600 text-[20px] font-bold w-[20%]'>{item.name}</td>

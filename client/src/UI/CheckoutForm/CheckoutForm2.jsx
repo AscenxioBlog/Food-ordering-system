@@ -25,9 +25,10 @@ function CheckoutForm2() {
         return ()=> {
             window.removeEventListener('storageUpdate',handleStorageChange );
         };
-      },[newcart])
+      },[])
 
       const totalPrice = newcart.reduce((total, item) => total + (item.price * item.quantity), 0);
+
   return (
     <div className=' min-h-[100vh] w-full bg-[#E7F0DC] grid grid-cols-1 lg:grid-cols-[32%,40%,24%] gap-6 '>
         <div className="h-[60vh] md:h-[60vh] lg:h-[100vh] bg-[] flex items-center p-2">

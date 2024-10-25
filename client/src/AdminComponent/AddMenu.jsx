@@ -45,14 +45,14 @@ function AddMenu() {
     <div>
       <div className="w-full min-h-[100vh]">
         <div className="min-h-[90vh] w-full lg:w-full pl-[2px] md-pl-[0px]  grid grid-cols-1 md:grid-cols-[15%,85%]">
-          <div className="bg-slate-200 md:flex justify-center">
+          <div className=" md:flex justify-center">
             <span className='text-[#5F8670] text-[40px] md:text-[60px]'>
               <MdOutlineRestaurantMenu />
             </span>
           </div>
-          <div className="bg-slate-200">
+          <div className="">
             <form onSubmit={handleSubmit} encType="multipart/form-data">
-              <div className="space-y-3 ml-[2px] md-ml-[0px] lg:ml-[0px] bg-slate-200">
+              <div className="space-y-3 ml-[2px] md-ml-[0px] lg:ml-[0px]">
                 <h1 className='text-[25px]'>Edit Menu List</h1>
                 <p>Partem diceret praesent mel et...</p>
               </div>

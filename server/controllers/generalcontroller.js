@@ -88,8 +88,7 @@ const for_Eachmenu = async (req,res)=>{
     try{
         const {restaurantid} = req.params;
         const menus = await Menu.find({restaurant: restaurantid})
-            .populate('restaurant','address')
-            .populate('restaurant','description')
+            .populate('restaurant','address').populate('restaurant','description')
         res.json(menus)
         // console.log(req.params)
         // console.log('Menus found:', menus);
@@ -113,7 +112,7 @@ const for_addmenu = async (req,res)=>{
         })
 
         await newMenu.save();
-        res.redirect('http://localhost:5173/admin/add')
+        // res.redirect('http://localhost:5173/admin/add')
     }catch(err){
         console.error(err);
     }
@@ -159,7 +158,6 @@ const signup = async (req,res)=>{
         
         await newUser.save();
         res.status(201).json({ message: 'Signup successful!' });
-        // res.redirect('http://localhost:5173/signup')
     }
     catch(err){
         console.error(err); 

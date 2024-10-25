@@ -19,13 +19,14 @@ function AdminComponent() {
 
         }
     }
+
   return (
-    <div className=' min-h-[100vh] bg-[#E7F0DC] w-full  mt-[100px] md:grid  md:grid-cols-[25%,75%] lg:grid-cols-[22%,78%]'>
+    <div className=' min-h-[100vh] bg-[#E7F0DC] w-full md:grid md:grid-cols-[25%,75%] lg:grid-cols-[30%,70%]'>
        <PhoneAdmin
        showMe ={showMe}
        HideModal={HideModal}
        />
-        <div className=" hidden md:inline-block bg-red-300 overflow-y-scroll">
+        <div className=" hidden md:inline-block bg-red-300 ">
             <section className=" bg-slate-200 w-full">
                 <h1 className=' text-[20px] font-bold'>Main</h1>
                 <Link to='/admin/profile'>
@@ -49,45 +50,12 @@ function AdminComponent() {
 
             </section>
         </div>
-        <div className="min-h-[100vh] bg-[]">
+        <div className=" h-[100vh] bg-[red] overflow-y-scroll mb-[70px]">
             
-            <div className="  ">
+            <div className=" bg-teal-300 ">
                 <Outlet/>
             </div>
         </div>
-
-
-        {/* <section className=" h-[70px] col-span-2 bg-[]  flex items-end lg:pl-[122px]">
-            <ul className=' flex justify-around items-end gap-3'>
-                <li className='adminbtn h-[35px] w-[110px]  md:h-[35px] md:w-[120px] lg:h-[50px] lg:w-[200px] bg-slate-200 flex justify-center items-center  text-[15px]'>
-                    <Link to='/admin/add'>+ RESTUARANT</Link>
-                </li>
-                <li className='adminbtn h-[35px] w-[110px] md:h-[35px] md:w-[120px] lg:h-[50px] lg:w-[200px] bg-slate-200 flex justify-center items-center text-[15px] '>
-                    <Link to='/admin/addmenu'>ADD MENU</Link>
-                </li> */}
-                {/* <li className='adminbtn h-[25px] w-[80px] md:h-[35px] md:w-[100px] lg:h-[50px] lg:w-[200px] bg-slate-200 flex justify-center items-center text-[20px]' >
-                    <Link to="test">Edit</Link>
-                </li>
-                <li className='adminbtn h-[25px] w-[80px] md:h-[35px] md:w-[100px] lg:h-[50px] lg:w-[200px] bg-slate-200 flex justify-center items-center text-[20px] '>
-                    <Link to="next">Delete</Link>
-                </li> */}
-
-                {/* <li className='adminbtn h-[35px] w-[110px] md:h-[35px] md:w-[120px] lg:h-[50px] lg:w-[200px] bg-slate-200 flex justify-center items-center  text-[15px] md:text-[20px] lg:text-[20px]'>
-                    <Link> RESTAURANT</Link>
-
-                <li className='adminbtn h-[35px] w-[110px] md:h-[35px] md:w-[120px] lg:h-[50px] lg:w-[200px] bg-slate-200 flex justify-center items-center  text-[15px] md:text-[20px] lg:text-[20px]'>
-                    <Link to="/admin/allrestaurant"> RESTAURANT</Link>
-
-                </li>
-            </ul>
-        </section>
-        <section className=" min-h-[100vh] bg-[] ">
-            <div className="  ">
-                <Outlet/>
-            </div>
-        </section>
-
-         */}
       
     </div>
   )

@@ -13,8 +13,6 @@ import CustomInput from "../../ReusableComponent/MyInput/CustomInput";
 
 
 function Restaurant1Component() {
- 
-
 
 
   let [holddata, setHolddata] = useState("");

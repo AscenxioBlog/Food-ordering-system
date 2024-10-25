@@ -35,18 +35,27 @@ function Signup2({ onLoginSuccess,setusername }) {
       const data = await response.json(); // Parse the JSON response
 
       switch (response.status) {
-        case 200:
+        case 201:
           // If sign-up is successful
           alert(data.message); 
           onLoginSuccess(true, "-130vh");
           setusername(data.username);
-
           break;
         case 400:
           alert(data.message); // Handle 400 Bad Request
           break;
         default:
           alert(data.error || "An unexpected error occurred"); 
+    //       chunk-3IHV7RO6.js?v=2e35549d:521 Warning: Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
+    // at CheckoutForm2 (http://localhost:5173/src/UI/CheckoutForm/CheckoutForm2.jsx:26:31)
+    // at div
+    // at CheckoutForm
+    // at RenderedRoute (http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=2e35549d:4092:5)
+    // at Routes (http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=2e35549d:4531:5)
+    // at App (http://localhost:5173/src/Container.jsx:43:20)
+    // at Router (http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=2e35549d:4474:15)
+    // at BrowserRouter (http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=2e35549d:5219:5)
+    // at Container
       }
     } catch (error) {
       console.error("Error:", error);
@@ -66,9 +75,9 @@ function Signup2({ onLoginSuccess,setusername }) {
             sign up.
           </legend>
           <div class="input-block">
-            <label HTMLfor="signup-username">Username</label>
+            <label htmlFor="signup-username">Username</label>
             <input
-              id="signup-email"
+              id="signup-username"
               name="username"
               type="text"
               required
@@ -76,7 +85,7 @@ function Signup2({ onLoginSuccess,setusername }) {
             />
           </div>
           <div class="input-block">
-            <label HTMLfor="signup-email">E-mail</label>
+            <label htmlFor="signup-email">E-mail</label>
             <input
               id="signup-email"
               name="email"
@@ -86,7 +95,7 @@ function Signup2({ onLoginSuccess,setusername }) {
             />
           </div>
           {/* <div class="input-block">
-            <label HTMLfor="signup-tel">Tel</label>
+            <label htmlFor="signup-tel">Tel</label>
             <input
               id="signup-tel"
               name="tel"
@@ -96,7 +105,7 @@ function Signup2({ onLoginSuccess,setusername }) {
             />
           </div> */}
           <div class="input-block">
-            <label HTMLfor="signup-password">Password</label>
+            <label htmlFor="signup-password">Password</label>
             <input
               id="signup-password"
               name="password"
